@@ -25,6 +25,7 @@ const Home           = lazy(() => import("./pages/HomeCar"));
 const Join           = lazy(() => import("./pages/Join"));
 const PlatformLanding = lazy(() => import("./pages/PlatformLanding"));
 const Vehicles       = lazy(() => import("./pages/Vehicles"));
+const BrandPage      = lazy(() => import("./pages/BrandPage"));
 const Equipment      = lazy(() => import("./pages/Equipment"));
 const Loads          = lazy(() => import("./pages/Loads"));
 const Jobs           = lazy(() => import("./pages/Jobs"));
@@ -246,6 +247,7 @@ function App() {
         <Route path="/platform" element={<WithLayout><PlatformLanding /></WithLayout>} />
         <Route path="/vehicles"    element={<WithLayout><Vehicles /></WithLayout>} />
         <Route path="/listings"   element={<WithLayout><Vehicles /></WithLayout>} />
+        <Route path="/brand/:brand" element={<WithLayout><BrandPage /></WithLayout>} />
         <Route path="/search"      element={<WithLayout><Search /></WithLayout>} />
         <Route path="/equipment"   element={<WithLayout><Equipment /></WithLayout>} />
         <Route path="/loads"       element={<WithLayout><Loads /></WithLayout>} />

@@ -265,7 +265,7 @@ function BrandStrip() {
           return (
             <Link
               key={b.name}
-              to={`/listings?brand=${encodeURIComponent(b.name)}`}
+              to={`/brand/${encodeURIComponent(b.name)}`}
               onClick={() => trackEvent('brand_click', { brand: b.name })}
               className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-surface border border-border hover:border-orange/50 hover:shadow-md transition-all btn-press"
             >
