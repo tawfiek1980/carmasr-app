@@ -202,8 +202,8 @@ function HeroSlider({ slides }: { slides: HeroSlide[] }) {
 
 /* ────────────────────────── Categories ────────────────────────── */
 const v2Categories = [
-  { name: 'شاحنات ومعدات', to: '/vehicles', art: TruckIcon },
-  { name: 'حمولات', to: '/loads', art: LoadsIcon },
+  { name: 'سيارات وسيارات', to: '/vehicles', art: TruckIcon },
+  { name: 'سيارات', to: '/loads', art: LoadsIcon },
   { name: 'وظائف', to: '/jobs', art: JobsIcon },
   { name: 'ورش وخدمات', to: '/services', art: WorkshopIcon },
   { name: 'قطع غيار', to: '/spare-parts', art: SparePartsIcon },
@@ -216,7 +216,7 @@ function CategoryGrid() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg sm:text-xl font-extrabold text-text">استكشف CarMasr</h2>
-          <Link to="/vehicles" aria-label="عرض كل الشاحنات والمعدات" className="flex items-center gap-1 text-orange-700 font-bold text-sm">
+          <Link to="/vehicles" aria-label="عرض كل السيارات والسيارات" className="flex items-center gap-1 text-orange-700 font-bold text-sm">
             عرض الكل <ChevronLeft className="w-4 h-4" />
           </Link>
         </div>
@@ -403,8 +403,8 @@ function LoadsRail({ loads, loading }: { loads: Load[]; loading: boolean }) {
     <section className="pt-8 sm:pt-10">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg sm:text-xl font-extrabold text-text">📦 حمولات متاحة الآن</h2>
-          <Link to="/loads" aria-label="عرض كل الحمولات المتاحة" className="flex items-center gap-1 text-orange-700 font-bold text-sm">
+          <h2 className="text-lg sm:text-xl font-extrabold text-text">📦 سيارات متاحة الآن</h2>
+          <Link to="/loads" aria-label="عرض كل السيارات المتاحة" className="flex items-center gap-1 text-orange-700 font-bold text-sm">
             عرض الكل <ChevronLeft className="w-4 h-4" />
           </Link>
         </div>
@@ -424,7 +424,7 @@ function LoadsRail({ loads, loading }: { loads: Load[]; loading: boolean }) {
       ) : (
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 card-surface">
           <EmptyState
-            title="مفيش حمولات متاحة دلوقتي"
+            title="مفيش سيارات متاحة دلوقتي"
             description="لو عندك شاحنة فاضية، انشرها هنا واوصل لأصحاب البضاعة"
             actionLabel="انشر حمولة"
             actionTo="/post-listing?type=load"
@@ -437,7 +437,7 @@ function LoadsRail({ loads, loading }: { loads: Load[]; loading: boolean }) {
 
 /* ────────────────────────── Services ────────────────────────── */
 const v2Services = [
-  { name: 'ورش وصيانة', desc: 'صيانة شاحنات ومعدات', to: '/services', icon: Wrench },
+  { name: 'ورش وصيانة', desc: 'صيانة سيارات وسيارات', to: '/services', icon: Wrench },
   { name: 'قطع غيار', desc: 'أصلي ومستعمل ومستورد', to: '/spare-parts', icon: Cog },
   { name: 'طوارئ الطريق', desc: 'مساعدة فورية 24/7', to: '/emergency', icon: Siren },
   { name: 'تمويل', desc: 'قسط شاحنتك بسهولة', to: '/finance', icon: Landmark },
@@ -600,9 +600,9 @@ const footerGroups = [
   {
     title: 'السوق',
     links: [
-      { name: 'شاحنات للبيع', to: '/vehicles' },
-      { name: 'معدات ثقيلة', to: '/equipment' },
-      { name: 'حمولات', to: '/loads' },
+      { name: 'سيارات للبيع', to: '/vehicles' },
+      { name: 'سيارات', to: '/equipment' },
+      { name: 'سيارات', to: '/loads' },
       { name: 'وظائف النقل', to: '/jobs' },
       { name: 'قطع الغيار', to: '/spare-parts' },
       { name: 'المعارض', to: '/exhibitions' },
@@ -655,7 +655,7 @@ function HomeV2Footer() {
               </div>
             </Link>
             <p className="text-text-light text-sm leading-relaxed mb-4 max-w-xs">
-              أكبر سوق إلكتروني متخصص في مركبات النقل الثقيل والمعدات في مصر. نربط البائعين والمشترين وأصحاب الحمولة في بيئة آمنة وموثوقة.
+              أكبر سوق إلكتروني متخصص في مركبات النقل الثقيل والسيارات في مصر. نربط البائعين والمشترين وأصحاب الحمولة في بيئة آمنة وموثوقة.
             </p>
             <div className="space-y-1.5 text-sm text-text-light">
               <a href="tel:01018870145" className="flex items-center gap-2 hover:text-orange transition-colors">
@@ -760,7 +760,7 @@ function ExhibitionsRail({ exhibitions }: { exhibitions: Exhibition[] }) {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg sm:text-xl font-extrabold text-text flex items-center gap-2">
-            <Store className="w-5 h-5 text-orange" /> معارض الشاحنات والمعدات
+            <Store className="w-5 h-5 text-orange" /> معارض السيارات والسيارات
           </h2>
           <Link to="/exhibitions" aria-label="عرض كل المعارض" className="flex items-center gap-1 text-orange-700 font-bold text-sm">
             عرض الكل <ChevronLeft className="w-4 h-4" />
@@ -838,8 +838,8 @@ export default function HomeV2() {
     }
     return [{
       title: 'أكبر سوق للنقل الثقيل في مصر',
-      subtitle: 'شاحنات • معدات • حمولات • وظائف',
-      cta: 'تصفح الشاحنات',
+      subtitle: 'سيارات • سيارات • سيارات • وظائف',
+      cta: 'تصفح السيارات',
       to: '/vehicles',
       image: '',
     }];
@@ -849,7 +849,7 @@ export default function HomeV2() {
     <div className="min-h-screen bg-bg" dir="rtl">
       <SeoHead
         title="كار مصر CarMasr - أكبر سوق للنقل الثقيل في مصر"
-        description="أكبر سوق إلكتروني للنقل الثقيل في مصر. ابحث عن شاحنات، معدات ثقيلة، حمولات، وظائف نقل، تمويل، وخدمات طوارئ في مكان واحد."
+        description="أكبر سوق إلكتروني للنقل الثقيل في مصر. ابحث عن سيارات، سيارات، سيارات، وظائف نقل، تمويل، وخدمات طوارئ في مكان واحد."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebSite",

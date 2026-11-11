@@ -9,12 +9,12 @@ import { trackEvent } from '../lib/analytics';
 const steps = [
   { n: '1', title: 'أنشئ حسابك', desc: 'سجّل برقم موبايلك في أقل من دقيقة', icon: UserPlus },
   { n: '2', title: 'أنشئ معرضك', desc: 'أضف اسم معرضك وشعاره وبيانات التواصل', icon: Building2 },
-  { n: '3', title: 'أضف منتجاتك', desc: 'ارفع صور معداتك وقطع الغيار للبيع', icon: Package },
+  { n: '3', title: 'أضف منتجاتك', desc: 'ارفع صور سياراتك وقطع الغيار للبيع', icon: Package },
 ];
 
 const benefits = [
   { icon: Building2, title: 'معرض رقمي خاص', desc: 'صفحة كاملة لمعرضك: غلاف وشعار ووصف وساعات عمل' },
-  { icon: Package, title: 'عرض منتجاتك', desc: 'أضف كل معداتك وقطع غيارك بالصور والأسعار' },
+  { icon: Package, title: 'عرض منتجاتك', desc: 'أضف كل سياراتك وقطع غيارك بالصور والأسعار' },
   { icon: Share2, title: 'رابط مشاركة', desc: 'شارك معرضك على واتساب وفيسبوك بضغطة واحدة' },
   { icon: Phone, title: 'اتصال مباشر', desc: 'العميل يوصلك بالهاتف أو واتساب مباشرة' },
   { icon: MapPin, title: 'ظهور حسب المحافظة', desc: 'الزوار في محافظتك يلاقوك بسهولة' },
@@ -32,8 +32,8 @@ export default function Join() {
   return (
     <div className="min-h-screen bg-bg">
       <SeoHead
-        title="انضم إلى كار مصر - معرضك الرقمي لمعدات وقطع غيار النقل الثقيل"
-        description="أنشئ معرضك المجاني على منصة كار مصر. اعرض معداتك وقطع غيارك على آلاف العملاء في مصر. اشترك في باقة المعارض خلال دقيقة."
+        title="انضم إلى كار مصر - معرضك الرقمي لسيارات وقطع غيار النقل الثقيل"
+        description="أنشئ معرضك المجاني على منصة كار مصر. اعرض سياراتك وقطع غيارك على آلاف العملاء في مصر. اشترك في باقة المعارض خلال دقيقة."
       />
 
       {/* Hero */}
@@ -49,7 +49,7 @@ export default function Join() {
             معرضك الرقمي على <span className="text-orange">كار مصر</span>
           </h1>
           <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">
-            اعرض معداتك وقطع غيارك وخدماتك على آلاف العملاء في مصر.
+            اعرض سياراتك وقطع غيارك وخدماتك على آلاف العملاء في مصر.
             أنشئ معرضك مجاناً في دقيقة وخلّي الناس توصلك مباشرة.
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">

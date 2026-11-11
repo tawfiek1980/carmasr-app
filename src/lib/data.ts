@@ -1,23 +1,23 @@
 import type { Category, Governorate, EmergencyService, MarketStat, Listing, Load, Job } from '../types';
 
 export const mainCategories: Category[] = [
-  { id: 'trucks', name: 'شاحنات', nameEn: 'Trucks', icon: 'Truck', count: 1240, color: '#F4700A' },
-  { id: 'equipment', name: 'معدات ثقيلة', nameEn: 'Heavy Equipment', icon: 'Construction', count: 856, color: '#0D1B2A' },
-  { id: 'trailers', name: 'مقطورات', nameEn: 'Trailers', icon: 'Container', count: 320, color: '#0891B2' },
+  { id: 'trucks', name: 'سيارات', nameEn: 'Trucks', icon: 'Truck', count: 1240, color: '#F4700A' },
+  { id: 'equipment', name: 'سيارات', nameEn: 'Heavy Equipment', icon: 'Construction', count: 856, color: '#0D1B2A' },
+  { id: 'trailers', name: 'سيارات', nameEn: 'Trailers', icon: 'Container', count: 320, color: '#0891B2' },
   { id: 'buses', name: 'حافلات', nameEn: 'Buses', icon: 'Bus', count: 180, color: '#7C3AED' },
   { id: 'spare-parts', name: 'قطع غيار', nameEn: 'Spare Parts', icon: 'Cog', count: 520, color: '#059669' },
-  { id: 'loads', name: 'حمولات', nameEn: 'Loads', icon: 'Package', count: 342, color: '#10B981' },
+  { id: 'loads', name: 'سيارات', nameEn: 'Loads', icon: 'Package', count: 342, color: '#10B981' },
   { id: 'jobs', name: 'وظائف', nameEn: 'Jobs', icon: 'HardHat', count: 128, color: '#3B82F6' },
   { id: 'finance', name: 'تمويل', nameEn: 'Finance', icon: 'Landmark', count: 45, color: '#8B5CF6' },
   { id: 'emergency', name: 'طوارئ', nameEn: 'Emergency', icon: 'Siren', count: 89, color: '#EF4444' },
 ];
 
 export const vehicleCategories = [
-  { id: 'trucks', name: 'شاحنات', icon: 'Truck' },
+  { id: 'trucks', name: 'سيارات', icon: 'Truck' },
   { id: 'half-trucks', name: 'نصف نقل', icon: 'Truck' },
   { id: 'quarter-trucks', name: 'ربع نقل', icon: 'Truck' },
   { id: 'tractor-heads', name: 'رؤوس جرارات', icon: 'GitPullRequest' },
-  { id: 'trailers', name: 'نصف مقطورات', icon: 'Container' },
+  { id: 'trailers', name: 'نصف سيارات', icon: 'Container' },
   { id: 'tankers', name: 'تانكرات', icon: 'Droplet' },
   { id: 'refrigerated', name: 'برادات', icon: 'Snowflake' },
   { id: 'dump-trucks', name: 'قلابات', icon: 'Mountain' },
@@ -142,14 +142,14 @@ export const citiesByGovernorate: Record<string, string[]> = {
 
 export const emergencyServices: EmergencyService[] = [
   { id: 'mechanic', name: 'ميكانيكي متنقل', icon: 'Wrench', description: 'إصلاح أعطال المحرك والهيكل في الموقع', responseTime: '30 دقيقة', phone: '01018870145' },
-  { id: 'electrician', name: 'كهربائي متنقل', icon: 'Zap', description: 'صيانة كهربائية شاملة للشاحنات والمعدات', responseTime: '25 دقيقة', phone: '01277177710' },
-  { id: 'recovery', name: 'ونش إنقاذ', icon: 'Truck', description: 'سحب ونقل الشاحنات المعطلة والمعدات', responseTime: '20 دقيقة', phone: '01018870145' },
+  { id: 'electrician', name: 'كهربائي متنقل', icon: 'Zap', description: 'صيانة كهربائية شاملة للسيارات والسيارات', responseTime: '25 دقيقة', phone: '01277177710' },
+  { id: 'recovery', name: 'ونش إنقاذ', icon: 'Truck', description: 'سحب ونقل السيارات المعطلة والسيارات', responseTime: '20 دقيقة', phone: '01018870145' },
   { id: 'tire', name: 'خدمة إطارات', icon: 'CircleDot', description: 'تغيير وإصلاح الإطارات على الطريق', responseTime: '15 دقيقة', phone: '01277177710' },
 ];
 
 export const marketStats: MarketStat[] = [
-  { label: 'متوسط سعر الشاحنات', value: '1,250,000 جنيه', change: '+5.2%', trend: 'up' },
-  { label: 'متوسط سعر المعدات', value: '2,800,000 جنيه', change: '+3.1%', trend: 'up' },
+  { label: 'متوسط سعر السيارات', value: '1,250,000 جنيه', change: '+5.2%', trend: 'up' },
+  { label: 'متوسط سعر السيارات', value: '2,800,000 جنيه', change: '+3.1%', trend: 'up' },
   { label: 'حمولة النشطة', value: '342 حمولة', change: '+12%', trend: 'up' },
   { label: 'أكثر المركبات طلباً', value: 'مرسيدس أكتروس', trend: 'stable' },
 ];
@@ -180,7 +180,7 @@ export const sampleTags = ['مميز', 'تم التحقق', 'سعر قابل ل�
 
 export const sampleListings: Listing[] = [
   // ═══════════════════════════════════════════
-  //  شاحنات - TRUCKS
+  //  سيارات - TRUCKS
   // ═══════════════════════════════════════════
   {
     id: 'sample-truck-actros-2020',
@@ -211,7 +211,7 @@ export const sampleListings: Listing[] = [
   {
     id: 'sample-truck-volvo-2019',
     title: 'فولفو FH 460 موديل 2019 - استيراد أوروبي',
-    description: 'جرار فولفو FH 460 موديل 2019 استيراد أوروبي مباشر من السويد. الممشى 380 ألف كم فقط. ماتور D13K مع فيلتر AdBlue. الفتيس I-Shift أتوماتيك. صيانة دورية في التوكيل. الكاوتش 6 بحالة 70%. الشاحن مجهز لنقل الحمولات الثقيلة. سعر نهائي 2,700,000 جنيه. موجود في الإسكندرية. معاينة وفحص قبل الشراء.',
+    description: 'جرار فولفو FH 460 موديل 2019 استيراد أوروبي مباشر من السويد. الممشى 380 ألف كم فقط. ماتور D13K مع فيلتر AdBlue. الفتيس I-Shift أتوماتيك. صيانة دورية في التوكيل. الكاوتش 6 بحالة 70%. الشاحن مجهز لنقل السيارات الثقيلة. سعر نهائي 2,700,000 جنيه. موجود في الإسكندرية. معاينة وفحص قبل الشراء.',
     price: 2700000,
     category: 'trucks',
     subcategory: 'tractor-heads',
@@ -286,7 +286,7 @@ export const sampleListings: Listing[] = [
   {
     id: 'sample-truck-isuzu-flatbed',
     title: 'ايزوزو سطحة نقل خفيف 2021',
-    description: 'شاحنة ايزوزو سطحة نقل خفيف موديل 2021. ماتور ايزوزو اصلي. الحمولة 5 طن. مناسبة لنقل الأجهزة والمعدات الخفيفة. البودي سطحة حديد 10 مم. الشاحن نظيف والبودي محدش لمسه. مثالي لنقل الأثاث والأجهزة الكهربائية. السعر 950,000 جنيه قابل للتفاوض. موجود في شبرا الخيمة.',
+    description: 'شاحنة ايزوزو سطحة نقل خفيف موديل 2021. ماتور ايزوزو اصلي. الحمولة 5 طن. مناسبة لنقل الأجهزة والسيارات الخفيفة. البودي سطحة حديد 10 مم. الشاحن نظيف والبودي محدش لمسه. مثالي لنقل الأثاث والأجهزة الكهربائية. السعر 950,000 جنيه قابل للتفاوض. موجود في شبرا الخيمة.',
     price: 950000,
     category: 'trucks',
     subcategory: 'flatbeds',
@@ -308,7 +308,7 @@ export const sampleListings: Listing[] = [
   },
   {
     id: 'sample-truck-tanker-fuel',
-    title: 'تانكر نقل بنزين 30000 لتر - معدات أمان متوفرة',
+    title: 'تانكر نقل بنزين 30000 لتر - سيارات أمان متوفرة',
     description: 'تانكر نقل الوقود سعة 30,000 لتر. صندوق ألومنيوم أصلي. مجهز بأجهزة أمان ومطافئ. التانكر مناسب لنقل البنزين والديزل والكاز. الشاحن موديل 2019 ماتور مرسيدس 2640. صلاحية الأنبوب والصمامات سارية. السعر 2,400,000 جنيه. موجود في بورسعيد.',
     price: 2400000,
     category: 'trucks',
@@ -354,7 +354,7 @@ export const sampleListings: Listing[] = [
   },
 
   // ═══════════════════════════════════════════
-  //  معدات ثقيلة - HEAVY EQUIPMENT
+  //  سيارات - HEAVY EQUIPMENT
   // ═══════════════════════════════════════════
   {
     id: 'sample-equipment-excavator-cat',
@@ -479,12 +479,12 @@ export const sampleListings: Listing[] = [
   },
 
   // ═══════════════════════════════════════════
-  //  مقطورات - TRAILERS
+  //  سيارات - TRAILERS
   // ═══════════════════════════════════════════
   {
     id: 'sample-trailer-flatbed',
     title: 'نصف مقطورة سطحة 3 محاور موديل 2021 - وارد',
-    description: 'نصف مقطورة سطحة 3 محاور موديل 2021. حمولة 40 طن. الشاسيه قوي جداً فول صيني. البودي حديد 14 مم. الدفرات 3 محاور 6 عجلات. الكاوتش 70%. المقطورة فحصها قبل الشراء ومفيش مشاكل. مناسبة لنقل الحديد والمواسير والمعدات الثقيلة. السعر 750,000 جنيه نهائي. موجودة في العاشر من رمضان.',
+    description: 'نصف مقطورة سطحة 3 محاور موديل 2021. حمولة 40 طن. الشاسيه قوي جداً فول صيني. البودي حديد 14 مم. الدفرات 3 محاور 6 عجلات. الكاوتش 70%. المقطورة فحصها قبل الشراء ومفيش مشاكل. مناسبة لنقل الحديد والمواسير والسيارات الثقيلة. السعر 750,000 جنيه نهائي. موجودة في العاشر من رمضان.',
     price: 750000,
     category: 'trailers',
     subcategory: 'flatbeds',
@@ -555,8 +555,8 @@ export const sampleListings: Listing[] = [
   },
   {
     id: 'sample-trailer-lowbed',
-    title: 'نصف مقطورة منخفضة 40 طن - نقل معدات ثقيلة',
-    description: 'نصف مقطورة منخفضة Lowboy سعة 40 طن. مناسبة لنقل الحفارات والبلدوزرات والمعدات الثقيلة. الطول 12 متر والارتفاع من الأرض 40 سم فقط. الشاسيه فول صيني قوي. الكاوتش 8 عجلات بحالة ممتازة. السعر 1,100,000 جنيه. موجود في السويس.',
+    title: 'نصف مقطورة منخفضة 40 طن - نقل سيارات',
+    description: 'نصف مقطورة منخفضة Lowboy سعة 40 طن. مناسبة لنقل الحفارات والبلدوزرات والسيارات الثقيلة. الطول 12 متر والارتفاع من الأرض 40 سم فقط. الشاسيه فول صيني قوي. الكاوتش 8 عجلات بحالة ممتازة. السعر 1,100,000 جنيه. موجود في السويس.',
     price: 1100000,
     category: 'trailers',
     subcategory: 'semi-trailers',
@@ -723,7 +723,7 @@ export const sampleListings: Listing[] = [
   {
     id: 'sample-spare-brakes',
     title: 'طقم فرامل كامل شاحنة - ديسكات وبلاتين',
-    description: 'طقم فرامل كامل لشاحنات النقل الثقيل. ديسكات أمامية وخلفية ماركة Haldex. بلاتين فرامل أصلية. مناسبة لـ أكتروس 2015-2022. الضمان 3 شهور. السعر 18,500 جنيه للطقم الكامل. موجود في شبرا الخيمة.',
+    description: 'طقم فرامل كامل لسيارات السيارات الملاكي. ديسكات أمامية وخلفية ماركة Haldex. بلاتين فرامل أصلية. مناسبة لـ أكتروس 2015-2022. الضمان 3 شهور. السعر 18,500 جنيه للطقم الكامل. موجود في شبرا الخيمة.',
     price: 18500,
     category: 'spare-parts',
     subcategory: 'brakes',
@@ -745,7 +745,7 @@ export const sampleListings: Listing[] = [
   {
     id: 'sample-spare-tires',
     title: 'طقم إطارات بريدجستون 315/80R22.5 - 4 كاوتش',
-    description: 'طقم إطارات بريدجستون Bridgestone R249 مقاس 315/80R22.5. 4 كاوتش. الاستخدام 60% بس. مناسبة للجرارات والشاحنات الكبيرة. تصلح لأكتروس وفولفو ومان وسكانيا. السعر للطقم الكامل 68,000 جنيه. موجود في شبرا الخيمة. للجادين فقط.',
+    description: 'طقم إطارات بريدجستون Bridgestone R249 مقاس 315/80R22.5. 4 كاوتش. الاستخدام 60% بس. مناسبة للجرارات والسيارات الكبيرة. تصلح لأكتروس وفولفو ومان وسكانيا. السعر للطقم الكامل 68,000 جنيه. موجود في شبرا الخيمة. للجادين فقط.',
     price: 68000,
     category: 'spare-parts',
     subcategory: 'tires',
@@ -767,7 +767,7 @@ export const sampleListings: Listing[] = [
   {
     id: 'sample-spare-alternator',
     title: 'دينمو شاحن 24 فولت 120 أمبير - جديد',
-    description: 'دينمو شاحن 24 فولت 120 أمبير. جديد أصلي. مناسب لشاحنات مرسيدس ومان وفولفو. ضمان 6 شهور. السعر 8,500 جنيه. التركيب متاح عندنا. موجود في تج سعيد بالقاهرة.',
+    description: 'دينمو شاحن 24 فولت 120 أمبير. جديد أصلي. مناسب لسيارات مرسيدس ومان وفولفو. ضمان 6 شهور. السعر 8,500 جنيه. التركيب متاح عندنا. موجود في تج سعيد بالقاهرة.',
     price: 8500,
     category: 'spare-parts',
     subcategory: 'electrical',
@@ -811,7 +811,7 @@ export const sampleListings: Listing[] = [
   {
     id: 'sample-spare-filters-set',
     title: 'طقم فلاتر كامل شاحنة - زيت وهواء ووقود',
-    description: 'طقم فلاتر كامل لشاحنات النقل الثقيل. يشمل فلتر الزيت وفلتر الهواء وفلتر الوقود وفلتر الكابينة. ماركة Mann-Filter أصلي. مناسب لأكتروس ومان وفولفو. الضمان 3 شهور. السعر 3,200 جنيه للطقم. موجود في تج سعيد.',
+    description: 'طقم فلاتر كامل لسيارات السيارات الملاكي. يشمل فلتر الزيت وفلتر الهواء وفلتر الوقود وفلتر الكابينة. ماركة Mann-Filter أصلي. مناسب لأكتروس ومان وفولفو. الضمان 3 شهور. السعر 3,200 جنيه للطقم. موجود في تج سعيد.',
     price: 3200,
     category: 'spare-parts',
     subcategory: 'filters',
@@ -833,7 +833,7 @@ export const sampleListings: Listing[] = [
   {
     id: 'sample-spare-oils',
     title: 'زيت موتور شاحنة 20 لتر Mobil Delvac',
-    description: 'زيت موتور شاحنات ثقيلة Mobil Delvac 15W-40. سعة 20 لتر. أصلي 100%. يناسب مرسيدس ومان وفولفو وسكانيا. السعر 2,800 جنيه للعبوة. يوجد كميات كبيرة. التوصيل متاح. موجود في شبرا الخيمة.',
+    description: 'زيت موتور سيارات ثقيلة Mobil Delvac 15W-40. سعة 20 لتر. أصلي 100%. يناسب مرسيدس ومان وفولفو وسكانيا. السعر 2,800 جنيه للعبوة. يوجد كميات كبيرة. التوصيل متاح. موجود في شبرا الخيمة.',
     price: 2800,
     category: 'spare-parts',
     subcategory: 'oils',
@@ -932,14 +932,14 @@ export const sampleLoads: Load[] = [
 export const sampleJobs: Job[] = [
   {
     id: 'sample-job-driver-heavy',
-    title: 'مطلوب سائق نقل ثقيل رخصة أولى',
+    title: 'مطلوب سائق السيارات الملاكي رخصة أولى',
     company: 'كار مصر لخدمات النقل',
     jobPostType: 'hire',
     type: 'driver',
     location: 'القاهرة الجديدة',
     governorate: 'القاهرة',
     salary: '12,000 - 16,000 جنيه',
-    description: 'مطلوب سائق نقل ثقيل خبرة لا تقل عن 5 سنوات في النقل بين المحافظات، الالتزام بالمواعيد شرط أساسي.',
+    description: 'مطلوب سائق السيارات الملاكي خبرة لا تقل عن 5 سنوات في النقل بين المحافظات، الالتزام بالمواعيد شرط أساسي.',
     requirements: ['رخصة قيادة أولى', 'خبرة 5 سنوات', 'معرفة بالطرق السريعة'],
     experience: '5 سنوات',
     userId: 'sample-admin',
@@ -951,14 +951,14 @@ export const sampleJobs: Job[] = [
   },
   {
     id: 'sample-job-mechanic-diesel',
-    title: 'فني ميكانيكا ديزل شاحنات',
+    title: 'فني ميكانيكا ديزل سيارات',
     company: 'مركز صيانة كار مصر',
     jobPostType: 'hire',
     type: 'mechanic',
     location: 'مدينة العبور',
     governorate: 'القاهرة',
     salary: '10,000 - 14,000 جنيه',
-    description: 'مطلوب فني ميكانيكا ديزل لديه خبرة في موتور وفتيس الشاحنات الأوروبية.',
+    description: 'مطلوب فني ميكانيكا ديزل لديه خبرة في موتور وفتيس السيارات الأوروبية.',
     requirements: ['خبرة ديزل', 'قدرة على التشخيص', 'التزام بالمواعيد'],
     experience: '3 سنوات',
     userId: 'sample-admin',
@@ -989,15 +989,15 @@ export const sampleJobs: Job[] = [
   },
   {
     id: 'sample-job-sales-heavy',
-    title: 'مندوب مبيعات معدات وشاحنات',
-    company: 'معرض معدات ثقيلة',
+    title: 'مندوب مبيعات سيارات وسيارات',
+    company: 'معرض سيارات',
     jobPostType: 'hire',
     type: 'sales',
     location: 'الجيزة',
     governorate: 'الجيزة',
     salary: 'راتب + عمولة',
-    description: 'مطلوب مندوب مبيعات لديه معرفة بسوق المعدات والشاحنات، ويفضل وجود شبكة علاقات في القطاع.',
-    requirements: ['خبرة مبيعات', 'لباقة', 'معرفة بالمعدات'],
+    description: 'مطلوب مندوب مبيعات لديه معرفة بسوق السيارات والسيارات، ويفضل وجود شبكة علاقات في القطاع.',
+    requirements: ['خبرة مبيعات', 'لباقة', 'معرفة بالسيارات'],
     experience: 'سنة على الأقل',
     userId: 'sample-admin',
     userName: 'مبيعات كار مصر',

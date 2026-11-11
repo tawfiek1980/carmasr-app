@@ -24,7 +24,7 @@ export default function SellingGuide() {
             </div>
             <h1 className="text-3xl font-bold">دليل البيع</h1>
           </div>
-          <p className="text-gray-300">كيف تبيع مركبتك أو معداتك بأعلى سعر وأسرع وقت</p>
+          <p className="text-gray-300">كيف تبيع مركبتك أو سياراتك بأعلى سعر وأسرع وقت</p>
         </div>
       </div>
       <div className="max-w-4xl mx-auto px-4 py-12">

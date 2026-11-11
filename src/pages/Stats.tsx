@@ -77,7 +77,7 @@ export default function Stats() {
           {[
             { label: 'إعلانات نشطة', value: activeListings.length, icon: Truck, color: 'bg-orange/10 text-orange' },
             { label: 'إعلانات مميزة', value: featuredListings.length, icon: Star, color: 'bg-amber-50 text-amber-600' },
-            { label: 'حمولات متاحة', value: availableLoads.length, icon: Package, color: 'bg-green-50 text-green-600' },
+            { label: 'سيارات متاحة', value: availableLoads.length, icon: Package, color: 'bg-green-50 text-green-600' },
             { label: 'وظائف نشطة', value: activeJobs.length, icon: Briefcase, color: 'bg-blue-50 text-blue-600' },
           ].map(s => (
             <div key={s.label} className="bg-white rounded-2xl border border-border p-5 flex items-center gap-4">

@@ -382,7 +382,7 @@ export interface Rating {
   createdAt: string;
 }
 
-// ═══ حاسبة الوردية (وردية نقل ثقيل) ═══
+// ═══ حاسبة الوردية (وردية السيارات الملاكي) ═══
 export interface ShiftTrip {
   id: string;
   client: string;

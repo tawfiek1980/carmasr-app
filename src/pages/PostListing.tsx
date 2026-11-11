@@ -15,7 +15,7 @@ import { generateSlug, sanitizeTitle, priceInputError, listingPriceValue, priceT
 import { normalizeArabicText, normalizeGovernorate } from "../lib/listingMeta";
 
 const listingTypes = [
-  { id: "vehicle",     name: "شاحنة أو معدات", icon: Truck },
+  { id: "vehicle",     name: "شاحنة أو سيارات", icon: Truck },
   { id: "load",        name: "حمولة",           icon: Package },
   { id: "job",         name: "وظيفة",           icon: HardHat },
   { id: "spare-part",  name: "قطعة غيار",       icon: Wrench },
@@ -32,7 +32,7 @@ const jobTypesList = [
   { id: "driver", name: "سائق" }, { id: "mechanic", name: "ميكانيكي" },
   { id: "technician", name: "تقني" }, { id: "logistics", name: "لوجستيات" },
   { id: "warehouse", name: "مستودعات" }, { id: "sales", name: "مبيعات" },
-  { id: "heavy-equip", name: "معدات ثقيلة" }, { id: "electrician", name: "كهربائي" },
+  { id: "heavy-equip", name: "سيارات" }, { id: "electrician", name: "كهربائي" },
   { id: "welder", name: "لحام" }, { id: "craftsman", name: "صنايعي" },
   { id: "tinsmith", name: "سمكري" }, { id: "carpenter", name: "نجار" },
   { id: "other", name: "أخرى" },
@@ -61,7 +61,7 @@ const subcategoriesByCategory: Record<string, { id: string; name: string }[]> = 
   ],
   equipment: equipmentCategories,
   trailers: [
-    { id: 'semi-trailers', name: 'نصف مقطورات' },
+    { id: 'semi-trailers', name: 'نصف سيارات' },
     { id: 'tankers', name: 'تانكرات' },
     { id: 'flatbeds', name: 'سطيحات' },
     { id: 'refrigerated', name: 'برادات' },
@@ -590,7 +590,7 @@ export default function PostListing() {
                   className={`${inp} resize-none`} placeholder="اكتب وصفاً تفصيلياً للحالة والمواصفات..." />
               </Field>
               <Field label="اسم المعلن (معرض أو فرد)">
-                <input value={vf.advertiserName} onChange={e=>setVf({...vf,advertiserName:e.target.value})} className={inp} placeholder="مثال: معرض النور للشاحنات" />
+                <input value={vf.advertiserName} onChange={e=>setVf({...vf,advertiserName:e.target.value})} className={inp} placeholder="مثال: معرض النور للسيارات" />
               </Field>
               <Field label="رقم هاتف التواصل (اختياري)">
                 <input value={vf.contactPhone} onChange={e=>setVf({...vf,contactPhone:e.target.value})} className={inp} placeholder="01000000000" />

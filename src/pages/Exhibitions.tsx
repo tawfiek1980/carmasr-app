@@ -126,15 +126,15 @@ export default function Exhibitions() {
   return (
     <div className="min-h-screen bg-bg">
       <SeoHead
-        title="معارض الشاحنات والمعدات الثقيلة"
-        description="تصفح معارض الشاحنات والمعدات الثقيلة والمقطورات في مصر — اعرض منتجاتك وخدماتك في معرضك الخاص وتواصل مع المشترين مباشرة."
+        title="معارض السيارات والسيارات الثقيلة"
+        description="تصفح معارض السيارات والسيارات الثقيلة والسيارات في مصر — اعرض منتجاتك وخدماتك في معرضك الخاص وتواصل مع المشترين مباشرة."
         ogType="website"
         canonical={`${getSiteUrl()}/exhibitions`}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
           name: 'معارض كار مصر CarMasr',
-          description: 'معارض الشاحنات والمعدات الثقيلة في مصر',
+          description: 'معارض السيارات والسيارات الثقيلة في مصر',
           url: `${getSiteUrl()}/exhibitions`,
         }}
       />

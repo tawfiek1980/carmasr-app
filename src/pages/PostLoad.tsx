@@ -319,7 +319,7 @@ export default function PostLoad() {
           <nav className="flex items-center gap-2 text-sm text-gray-400 mb-4">
             <Link to="/" className="hover:text-orange">الرئيسية</Link>
             <ChevronLeft className="w-4 h-4 rtl-flip" />
-            <Link to="/loads" className="hover:text-orange">الحمولات</Link>
+            <Link to="/loads" className="hover:text-orange">السيارات</Link>
             <ChevronLeft className="w-4 h-4 rtl-flip" />
             <span className="text-gray-300">حمولة جديدة</span>
           </nav>
@@ -357,7 +357,7 @@ export default function PostLoad() {
             <h2 className="text-xl font-bold text-text mb-1">{publishedStatus === 'pending' ? 'تم الاستلام!' : 'تم النشر!'}</h2>
             <p className="text-text-light text-sm mb-4">{publishedStatus === 'pending' ? 'حمولتك قيد المراجعة الإدارية وسيتم تفعيلها بعد الموافقة.' : 'تم نشر حمولتك وهي مرئية للسائقين الآن.'}</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link to="/loads" className="bg-orange hover:bg-orange-dark text-white px-5 py-2.5 rounded-xl font-bold text-sm">عرض الحمولات</Link>
+              <Link to="/loads" className="bg-orange hover:bg-orange-dark text-white px-5 py-2.5 rounded-xl font-bold text-sm">عرض السيارات</Link>
               <Link to={`/load/${publishedId}`} className="bg-surface border border-border hover:bg-gray-50 text-text px-5 py-2.5 rounded-xl font-bold text-sm">عرض حمولتي</Link>
             </div>
           </div>

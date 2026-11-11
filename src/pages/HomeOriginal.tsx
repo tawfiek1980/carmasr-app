@@ -50,7 +50,7 @@ export default function Home() {
     <div className="min-h-screen">
       <SeoHead
         title="كار مصر CarMasr - أكبر سوق للنقل الثقيل في مصر"
-        description="أكبر سوق إلكتروني للنقل الثقيل في مصر. ابحث عن شاحنات، معدات ثقيلة، حمولات، وظائف نقل، تمويل، وخدمات طوارئ في مكان واحد."
+        description="أكبر سوق إلكتروني للنقل الثقيل في مصر. ابحث عن سيارات، سيارات، سيارات، وظائف نقل، تمويل، وخدمات طوارئ في مكان واحد."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebSite",
@@ -77,7 +77,7 @@ export default function Home() {
               أكبر سوق إلكتروني للنقل <span className="gradient-text">الثقيل</span> في مصر
             </h1>
             <p className="text-gray-300 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
-              ابحث عن شاحنات، حمولات، معدات ثقيلة، وظائف، تمويل وخدمات طوارئ في مكان واحد
+              ابحث عن سيارات، سيارات، سيارات، وظائف، تمويل وخدمات طوارئ في مكان واحد
             </p>
           </motion.div>
           <SearchBar />
@@ -98,30 +98,30 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             <Link to="/vehicles?category=trucks" className="relative group block rounded-2xl overflow-hidden h-28 sm:h-36 shadow-sm hover:shadow-md transition-all">
-               <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80&fit=crop&crop=center" alt="شاحنات" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+               <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80&fit=crop&crop=center" alt="سيارات" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(244,112,10,0.3) 0%, rgba(234,88,12,0.15) 100%)' }} />
               <div className="absolute bottom-3 right-3 left-3 flex items-center justify-between z-10">
-                <span className="text-white font-extrabold text-base sm:text-lg tracking-wide drop-shadow-lg">شاحنات</span>
+                <span className="text-white font-extrabold text-base sm:text-lg tracking-wide drop-shadow-lg">سيارات</span>
                 <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/30 backdrop-blur flex items-center justify-center">
                   <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" className="w-5 h-5 sm:w-6 sm:h-6"><path d="M5 17h14M5 17a2 2 0 1 1-4 0M5 17a2 2 0 1 0 4 0M5 17V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v10M19 17a2 2 0 1 1-4 0m4 0a2 2 0 1 0 4 0m0 0V11l-4-4h-4"/></svg>
                 </span>
               </div>
             </Link>
             <Link to="/equipment" className="relative group block rounded-2xl overflow-hidden h-28 sm:h-36 shadow-sm hover:shadow-md transition-all">
-               <img src="https://images.unsplash.com/photo-1603814744247-ca3e77714471?w=600&q=80&fit=crop&crop=center" alt="معدات ثقيلة" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+               <img src="https://images.unsplash.com/photo-1603814744247-ca3e77714471?w=600&q=80&fit=crop&crop=center" alt="سيارات" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(13,27,42,0.3) 0%, rgba(26,48,72,0.15) 100%)' }} />
               <div className="absolute bottom-3 right-3 left-3 flex items-center justify-between z-10">
-                <span className="text-white font-extrabold text-base sm:text-lg tracking-wide drop-shadow-lg">معدات ثقيلة</span>
+                <span className="text-white font-extrabold text-base sm:text-lg tracking-wide drop-shadow-lg">سيارات</span>
                 <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/30 backdrop-blur flex items-center justify-center">
                   <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" className="w-5 h-5 sm:w-6 sm:h-6"><path d="M10 3h4v14H10zM3 17h18M3 17a2 2 0 1 1-4 0M3 17a2 2 0 1 0 4 0M17 17a2 2 0 1 1-4 0m4 0a2 2 0 1 0 4 0M14 3v7l4 4"/></svg>
                 </span>
               </div>
             </Link>
             <Link to="/vehicles?category=trailers" className="relative group block rounded-2xl overflow-hidden h-28 sm:h-36 shadow-sm hover:shadow-md transition-all sm:col-span-2 lg:col-span-1">
-               <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=600&q=80&fit=crop&crop=center" alt="مقطورات" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+               <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=600&q=80&fit=crop&crop=center" alt="سيارات" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(8,145,178,0.3) 0%, rgba(6,122,150,0.15) 100%)' }} />
               <div className="absolute bottom-3 right-3 left-3 flex items-center justify-between z-10">
-                <span className="text-white font-extrabold text-base sm:text-lg tracking-wide drop-shadow-lg">مقطورات</span>
+                <span className="text-white font-extrabold text-base sm:text-lg tracking-wide drop-shadow-lg">سيارات</span>
                 <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/30 backdrop-blur flex items-center justify-center">
                   <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" className="w-5 h-5 sm:w-6 sm:h-6"><rect x="2" y="6" width="16" height="12" rx="2"/><path d="M18 12h4l-2 4h-2"/><circle cx="8" cy="18" r="2"/><circle cx="16" cy="18" r="2"/></svg>
                 </span>
@@ -144,7 +144,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h2 className="text-lg sm:text-xl font-extrabold text-white">
-                    تمويل نقل ثقيل حتى <span className="text-orange">4 ملايين جنيه</span>
+                    تمويل السيارات الملاكي حتى <span className="text-orange">4 ملايين جنيه</span>
                   </h2>
                   <p className="text-gray-300 text-xs sm:text-sm mt-1">احصل على شاحنتك بأقساط مرنة تبدأ من 10%</p>
                 </div>
@@ -238,7 +238,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="text-center py-12 bg-bg rounded-2xl border border-border">
-              <p className="text-text-light text-sm">لا توجد حمولات بعد</p>
+              <p className="text-text-light text-sm">لا توجد سيارات بعد</p>
             </div>
           )}
         </div>

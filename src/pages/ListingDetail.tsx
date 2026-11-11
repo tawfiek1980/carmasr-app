@@ -848,9 +848,9 @@ useEffect(() => {
               </ul>
             </div>
 
-            {/* حمولات مناسبة (ذكاء اصطناعي) */}
+            {/* سيارات مناسبة (ذكاء اصطناعي) */}
             {(['trucks', 'trailers', 'buses'].includes(listing.category)) && (
-              <AiMatch target="truck" id={listing.id} title="حمولات مناسبة لشاحنتك" />
+              <AiMatch target="truck" id={listing.id} title="سيارات مناسبة لشاحنتك" />
             )}
           </div>
         </div>

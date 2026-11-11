@@ -18,7 +18,7 @@ export default function PressKit() {
         <div className="bg-surface rounded-2xl border border-border p-6 mb-6">
           <h2 className="font-bold text-text mb-3 flex items-center gap-2"><FileImage className="w-5 h-5 text-orange" />نبذة عن الشركة</h2>
           <p className="text-text-light text-sm leading-relaxed">
-            كار مصر (CarMasr) هي منصة رقمية مصرية متخصصة في سوق مركبات النقل الثقيل والمعدات. تأسست عام 2023 وتخدم أكثر من 100,000 مستخدم مسجّل عبر 27 محافظة مصرية. توفر المنصة خدمات البيع والشراء والتأجير وطلبات الحمولة والتمويل وقطع الغيار وخدمات الطوارئ في قطاع النقل.
+            كار مصر (CarMasr) هي منصة رقمية مصرية متخصصة في سوق مركبات النقل الثقيل والسيارات. تأسست عام 2023 وتخدم أكثر من 100,000 مستخدم مسجّل عبر 27 محافظة مصرية. توفر المنصة خدمات البيع والشراء والتأجير وطلبات الحمولة والتمويل وقطع الغيار وخدمات الطوارئ في قطاع النقل.
           </p>
         </div>
         <div className="bg-surface rounded-2xl border border-border p-6 mb-6">

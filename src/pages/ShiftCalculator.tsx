@@ -369,7 +369,7 @@ export default function ShiftCalculator() {
 
   return (
     <div className="min-h-screen bg-bg pb-24 sm:pb-10">
-      <SeoHead title="حاسبة الوردية" description="احسب إيرادات ومصروفات وردية النقل الثقيل وصافيها في مكان واحد." />
+      <SeoHead title="حاسبة الوردية" description="احسب إيرادات ومصروفات وردية السيارات الملاكي وصافيها في مكان واحد." />
 
       <div className="bg-gradient-to-l from-navy to-navy-light px-4 py-8 text-white">
         <div className="mx-auto max-w-5xl">
@@ -413,7 +413,7 @@ export default function ShiftCalculator() {
               </h2>
               <div className="grid gap-3 sm:grid-cols-2">
                 <Field label="العربية / رقم الشاحنة" icon={<Truck className="h-3.5 w-3.5" />}>
-                  <input className={inp} value={meta.truck} onChange={e => patchMeta({ truck: e.target.value })} placeholder="مثال: نقل ثقيل — 1234 أ ب ج" />
+                  <input className={inp} value={meta.truck} onChange={e => patchMeta({ truck: e.target.value })} placeholder="مثال: السيارات الملاكي — 1234 أ ب ج" />
                 </Field>
                 <Field label="التاريخ" icon={<Calendar className="h-3.5 w-3.5" />}>
                   <input type="date" className={inp} value={meta.date} onChange={e => patchMeta({ date: e.target.value })} />

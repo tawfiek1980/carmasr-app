@@ -115,7 +115,7 @@ priceType: data.priceType === "sold" ? "fixed" : (data.priceType || "fixed"),
     ],
     equipment: equipmentCategories,
     trailers: [
-      { id: 'semi-trailers', name: 'نصف مقطورات' },
+      { id: 'semi-trailers', name: 'نصف سيارات' },
       { id: 'tankers', name: 'تانكرات' },
       { id: 'flatbeds', name: 'سطيحات' },
       { id: 'refrigerated', name: 'برادات' },
@@ -303,9 +303,9 @@ priceType: data.priceType === "sold" ? "fixed" : (data.priceType || "fixed"),
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="الفئة">
               <CustomSelect value={form.category} onChange={e => setForm({ ...form, category: e.target.value, subcategory: "", listingType: e.target.value === "spare-parts" ? "sell" : form.listingType })}>
-                <option value="trucks">شاحنات</option>
-                <option value="equipment">معدات ثقيلة</option>
-                <option value="trailers">مقطورات</option>
+                <option value="trucks">سيارات</option>
+                <option value="equipment">سيارات</option>
+                <option value="trailers">سيارات</option>
                 <option value="buses">حافلات</option>
                 <option value="spare-parts">قطع غيار</option>
               </CustomSelect>
@@ -367,7 +367,7 @@ priceType: data.priceType === "sold" ? "fixed" : (data.priceType || "fixed"),
             <Field label="رقم الهاتف"><input value={form.userPhone} onChange={e => setForm({ ...form, userPhone: e.target.value })} className={inp} placeholder="01XXXXXXXXX" /></Field>
             <Field label="رقم هاتف التواصل (اختياري)"><input value={form.contactPhone} onChange={e => setForm({ ...form, contactPhone: e.target.value })} className={inp} placeholder="01000000000" /></Field>
             <Field label="رقم واتساب (اختياري)"><input value={form.whatsappPhone || ""} onChange={e => setForm({ ...form, whatsappPhone: e.target.value })} className={inp} placeholder="01000000000" /></Field>
-            <Field label="اسم المعلن (معرض أو فرد)"><input value={form.advertiserName} onChange={e => setForm({ ...form, advertiserName: e.target.value })} className={inp} placeholder="مثال: معرض النور للشاحنات" /></Field>
+            <Field label="اسم المعلن (معرض أو فرد)"><input value={form.advertiserName} onChange={e => setForm({ ...form, advertiserName: e.target.value })} className={inp} placeholder="مثال: معرض النور للسيارات" /></Field>
           </div>
 
           {form.listingType === "sell" ? (

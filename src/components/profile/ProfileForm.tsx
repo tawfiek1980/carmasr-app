@@ -70,7 +70,7 @@ const drivingTypes = [
   "رخصة مهنية ثانية",
   "رخصة مهنية ثالثة",
   "رخصة خاصة",
-  "معدات ثقيلة"
+  "سيارات"
 ];
 
 export default function ProfileForm({ saving, setSaving }: Props) {

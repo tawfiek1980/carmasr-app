@@ -294,7 +294,7 @@ export default function Vehicles() {
           ) : (
             <EmptyState
               title="لسه مفيش إعلانات هنا"
-              description="كن أول من يضيف إعلان في قسم المركبات والمعدات"
+              description="كن أول من يضيف إعلان في قسم المركبات والسيارات"
               actionLabel="أضف إعلان الآن"
               actionTo="/post-listing"
             />

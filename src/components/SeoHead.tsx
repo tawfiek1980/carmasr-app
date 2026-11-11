@@ -10,7 +10,7 @@ interface Props {
 }
 
 const SITE = 'https://carmasr-app.vercel.app';
-const DEFAULT_DESC = 'أكبر سوق إلكتروني للنقل الثقيل في مصر. شاحنات، معدات ثقيلة، حمولات، وظائف، تمويل، وخدمات طوارئ.';
+const DEFAULT_DESC = 'أكبر سوق إلكتروني للنقل الثقيل في مصر. سيارات، سيارات، سيارات، وظائف، تمويل، وخدمات طوارئ.';
 const DEFAULT_IMAGE = `${SITE}/og-image.png`;
 
 export default function SeoHead({

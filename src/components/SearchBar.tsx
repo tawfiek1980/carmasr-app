@@ -10,9 +10,9 @@ interface SearchBarProps {
 
 const categoryOptions = [
   { id: '', name: 'كل الأقسام' },
-  { id: 'trucks', name: 'شاحنات' },
-  { id: 'equipment', name: 'معدات ثقيلة' },
-  { id: 'trailers', name: 'مقطورات' },
+  { id: 'trucks', name: 'سيارات' },
+  { id: 'equipment', name: 'سيارات' },
+  { id: 'trailers', name: 'سيارات' },
   { id: 'buses', name: 'حافلات' },
   { id: 'spare-parts', name: 'قطع غيار' },
 ];
@@ -71,7 +71,7 @@ export default function SearchBar({ variant = 'hero', onClose }: SearchBarProps)
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onFocus={() => setShowRecent(true)}
-              placeholder="ابحث عن شاحنات، معدات ثقيلة، حمولات..."
+              placeholder="ابحث عن سيارات، سيارات، سيارات..."
               className="w-full h-12 sm:h-14 pr-12 pl-4 bg-bg rounded-xl border border-transparent focus:border-orange focus:bg-white focus:outline-none transition-colors"
             />
             {query && (
@@ -118,7 +118,7 @@ export default function SearchBar({ variant = 'hero', onClose }: SearchBarProps)
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setShowRecent(true)}
-            placeholder={variant === 'mobile' ? "ابحث في كار مصر..." : "ابحث عن شاحنات، معدات، حمولات..."}
+            placeholder={variant === 'mobile' ? "ابحث في كار مصر..." : "ابحث عن سيارات، سيارات، سيارات..."}
             className={variant === 'mobile'
               ? "w-full h-12 pr-11 pl-10 rounded-xl bg-white/95 border border-white/25 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/40 text-sm font-medium transition-colors"
               : inputClasses}

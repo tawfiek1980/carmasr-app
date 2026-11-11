@@ -24,16 +24,16 @@ const benefits = [
 ];
 
 const services = [
-  { name: 'شاحنات', desc: 'بيع وإيجار الشاحنات والمركبات الثقيلة', path: '/vehicles', icon: Truck },
-  { name: 'معدات ثقيلة', desc: 'لوادر، حفارات، أوناش وكل المعدات', path: '/equipment', icon: Wrench },
-  { name: 'قطع غيار', desc: 'قطع أصلية للشاحنات والمعدات', path: '/spare-parts', icon: Gauge },
-  { name: 'حمولات', desc: 'إعلانات حمولة وشحن من وإلى كل المحافظات', path: '/loads', icon: Package },
+  { name: 'سيارات', desc: 'بيع وإيجار السيارات والمركبات الثقيلة', path: '/vehicles', icon: Truck },
+  { name: 'سيارات', desc: 'لوادر، حفارات، أوناش وكل السيارات', path: '/equipment', icon: Wrench },
+  { name: 'قطع غيار', desc: 'قطع أصلية للسيارات والسيارات', path: '/spare-parts', icon: Gauge },
+  { name: 'سيارات', desc: 'إعلانات حمولة وشحن من وإلى كل المحافظات', path: '/loads', icon: Package },
   { name: 'وظائف النقل', desc: 'سواقين وميكانيكية وفرص عمل بالمجال', path: '/jobs', icon: Briefcase },
   { name: 'خدمات الصيانة', desc: 'صيانة، تأمين، فحص قبل الشراء، تخلصيات', path: '/services', icon: Wrench },
-  { name: 'تمويل', desc: 'تمويل شراء الشاحنات والمعدات', path: '/finance', icon: DollarSign },
+  { name: 'تمويل', desc: 'تمويل شراء السيارات والسيارات', path: '/finance', icon: DollarSign },
   { name: 'طوارئ الطريق', desc: 'أعطال وحوادث — مساعدة على الطريق', path: '/emergency', icon: Siren },
-  { name: 'معارض تجارية', desc: 'معارض رقمية لأصحاب المعدات والورش', path: '/exhibitions', icon: Store },
-  { name: 'منتجات المعارض', desc: 'معدات وقطع غيار من كل المعارض', path: '/products', icon: ShoppingBag },
+  { name: 'معارض تجارية', desc: 'معارض رقمية لأصحاب السيارات والورش', path: '/exhibitions', icon: Store },
+  { name: 'منتجات المعارض', desc: 'سيارات وقطع غيار من كل المعارض', path: '/products', icon: ShoppingBag },
 ];
 
 export default function PlatformLanding() {
@@ -41,7 +41,7 @@ export default function PlatformLanding() {
     <div className="min-h-screen bg-bg">
       <SeoHead
         title="كار مصر CarMasr - سوق النقل الثقيل في مصر | سجّل مجاناً"
-        description="كار مصر أكبر سوق إلكتروني للنقل الثقيل في مصر. شاحنات، معدات، قطع غيار، حمولات، وظائف، تمويل وخدمات طوارئ. سجّل مجاناً وابدأ في دقيقة."
+        description="كار مصر أكبر سوق إلكتروني للنقل الثقيل في مصر. سيارات، سيارات، قطع غيار، سيارات، وظائف، تمويل وخدمات طوارئ. سجّل مجاناً وابدأ في دقيقة."
       />
 
       {/* Hero */}
@@ -57,7 +57,7 @@ export default function PlatformLanding() {
             كل حاجة للنقل الثقيل في <span className="text-orange">مكان واحد</span>
           </h1>
           <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">
-            شاحنات ومعدات وقطع غيار وحمولات ووظائف وتمويل وطوارئ.
+            سيارات وسيارات وقطع غيار وسيارات ووظائف وتمويل وطوارئ.
             سجّل مجاناً في دقيقة وابدأ تشتري وتبيع وتتواصل مباشرة مع السوق كله.
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
@@ -141,8 +141,8 @@ export default function PlatformLanding() {
             <Store className="w-7 h-7" />
           </div>
           <div className="flex-1 text-center sm:text-right">
-            <h3 className="text-lg font-extrabold mb-1">عندك معرض معدات أو ورشة؟ اعمل معرضك الرقمي مجاناً</h3>
-            <p className="text-white/90 text-sm">عرض معداتك وقطع غيارك على آلاف العملاء — الباقة المجانية متاحة دائماً.</p>
+            <h3 className="text-lg font-extrabold mb-1">عندك معرض سيارات أو ورشة؟ اعمل معرضك الرقمي مجاناً</h3>
+            <p className="text-white/90 text-sm">عرض سياراتك وقطع غيارك على آلاف العملاء — الباقة المجانية متاحة دائماً.</p>
           </div>
           <Link to="/exhibitions/subscribe"
             className="flex-shrink-0 bg-white text-orange px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-bg transition-colors">

@@ -8,8 +8,8 @@ import ProtectedPhoneButton from '../components/ProtectedPhoneButton';
 import type { FinanceCompany } from '../types';
 
 const vehicleTypes = [
-  'شاحنة نقل ثقيل','رأس جرارة','نصف مقطورة','تانكر','شاحنة برادة',
-  'قلابة','حفار','لودر','كرينة','بلدوزر','رافعة شوكية','معدات أخرى',
+  'شاحنة السيارات الملاكي','رأس جرارة','نصف مقطورة','تانكر','شاحنة برادة',
+  'قلابة','حفار','لودر','كرينة','بلدوزر','رافعة شوكية','سيارات أخرى',
 ];
 
 const inp = "w-full border border-border rounded-xl px-4 py-2.5 text-sm bg-bg focus:outline-none focus:border-orange";

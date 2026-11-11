@@ -9,7 +9,7 @@ import { getSiteUrl } from '../lib/config';
 import { optimizeImage } from '../lib/imageUtils';
 import { cleanText } from '../lib/utils';
 
-const categories = ['معدات نقل', 'قطع غيار', 'إطارات', 'زيوت ووقود', 'معدات ثقيلة', 'كماليات', 'خدمات', 'أخرى'];
+const categories = ['سيارات نقل', 'قطع غيار', 'إطارات', 'زيوت ووقود', 'سيارات', 'كماليات', 'خدمات', 'أخرى'];
 
 type SortKey = 'newest' | 'priceAsc' | 'priceDesc' | 'name';
 

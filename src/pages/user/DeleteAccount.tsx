@@ -73,7 +73,7 @@ export default function DeleteAccount() {
           <div className="bg-surface rounded-2xl border border-border p-6">
             <h2 className="font-bold text-text mb-2">حذف حسابك وبياناتك من كار مصر CarMasr</h2>
             <p className="text-sm text-text-light leading-relaxed">
-              يمكنك حذف حسابك وكل بياناتك نهائيًا في أي وقت. الحذف يشمل الإعلانات، الحمولات،
+              يمكنك حذف حسابك وكل بياناتك نهائيًا في أي وقت. الحذف يشمل الإعلانات، السيارات،
               الوظائف، المحادثات، الإشعارات، بيانات ورديات العمل، ومعلومات الحساب.
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function DeleteAccount() {
               <div>
                 <h3 className="font-bold text-danger mb-2">ماذا سيتم حذفه؟</h3>
                 <ul className="text-sm text-text-light space-y-1">
-                  <li>• جميع إعلاناتك وبيانات الحمولات والوظائف.</li>
+                  <li>• جميع إعلاناتك وبيانات السيارات والوظائف.</li>
                   <li>• المحادثات والإشعارات والمفضلات.</li>
                   <li>• بيانات ورديات العمل (حاسبة الوردية) والمصاريف.</li>
                   <li>• معلومات الحساب والتقييمات وتاريخ المعاملات.</li>

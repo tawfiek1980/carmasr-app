@@ -23,9 +23,9 @@ const iconMap: Record<string, React.ElementType> = {
 
 const footerLinks = {
   marketplace: [
-    { name: 'شاحنات للبيع', path: '/vehicles' },
-    { name: 'معدات ثقيلة', path: '/equipment' },
-    { name: 'طلبات حمولات', path: '/loads' },
+    { name: 'سيارات للبيع', path: '/vehicles' },
+    { name: 'سيارات', path: '/equipment' },
+    { name: 'طلبات سيارات', path: '/loads' },
     { name: 'وظائف النقل', path: '/jobs' },
     { name: 'قطع الغيار', path: '/spare-parts' },
     { name: 'خدمات متخصصة', path: '/services' },
@@ -86,7 +86,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-xs">
-              أكبر سوق إلكتروني متخصص في مركبات النقل الثقيل والمعدات في مصر. نربط البائعين والمشترين وأصحاب الحمولة في بيئة آمنة وموثوقة.
+              أكبر سوق إلكتروني متخصص في مركبات النقل الثقيل والسيارات في مصر. نربط البائعين والمشترين وأصحاب الحمولة في بيئة آمنة وموثوقة.
             </p>
             {/* Social */}
             <div className="flex items-center gap-2 flex-wrap mb-5">

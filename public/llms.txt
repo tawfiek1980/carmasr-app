@@ -1,15 +1,15 @@
 # كار مصر CarMasr - سوق النقل الثقيل في مصر
 
-> أكبر سوق إلكتروني للنقل الثقيل في مصر. يجمع بين البائعين والمشترين لشاحنات، معدات ثقيلة، حمولات، وظائف، تمويل، وخدمات طوارئ.
+> أكبر سوق إلكتروني للنقل الثقيل في مصر. يجمع بين البائعين والمشترين لسيارات، سيارات، سيارات، وظائف، تمويل، وخدمات طوارئ.
 
 ## الروابط الأساسية
 - الرئيسية: https://carmasr-app.vercel.app
-- الشاحنات والمركبات: https://carmasr-app.vercel.app/vehicles
-- المعدات الثقيلة: https://carmasr-app.vercel.app/equipment
-- الحمولات: https://carmasr-app.vercel.app/loads
+- السيارات والمركبات: https://carmasr-app.vercel.app/vehicles
+- السيارات الثقيلة: https://carmasr-app.vercel.app/equipment
+- السيارات: https://carmasr-app.vercel.app/loads
 - الوظائف: https://carmasr-app.vercel.app/jobs
 - خدمات الطوارئ: https://carmasr-app.vercel.app/emergency
-- تمويل شاحنات: https://carmasr-app.vercel.app/finance
+- تمويل سيارات: https://carmasr-app.vercel.app/finance
 - قطع غيار: https://carmasr-app.vercel.app/spare-parts
 - عنّا: https://carmasr-app.vercel.app/about
 - تواصل معنا: https://carmasr-app.vercel.app/contact

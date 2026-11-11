@@ -586,11 +586,11 @@ export default function ExhibitionDetail() {
                       <select value={productForm.category} onChange={e => setProductForm(f => ({...f, category: e.target.value}))}
                         className="w-full border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-orange">
                         <option value="">اختر التصنيف</option>
-                        <option value="معدات نقل">معدات نقل</option>
+                        <option value="سيارات نقل">سيارات نقل</option>
                         <option value="قطع غيار">قطع غيار</option>
                         <option value="إطارات">إطارات</option>
                         <option value="زيوت ووقود">زيوت ووقود</option>
-                        <option value="معدات ثقيلة">معدات ثقيلة</option>
+                        <option value="سيارات">سيارات</option>
                         <option value="كماليات">كماليات</option>
                         <option value="خدمات">خدمات</option>
                         <option value="أخرى">أخرى</option>

@@ -16,7 +16,7 @@ export default function FinancingGuide() {
             </div>
             <h1 className="text-3xl font-bold">دليل التمويل</h1>
           </div>
-          <p className="text-gray-300">كل ما تحتاج معرفته لتمويل مركبتك أو معداتك بسهولة</p>
+          <p className="text-gray-300">كل ما تحتاج معرفته لتمويل مركبتك أو سياراتك بسهولة</p>
         </div>
       </div>
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-6">

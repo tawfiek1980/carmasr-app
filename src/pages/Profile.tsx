@@ -443,7 +443,7 @@ export default function Profile() {
           <div className="flex border-b border-gray-100 overflow-x-auto hide-scrollbar bg-gray-50/50">
             {[
               { id: 'listings', label: `إعلاناتي (${listings.length})`, icon: Truck },
-              { id: 'loads', label: `حمولاتي (${loads.length})`, icon: Package },
+              { id: 'loads', label: `سياراتي (${loads.length})`, icon: Package },
               { id: 'jobs', label: `وظائفي (${jobs.length})`, icon: HardHat },
             ].map((tab) => (
               <button
@@ -491,7 +491,7 @@ export default function Profile() {
               )
             ) : activeTab === 'loads' ? (
               loads.length === 0 ? (
-                <EmptyState icon={Package} title="لم تقم بإضافة حمولات" desc="أضف حمولتك ليتم التواصل مع أقرب الشاحنات المتاحة" link="/post-listing?type=load" btn="إضافة حمولة" />
+                <EmptyState icon={Package} title="لم تقم بإضافة سيارات" desc="أضف حمولتك ليتم التواصل مع أقرب السيارات المتاحة" link="/post-listing?type=load" btn="إضافة حمولة" />
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {loads.map(l => (

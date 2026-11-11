@@ -54,7 +54,7 @@ export default function MyFinanceRequests() {
           <div className="bg-surface rounded-2xl border border-border p-10 text-center">
             <DollarSign className="w-14 h-14 text-gray-200 mx-auto mb-4" />
             <h2 className="font-bold text-text mb-2">لا توجد طلبات تمويل</h2>
-            <p className="text-text-light text-sm mb-6">تقدّم بطلب تمويل لمركبتك أو معداتك الآن</p>
+            <p className="text-text-light text-sm mb-6">تقدّم بطلب تمويل لمركبتك أو سياراتك الآن</p>
             <Link to="/finance" className="bg-orange hover:bg-orange-dark text-white px-8 py-3 rounded-xl font-bold transition-colors inline-block">تقديم طلب تمويل</Link>
           </div>
         ) : (

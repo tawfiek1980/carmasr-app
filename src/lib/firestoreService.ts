@@ -244,7 +244,7 @@ export const loadsService = {
   async getAll(filters?: { status?: string }): Promise<Load[]> {
     if (isDemoMode()) return filterSampleLoads(filters);
     try {
-      // جيب كل الحمولات بدون orderBy عشان مفيش index
+      // جيب كل السيارات بدون orderBy عشان مفيش index
       const q     = query(collection(db, "loads"), limit(100));
       const snaps = await getDocs(q);
       let results = snaps.docs.map(s => ({ ...cleanId<Load>(s), createdAt: toDate(s.data().createdAt) }));
@@ -1210,7 +1210,7 @@ export async function seedData(): Promise<{ listings: number; loads: number; job
     {
       cat: "trailers", count: 8,
       subs: ["flatbeds", "refrigerated", "tankers", "dump-trailers"],
-      titles: ["نصف مقطورة سطحة 3 محاور", "براد نقل مبرد 40 قدم", "تنكة نقل مياه 30 طن", "مقطورة قلاب 4 محاور", "هيكل نقل بضائع 12م", "مقطورة خيل", "لوبد نقل معدات", "مقطورة ثلاجة 20 قدم"],
+      titles: ["نصف مقطورة سطحة 3 محاور", "براد نقل مبرد 40 قدم", "تنكة نقل مياه 30 طن", "مقطورة قلاب 4 محاور", "هيكل نقل بضائع 12م", "مقطورة خيل", "لوبد نقل سيارات", "مقطورة ثلاجة 20 قدم"],
       desc: ["شاسيه قوي، 3 محاور، حمولة 40 طن.", "وحدة تبريد تعمل بكفاءة، مناسب للمنتجات الغذائية.", "صناعة محلية متينة، جاهز للعمل.", "حمولة عالية، مناسب للمقاولات."],
       brands: ["محلي", "Carrier", "Thermo King", "هيونداي", "مصرية", "تريلا", "Kogel", "Schmitz"],
       minP: 250000, maxP: 1800000, years: [2018, 2019, 2020, 2021, 2022, 2023],
@@ -1260,7 +1260,7 @@ export async function seedData(): Promise<{ listings: number; loads: number; job
     }
   }
 
-  // إنشاء الحمولات
+  // إنشاء السيارات
   let loadCount = 0;
   const loadRoutes = [
     { origin: "القاهرة", dest: "الإسكندرية", cargo: "حديد", w: "24", p: 18500 },
@@ -1291,11 +1291,11 @@ export async function seedData(): Promise<{ listings: number; loads: number; job
   // إنشاء الوظائف
   let jobCount = 0;
   const jobs = [
-    { t: "سائق نقل ثقيل" , c: "شركة النقل الآمن"      , ty: "driver"   , s: "12,000 - 16,000 جنيه" , e: "5 سنوات"   },
+    { t: "سائق السيارات الملاكي" , c: "شركة النقل الآمن"      , ty: "driver"   , s: "12,000 - 16,000 جنيه" , e: "5 سنوات"   },
     { t: "فني ميكانيكا ديزل", c: "مركز صيانة متطور"      , ty: "mechanic", s: "10,000 - 14,000 جنيه", e: "3 سنوات"   },
     { t: "منسق عمليات لوجستية", c: "شركة شحن وتوزيع"    , ty: "logistics", s: "9,000 - 13,000 جنيه" , e: "سنتان"    },
-    { t: "مندوب مبيعات معدات", c: "معرض معدات ثقيلة"    , ty: "sales"    , s: "راتب + عمولة"        , e: "سنة"      },
-    { t: "فني كهرباء شاحنات", c: "مركز كهرباء متخصص"    , ty: "technician", s: "8,000 - 11,000 جنيه", e: "3 سنوات"  },
+    { t: "مندوب مبيعات سيارات", c: "معرض سيارات"    , ty: "sales"    , s: "راتب + عمولة"        , e: "سنة"      },
+    { t: "فني كهرباء سيارات", c: "مركز كهرباء متخصص"    , ty: "technician", s: "8,000 - 11,000 جنيه", e: "3 سنوات"  },
     { t: "أمين مستودع قطع غيار", c: "مستودع كار مصر"        , ty: "warehouse", s: "7,000 - 9,000 جنيه" , e: "سنة"      },
     { t: "سائق تريلا", c: "شركة نقل العجمي", ty: "driver", s: "15,000 - 20,000 جنيه", e: "7 سنوات" },
     { t: "محاسب تكاليف نقل", c: "مجموعة شحن متكاملة"    , ty: "logistics", s: "8,000 - 12,000 جنيه", e: "3 سنوات"  },

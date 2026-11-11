@@ -22,7 +22,7 @@ const PRIORITY_COLORS: Record<string, string> = {
 const CATEGORY_ICONS: Record<string, string> = {
   'حساب': '👤',
   'إعلانات': '📋',
-  'حمولات': '🚛',
+  'سيارات': '🚛',
   'تمويل': '💰',
   'معارض': '🏪',
   'دفع': '💳',
@@ -93,7 +93,7 @@ export default function TriageTab({ getApiUrl }: Props) {
             <option value="">اتركه فارغاً للتصنيف التلقائي</option>
             <option>حساب</option>
             <option>إعلانات</option>
-            <option>حمولات</option>
+            <option>سيارات</option>
             <option>تمويل</option>
             <option>معارض</option>
             <option>دفع</option>

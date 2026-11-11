@@ -673,7 +673,7 @@ ${typeLabel ? '🚚 النوع: ' + typeLabel + '\n' : ''}🏷️ ${d.brand || '
               phone: 'رقم التليفون: اكتبه للتواصل',
               price: 'السعر بالجنيه 💰\nاكتب السعر، أو اكتب 0 لو حابب تحدد السعر عند المعاينة',
               titleEdit: 'العنوان الجديد: اكتبه — بيظهر وبيتكتب في رابط الإعلان',
-              advertiser: 'اسم المعلن (معرض أو فرد): اكتبه\nمثال: معرض النور للشاحنات (أو اكتب "لا" لحذفه)',
+              advertiser: 'اسم المعلن (معرض أو فرد): اكتبه\nمثال: معرض النور للسيارات (أو اكتب "لا" لحذفه)',
               brand: 'الماركة: اكتبها\nمثال: مرسيدس',
               model: 'الموديل: اكتبه\nمثال: أكتروس',
               year: 'سنة الصنع: اكتب السنة\nمثال: 2018',
@@ -867,8 +867,8 @@ ${typeLabel ? '🚚 النوع: ' + typeLabel + '\n' : ''}🏷️ ${d.brand || '
                   onClick={() => {
                     const base = (draft.description || '').trim();
                     const enhanced = base
-                      ? `✨ ${draft.title || ''}\n${base}\n\n📍 ${draft.governorate || ''} • 💰 ${(draft.price || 0).toLocaleString('ar-EG')} جنيه • 📞 ${draft.phone || ''}\n#كار_مصر #شاحنات`
-                      : `🚛 ${draft.title || 'إعلان مميز'}\n🏷️ ${[draft.brand, draft.model, draft.year].filter(Boolean).join(' ')} • ${draft.condition === 'new' ? 'جديد' : 'مستعمل'}\n📍 ${draft.governorate || ''} • 💰 ${(draft.price || 0).toLocaleString('ar-EG')} جنيه\n📝 حالة ممتازة، جاهز للعمل فوراً\n📞 ${draft.phone || ''}\n#كار_مصر #شاحنات`;
+                      ? `✨ ${draft.title || ''}\n${base}\n\n📍 ${draft.governorate || ''} • 💰 ${(draft.price || 0).toLocaleString('ar-EG')} جنيه • 📞 ${draft.phone || ''}\n#كار_مصر #سيارات`
+                      : `🚛 ${draft.title || 'إعلان مميز'}\n🏷️ ${[draft.brand, draft.model, draft.year].filter(Boolean).join(' ')} • ${draft.condition === 'new' ? 'جديد' : 'مستعمل'}\n📍 ${draft.governorate || ''} • 💰 ${(draft.price || 0).toLocaleString('ar-EG')} جنيه\n📝 حالة ممتازة، جاهز للعمل فوراً\n📞 ${draft.phone || ''}\n#كار_مصر #سيارات`;
                     setDraft(d => ({ ...d, description: enhanced.slice(0, 4000) }));
                     botSay('✨ تم تطوير الوصف — راجعه وعدّله كما تحب ثم اضغط نشر');
                   }}

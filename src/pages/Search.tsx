@@ -16,9 +16,9 @@ import SeoHead from '../components/SeoHead';
 
 const cats = [
   { id: '', name: 'الكل', icon: '' },
-  { id: 'trucks', name: 'شاحنات', icon: 'trucks' },
-  { id: 'equipment', name: 'معدات', icon: 'equipment' },
-  { id: 'trailers', name: 'مقطورات', icon: 'trailers' },
+  { id: 'trucks', name: 'سيارات', icon: 'trucks' },
+  { id: 'equipment', name: 'سيارات', icon: 'equipment' },
+  { id: 'trailers', name: 'سيارات', icon: 'trailers' },
   { id: 'buses', name: 'حافلات', icon: 'buses' },
   { id: 'spare-parts', name: 'قطع غيار', icon: 'spare-parts' },
 ];
@@ -271,7 +271,7 @@ export default function Search() {
     <div className="min-h-screen bg-bg pb-20 sm:pb-8">
       <SeoHead
         title={query ? `نتائج البحث عن: ${query}` : 'البحث المتقدم في إعلانات كار مصر'}
-        description="ابحث في كل إعلانات المركبات والمعدات الثقيلة وقطع الغيار في مصر — مع فلاتر المحافظة والسعر والترتيب."
+        description="ابحث في كل إعلانات المركبات والسيارات الثقيلة وقطع الغيار في مصر — مع فلاتر المحافظة والسعر والترتيب."
       />
       <div className="bg-navy py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

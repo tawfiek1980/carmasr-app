@@ -22,7 +22,7 @@ const JOB_TYPES = [
   { id: 'mechanic',   name: 'ميكانيكي', icon: '🔧' },
   { id: 'technician', name: 'تقني', icon: '💻' },
   { id: 'logistics',  name: 'لوجستيات', icon: '📦' },
-  { id: 'heavy-equip',name: 'معدات ثقيلة', icon: '🏗️' },
+  { id: 'heavy-equip',name: 'سيارات', icon: '🏗️' },
   { id: 'electrician',name: 'كهربائي', icon: '⚡' },
   { id: 'welder',     name: 'لحام', icon: '🔥' },
   { id: 'craftsman',  name: 'صنايعي', icon: '🛠️' },
@@ -338,7 +338,7 @@ function JobCard({ job, saved, onToggleSave }: { job: Job; saved: boolean; onTog
   const typeLabels: Record<string, string> = {
     driver:'سائق', mechanic:'ميكانيكي', technician:'تقني',
     logistics:'لوجستيات', warehouse:'مستودعات', sales:'مبيعات',
-    'heavy-equip':'معدات ثقيلة', electrician:'كهربائي',
+    'heavy-equip':'سيارات', electrician:'كهربائي',
     welder:'لحام', craftsman:'صنايعي', tinsmith:'سمكري',
     carpenter:'نجار', other:'أخرى',
   };

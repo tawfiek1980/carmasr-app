@@ -53,7 +53,7 @@ export default function ShareApp() {
         <img src="/tareeq-logo.png" alt="كار مصر CarMasr" className="w-20 h-20 rounded-2xl mx-auto mb-4 object-contain bg-white/10 p-2" />
         <h1 className="text-2xl font-extrabold text-white mb-2">شارك تطبيق كار مصر</h1>
         <p className="text-white/80 text-sm max-w-sm mx-auto">
-          ابعث التطبيق لأصدقائك وأصحاب الشاحنات — تحميل مجاني وسريع
+          ابعث التطبيق لأصدقائك وأصحاب السيارات — تحميل مجاني وسريع
         </p>
       </div>
 

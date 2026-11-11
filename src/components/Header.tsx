@@ -10,8 +10,8 @@ import { useNotifications } from '../contexts/NotificationContext';
 
 const navLinks = [
   { name: 'الرئيسية', path: '/' },
-  { name: 'الشاحنات', path: '/vehicles' },
-  { name: 'المعدات', path: '/equipment' },
+  { name: 'السيارات', path: '/vehicles' },
+  { name: 'السيارات', path: '/equipment' },
   { name: 'قطع غيار', path: '/spare-parts' },
   { name: 'حمولة', path: '/loads' },
   { name: 'الوظائف', path: '/jobs' },

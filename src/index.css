@@ -382,3 +382,35 @@ input[type="tel"] {
   }
   .skeleton::after { display: none; }
 }
+
+
+/* Logo gloss / shine effect */
+.logo-gloss {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.logo-gloss::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.0) 45%, rgba(255,255,255,0.0) 100%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+.logo-gloss::after {
+  content: '';
+  position: absolute;
+  top: 4%;
+  left: 8%;
+  width: 40%;
+  height: 28%;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+.logo-gloss img {
+  position: relative;
+  z-index: 0;
+}

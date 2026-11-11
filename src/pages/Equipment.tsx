@@ -54,7 +54,7 @@ export default function Equipment() {
     setSearchParams(newParams);
   };
 
-  const subName = equipmentCategories.find(c => c.id === subcategory)?.name || 'معدات ثقيلة';
+  const subName = equipmentCategories.find(c => c.id === subcategory)?.name || 'سيارات';
   return (
     <div className="min-h-screen bg-bg pb-20 sm:pb-8">
       <SeoHead
@@ -63,7 +63,7 @@ export default function Equipment() {
       />
       <div className="bg-navy py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">سوق المعدات الثقيلة</h1>
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">سوق السيارات الثقيلة</h1>
           <SearchBar variant="header" />
         </div>
       </div>
@@ -159,7 +159,7 @@ export default function Equipment() {
         ) : listings.length === 0 ? (
           <div className="bg-white rounded-2xl p-12 text-center">
             <Filter className="w-16 h-16 text-text-light mx-auto mb-4" />
-            <h3 className="text-lg font-bold text-text mb-2">لا توجد معدات</h3>
+            <h3 className="text-lg font-bold text-text mb-2">لا توجد سيارات</h3>
             <p className="text-text-light text-sm">جرّب تغيير الفلاتر أو البحث بكلمات مختلفة</p>
           </div>
         ) : (

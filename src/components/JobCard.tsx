@@ -12,7 +12,7 @@ export default function JobCard({ job }: JobCardProps) {
   const typeLabels: Record<string, string> = {
     driver: 'سائق', mechanic: 'ميكانيكي', technician: 'فني',
     logistics: 'لوجستي', warehouse: 'مستودع', sales: 'مبيعات',
-    'heavy-equip': 'معدات ثقيلة', electrician: 'كهربائي',
+    'heavy-equip': 'سيارات', electrician: 'كهربائي',
     welder: 'لحام', craftsman: 'صنايعي', tinsmith: 'سمكري',
     carpenter: 'نجار', other: 'أخرى',
   };

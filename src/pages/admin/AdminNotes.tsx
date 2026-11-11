@@ -316,7 +316,7 @@ export default function AdminNotes() {
                   value={form.title}
                   onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
                   className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-orange-400"
-                  placeholder="مثال: معرض النور للشاحنات"
+                  placeholder="مثال: معرض النور للسيارات"
                 />
               </div>
 

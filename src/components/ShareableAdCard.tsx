@@ -86,9 +86,9 @@ export default function ShareableAdCard({ listing, onClose }: ShareableAdCardPro
   }, [listing, adUrl]);
 
   const categoryLabels: Record<string, string> = {
-    trucks: 'شاحنات',
-    equipment: 'معدات ثقيلة',
-    trailers: 'مقطورات',
+    trucks: 'سيارات',
+    equipment: 'سيارات',
+    trailers: 'سيارات',
     buses: 'حافلات',
     'spare-parts': 'قطع غيار',
   };

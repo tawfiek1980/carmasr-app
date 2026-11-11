@@ -124,7 +124,7 @@ export default function AiAssistantChat() {
             {messages.length === 0 && (
               <>
                 <div className="bg-white rounded-xl rounded-tr-sm p-3 text-sm text-gray-700 border border-gray-100 shadow-sm">
-                  أهلاً 👋 أنا مساعد كار مصر، أساعدك في نشر الإعلانات، الحمولات، التمويل، الباقات وأي شيء آخر.
+                  أهلاً 👋 أنا مساعد كار مصر، أساعدك في نشر الإعلانات، السيارات، التمويل، الباقات وأي شيء آخر.
                 </div>
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {SUGGESTIONS.map(s => (

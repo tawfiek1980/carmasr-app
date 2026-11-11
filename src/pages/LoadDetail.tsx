@@ -87,7 +87,7 @@ export default function LoadDetail() {
           <p className="text-text-light text-sm mb-6">ربما تم حذفها أو انتهى عرضها</p>
           <Link to="/loads"
             className="inline-block bg-orange hover:bg-orange-dark text-white px-6 py-3 rounded-xl font-bold transition-colors">
-            تصفح كل الحمولات
+            تصفح كل السيارات
           </Link>
         </div>
       </div>
@@ -110,7 +110,7 @@ export default function LoadDetail() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <Link to="/loads"
             className="inline-flex items-center gap-1 text-white/60 hover:text-white text-xs font-semibold mb-3 transition-colors">
-            <ChevronRight className="w-4 h-4" /> كل الحمولات
+            <ChevronRight className="w-4 h-4" /> كل السيارات
           </Link>
           <div className="flex items-center gap-1.5 flex-wrap mb-3">
             {tags.map((t, i) => (
@@ -231,8 +231,8 @@ export default function LoadDetail() {
           <p className="text-[10px] text-gray-400">نشر منذ {formatDateDMY(load.createdAt)}</p>
         </div>
 
-        {/* ── شاحنات مناسبة (ذكاء اصطناعي) ── */}
-        <AiMatch target="load" id={load.id} title="شاحنات مناسبة للحمولة" />
+        {/* ── سيارات مناسبة (ذكاء اصطناعي) ── */}
+        <AiMatch target="load" id={load.id} title="سيارات مناسبة للحمولة" />
 
         {/* ── الخريطة ── */}
         <button onClick={() => openMap(load)}

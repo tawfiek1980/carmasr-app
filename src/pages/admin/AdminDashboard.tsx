@@ -86,7 +86,7 @@ const nav: { id: Tab; label: string; icon: React.ElementType }[] = [
   { id:'users',     label:'المستخدمون',     icon:Users },
   { id:'listings',  label:'الإعلانات',      icon:Truck },
   { id:'jobs',      label:'الوظائف',        icon:Briefcase },
-  { id:'loads',     label:'الحمولات',       icon:Package },
+  { id:'loads',     label:'السيارات',       icon:Package },
   { id:'finance',   label:'التمويل',        icon:DollarSign },
   { id:'resets',    label:'طلبات كلمة المرور', icon:FileText },
   { id:'exhibitions', label:'المعارض',      icon:Store },
@@ -2280,7 +2280,7 @@ const [fbCoolingHours, setFbCoolingHours] = useState(() => { try { return Number
                 </div>
               </div>
             ))}
-            {!pageLoads.length && <Empty label="حمولات" />}
+            {!pageLoads.length && <Empty label="سيارات" />}
           </div>
           <Pagination page={page} total={loads.length} onChange={setPage} />
         </div>

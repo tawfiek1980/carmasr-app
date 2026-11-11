@@ -2,7 +2,7 @@ import { DollarSign } from 'lucide-react';
 import PageLayout, { PolicySection } from '../../components/PageLayout';
 export default function FinancePolicy() {
   return (
-    <PageLayout title="سياسة التمويل" description="إرشادات وشروط خدمة طلبات التمويل لمركبات النقل الثقيل والمعدات على منصة كار مصر." breadcrumbs={[{ name: 'سياسة التمويل' }]} icon={<DollarSign className="w-6 h-6" />} lastUpdated="1 يناير 2025">
+    <PageLayout title="سياسة التمويل" description="إرشادات وشروط خدمة طلبات التمويل لمركبات النقل الثقيل والسيارات على منصة كار مصر." breadcrumbs={[{ name: 'سياسة التمويل' }]} icon={<DollarSign className="w-6 h-6" />} lastUpdated="1 يناير 2025">
       <PolicySection title="١. طبيعة خدمة التمويل">
         <p>خدمة التمويل على منصة كار مصر هي خدمة تمهيدية لربط العملاء بشركات التمويل والبنوك المعتمدة. كار مصر ليست مؤسسة تمويل أو بنكاً، ولا تمنح قروضاً بشكل مباشر.</p>
         <p>عند تقديم طلب التمويل، يُحال طلبك إلى شركاء التمويل المعتمدين الذين سيتواصلون معك لاستكمال الإجراءات وفق سياساتهم الخاصة.</p>

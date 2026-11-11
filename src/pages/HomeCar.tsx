@@ -23,7 +23,7 @@ function HomeHeader() {
     <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-border">
       <div className="max-w-[1280px] mx-auto flex items-center justify-between h-[72px] px-4 sm:px-6 gap-3">
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <img src="/app-icon-128.png" alt="كار مصر" className="h-11 w-11 rounded-2xl object-cover" />
+          <img src="/app-icon-128.png" alt="كار مصر" className="h-11 w-11 rounded-2xl object-cover logo-gloss" />
           <span className="text-text font-extrabold text-xl leading-none">كار مصر</span>
         </Link>
 
@@ -269,11 +269,11 @@ function BrandStrip() {
               onClick={() => trackEvent('brand_click', { brand: b.name })}
               className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-surface border border-border hover:border-orange/50 hover:shadow-md transition-all btn-press"
             >
-              <div className="w-12 h-12 rounded-xl bg-bg flex items-center justify-center overflow-hidden">
+              <div className="w-12 h-12 rounded-xl bg-bg flex items-center justify-center overflow-hidden logo-gloss">
                 {src ? (
                   <img
                     src={src}
-                    alt={b.name}
+                    alt=""
                     loading="lazy"
                     className="w-8 h-8 object-contain"
                     onError={(e) => {
@@ -505,7 +505,7 @@ function HomeFooter() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <img src="/app-icon-128.png" alt="كار مصر" className="h-9 w-9 rounded-xl" />
+            <img src="/app-icon-128.png" alt="كار مصر" className="h-9 w-9 rounded-xl logo-gloss" />
             <span className="font-extrabold text-text">كار مصر</span>
           </div>
           <p className="text-xs text-text-muted">سوق السيارات الملاكي في مصر — بيع، شراء، إيجار، قطع غيار.</p>

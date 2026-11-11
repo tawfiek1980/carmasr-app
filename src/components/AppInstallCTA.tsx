@@ -30,7 +30,7 @@ export default function AppInstallCTA({ onDismiss }: Props) {
           className="w-12 h-12 rounded-xl shadow-lg object-cover shrink-0" />
         <div className="min-w-0 flex-1">
           <p className="font-black text-white text-base leading-tight">كمّل في التطبيق</p>
-          <p className="text-[11px] text-white/60 mt-0.5 leading-snug">طريقة أفضل لتصفّح إعلانات الشاحنات والمعدات والحمولات</p>
+          <p className="text-[11px] text-white/60 mt-0.5 leading-snug">طريقة أفضل لتصفّح إعلانات السيارات والسيارات والسيارات</p>
         </div>
         {onDismiss ? null : (
           <button onClick={dismiss} aria-label="إغلاق" className="text-white/40 hover:text-white transition-colors p-0.5 -m-0.5">

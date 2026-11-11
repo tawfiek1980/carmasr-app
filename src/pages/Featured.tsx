@@ -8,9 +8,9 @@ import ListingCard from '../components/ListingCard';
 
 const cats = [
   { id: '', name: 'الكل' },
-  { id: 'trucks', name: 'شاحنات' },
-  { id: 'equipment', name: 'معدات ثقيلة' },
-  { id: 'trailers', name: 'مقطورات' },
+  { id: 'trucks', name: 'سيارات' },
+  { id: 'equipment', name: 'سيارات' },
+  { id: 'trailers', name: 'سيارات' },
   { id: 'buses', name: 'حافلات' },
   { id: 'spare-parts', name: 'قطع غيار' },
 ];

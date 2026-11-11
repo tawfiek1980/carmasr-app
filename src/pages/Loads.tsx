@@ -212,7 +212,7 @@ export default function Loads() {
                   <label className="flex items-center gap-1.5 text-xs text-text-light cursor-pointer">
                     <input type="checkbox" checked={returnOnly} onChange={e => updateFilter('returnOnly', e.target.checked ? '1' : '')}
                       className="w-4 h-4 rounded border-gray-300 text-orange focus:ring-orange" />
-                    حمولات رجعة
+                    سيارات رجعة
                   </label>
                   <label className="flex items-center gap-1.5 text-xs text-text-light cursor-pointer">
                     <input type="checkbox" checked={periodOnly} onChange={e => updateFilter('periodOnly', e.target.checked ? '1' : '')}
@@ -245,7 +245,7 @@ export default function Loads() {
         ) : filtered.length === 0 ? (
           <div className="text-center py-16">
             <Package className="w-16 h-16 text-gray-200 mx-auto mb-4" />
-            <h3 className="text-lg font-bold text-text mb-1">لا توجد حمولات</h3>
+            <h3 className="text-lg font-bold text-text mb-1">لا توجد سيارات</h3>
             <p className="text-text-light text-sm mb-6">جرب تغيير الفلاتر أو أضف حمولة</p>
             <div className="flex items-center justify-center gap-3">
               {hasFilters && (
@@ -525,8 +525,8 @@ const phone = load.secondaryPhone || load.contactPhone || load.userPhone;
               <p className="text-[10px] text-gray-400">نشر منذ {formatDateDMY(load.createdAt)}</p>
             </div>
 
-            {/* شاحنات مناسبة (ذكاء اصطناعي) */}
-            <AiMatch target="load" id={load.id} title="شاحنات مناسبة للحمولة" />
+            {/* سيارات مناسبة (ذكاء اصطناعي) */}
+            <AiMatch target="load" id={load.id} title="سيارات مناسبة للحمولة" />
 
             {/* خريطة */}
             <button onClick={openMap}
