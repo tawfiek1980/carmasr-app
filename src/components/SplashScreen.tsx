@@ -9,7 +9,7 @@ interface SplashScreenProps {
 }
 
 // العربية cutout بخلفية شفافة (1920×1280)
-const TRUCK_SRC = '/tareeq-truck.png';
+const TRUCK_SRC = '';
 
 export default function SplashScreen({ onFinish }: SplashScreenProps) {
   const [visible, setVisible] = useState(true);
@@ -105,29 +105,6 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
             </svg>
           </div>
 
-          {/* ── العربية (رسم برتقالي #FF8C2F بنسبة 1694×897): تدخل من برة الشاشة شمال وتسوق على الخط ── */}
-          <motion.img
-            src={TRUCK_SRC}
-            alt="CarMasr"
-            className="absolute object-contain"
-            style={{ bottom: '39.5%', width: 'min(54vw, 360px)' }}
-            initial={{ x: '-118vw', opacity: 0 }}
-            animate={{ x: '0vw', opacity: 1 }}
-            transition={{ duration: 1.7, delay: 0.45, ease: [0.32, 0.72, 0.35, 1] }}
-          />
-          {/* ظل خفيف تحت العجلات يثبّت العربية على الخط */}
-          <motion.div
-            className="absolute rounded-[50%]"
-            style={{
-              bottom: '38.6%',
-              width: 'min(46vw, 300px)',
-              height: 6,
-              background: 'radial-gradient(ellipse at center, rgba(255,140,47,0.28) 0%, rgba(255,140,47,0) 72%)',
-            }}
-            initial={{ opacity: 0, scaleX: 0.6 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 1.75 }}
-          />
         </motion.div>
       )}
     </AnimatePresence>
