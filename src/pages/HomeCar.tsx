@@ -223,30 +223,30 @@ function HeroSearch() {
 }
 
 /* ────────────────────────── Brand strip ────────────────────────── */
-const BRAND_LOGOS: { name: string; slug: string | null }[] = [
-  { name: 'Toyota', slug: 'toyota' },
-  { name: 'Nissan', slug: 'nissan' },
-  { name: 'Hyundai', slug: 'hyundai' },
-  { name: 'Kia', slug: 'kia' },
-  { name: 'Chevrolet', slug: 'chevrolet' },
-  { name: 'Ford', slug: 'ford' },
-  { name: 'Mitsubishi', slug: 'mitsubishi' },
-  { name: 'Mercedes', slug: null },
-  { name: 'BMW', slug: 'bmw' },
-  { name: 'Volkswagen', slug: 'volkswagen' },
-  { name: 'Renault', slug: 'renault' },
-  { name: 'Peugeot', slug: 'peugeot' },
-  { name: 'Mazda', slug: 'mazda' },
-  { name: 'Honda', slug: 'honda' },
-  { name: 'MG', slug: 'mg' },
-  { name: 'Jeep', slug: 'jeep' },
-  { name: 'Audi', slug: 'audi' },
-  { name: 'Chery', slug: null },
-  { name: 'Skoda', slug: 'skoda' },
-  { name: 'BYD', slug: null },
-  { name: 'Haval', slug: null },
-  { name: 'Geely', slug: null },
-  { name: 'Land Rover', slug: null },
+const BRAND_LOGOS: { name: string; slug: string | null; domain: string | null }[] = [
+  { name: 'Toyota', slug: 'toyota', domain: null },
+  { name: 'Nissan', slug: 'nissan', domain: null },
+  { name: 'Hyundai', slug: 'hyundai', domain: null },
+  { name: 'Kia', slug: 'kia', domain: null },
+  { name: 'Chevrolet', slug: 'chevrolet', domain: null },
+  { name: 'Ford', slug: 'ford', domain: null },
+  { name: 'Mitsubishi', slug: 'mitsubishi', domain: null },
+  { name: 'Mercedes', slug: null, domain: 'mercedes-benz.com' },
+  { name: 'BMW', slug: 'bmw', domain: null },
+  { name: 'Volkswagen', slug: 'volkswagen', domain: null },
+  { name: 'Renault', slug: 'renault', domain: null },
+  { name: 'Peugeot', slug: 'peugeot', domain: null },
+  { name: 'Mazda', slug: 'mazda', domain: null },
+  { name: 'Honda', slug: 'honda', domain: null },
+  { name: 'MG', slug: 'mg', domain: null },
+  { name: 'Jeep', slug: 'jeep', domain: null },
+  { name: 'Audi', slug: 'audi', domain: null },
+  { name: 'Chery', slug: null, domain: 'cheryauto.com' },
+  { name: 'Skoda', slug: 'skoda', domain: null },
+  { name: 'BYD', slug: null, domain: 'byd.com' },
+  { name: 'Haval', slug: null, domain: 'haval-global.com' },
+  { name: 'Geely', slug: null, domain: 'geely.com' },
+  { name: 'Land Rover', slug: null, domain: 'landrover.com' },
 ];
 
 function BrandStrip() {
@@ -259,39 +259,46 @@ function BrandStrip() {
         </Link>
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-3">
-        {BRAND_LOGOS.map((b) => (
-          <Link
-            key={b.name}
-            to={`/listings?brand=${encodeURIComponent(b.name)}`}
-            onClick={() => trackEvent('brand_click', { brand: b.name })}
-            className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-surface border border-border hover:border-orange/50 hover:shadow-md transition-all btn-press"
-          >
-            <div className="w-12 h-12 rounded-xl bg-bg flex items-center justify-center overflow-hidden">
-              {b.slug ? (
-                <img
-                  src={`https://cdn.simpleicons.org/${b.slug}`}
-                  alt={b.name}
-                  loading="lazy"
-                  className="w-8 h-8 object-contain"
-                  onError={(e) => {
-                    const t = e.currentTarget;
-                    t.style.display = 'none';
-                    const parent = t.parentElement;
-                    if (parent && !parent.querySelector('.brand-fallback')) {
-                      const span = document.createElement('span');
-                      span.className = 'brand-fallback text-orange font-extrabold text-xs';
-                      span.textContent = b.name.slice(0, 3);
-                      parent.appendChild(span);
-                    }
-                  }}
-                />
-              ) : (
-                <span className="text-orange font-extrabold text-xs">{b.name.slice(0, 3)}</span>
-              )}
-            </div>
-            <span className="text-xs font-semibold text-text group-hover:text-orange transition-colors text-center leading-tight">{b.name}</span>
-          </Link>
-        ))}
+        {BRAND_LOGOS.map((b) => {
+          const src = b.slug
+            ? `https://cdn.simpleicons.org/${b.slug}`
+            : b.domain
+            ? `https://www.google.com/s2/favicons?domain=${b.domain}&sz=64`
+            : null;
+          return (
+            <Link
+              key={b.name}
+              to={`/listings?brand=${encodeURIComponent(b.name)}`}
+              onClick={() => trackEvent('brand_click', { brand: b.name })}
+              className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-surface border border-border hover:border-orange/50 hover:shadow-md transition-all btn-press"
+            >
+              <div className="w-12 h-12 rounded-xl bg-bg flex items-center justify-center overflow-hidden">
+                {src ? (
+                  <img
+                    src={src}
+                    alt={b.name}
+                    loading="lazy"
+                    className="w-8 h-8 object-contain"
+                    onError={(e) => {
+                      const t = e.currentTarget;
+                      t.style.display = 'none';
+                      const parent = t.parentElement;
+                      if (parent && !parent.querySelector('.brand-fallback')) {
+                        const span = document.createElement('span');
+                        span.className = 'brand-fallback text-orange font-extrabold text-xs';
+                        span.textContent = b.name.slice(0, 3);
+                        parent.appendChild(span);
+                      }
+                    }}
+                  />
+                ) : (
+                  <span className="text-orange font-extrabold text-xs">{b.name.slice(0, 3)}</span>
+                )}
+              </div>
+              <span className="text-xs font-semibold text-text group-hover:text-orange transition-colors text-center leading-tight">{b.name}</span>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );
