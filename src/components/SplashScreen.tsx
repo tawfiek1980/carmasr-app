@@ -2,14 +2,11 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ORANGE = '#FF8C2F';
-const DURATION = 3000;
+const DURATION = 2600;
 
 interface SplashScreenProps {
   onFinish?: () => void;
 }
-
-// العربية cutout بخلفية شفافة (1920×1280)
-const TRUCK_SRC = '';
 
 export default function SplashScreen({ onFinish }: SplashScreenProps) {
   const [visible, setVisible] = useState(true);
@@ -26,85 +23,81 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[200] flex items-center justify-center overflow-hidden"
-          style={{ backgroundColor: '#000000' }}
+          className="fixed inset-0 z-[200] flex flex-col items-center justify-center overflow-hidden"
+          style={{ background: 'radial-gradient(ellipse at center, #122B4F 0%, #0B1E3A 60%, #050D1A 100%)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.25 }}
-          exit={{ opacity: 0, transition: { duration: 0.4, delay: 0.15 } }}
+          transition={{ duration: 0.4 }}
+          exit={{ opacity: 0, transition: { duration: 0.5 } }}
           role="status"
-          aria-label="جاري تحميل كار مصر"
+          aria-label="CarMasr"
         >
-          {/* ── اللوجو في النص: يكبر سنة ونبضة نور لما العربية توصل ── */}
-          <motion.div
-            className="absolute flex flex-col items-center"
-            style={{ top: '19%' }}
-            initial={{ scale: 1 }}
-            animate={{ scale: [1, 1, 1.05, 1] }}
-            transition={{ duration: 1.5, times: [0, 0.42, 0.62, 1], delay: 1.75, ease: 'easeInOut' }}
-          >
-            <motion.span
-              className="text-4xl sm:text-5xl font-black leading-none tracking-[0.12em] text-white"
-              initial={{ textShadow: '0 0 0 rgba(255,140,47,0)' }}
-              animate={{ textShadow: ['0 0 0 rgba(255,140,47,0)', '0 0 26px rgba(255,140,47,0.95)', '0 0 12px rgba(255,140,47,0.45)'] }}
-              transition={{ duration: 1.5, times: [0, 0.35, 1], delay: 1.75, ease: 'easeOut' }}
-            >
-              CarMasr
-            </motion.span>
-            <motion.span
-              className="mt-1.5 text-2xl sm:text-3xl font-black leading-none tracking-tight"
-              style={{ color: ORANGE }}
-              initial={{ opacity: 0.55 }}
-              animate={{ opacity: [0.55, 1, 0.8] }}
-              transition={{ duration: 1.5, delay: 1.75 }}
-            >
-              كار مصر
-            </motion.span>
-            <motion.span
-              className="mt-3 text-[13px] sm:text-sm font-semibold leading-none text-white/70"
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.85, ease: 'easeOut' }}
-            >
-              سوق السيارات في مصر
-            </motion.span>
-          </motion.div>
-
-          {/* نبضة نور عند وصول العربية */}
+          {/* Glow */}
           <motion.div
             className="absolute rounded-full pointer-events-none"
             style={{
-              top: '22%',
-              width: 360,
-              height: 360,
-              marginLeft: -180,
-              marginTop: -60,
-              background: 'radial-gradient(circle, rgba(255,140,47,0.5) 0%, rgba(255,140,47,0) 68%)',
+              width: 320, height: 320,
+              background: 'radial-gradient(circle, rgba(255,140,47,0.35) 0%, rgba(255,140,47,0) 70%)',
             }}
-            initial={{ opacity: 0, scale: 0.55 }}
-            animate={{ opacity: [0, 0.95, 0], scale: [0.55, 1.15] }}
-            transition={{ duration: 1.4, delay: 1.78, ease: 'easeOut' }}
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: [0, 1, 0.6], scale: [0.6, 1.1, 1] }}
+            transition={{ duration: 1.6, ease: 'easeOut' }}
           />
 
-          {/* ── خط الطريق المتقطع الأبيض: يترسم من الشمال لليمين لوحده ── */}
-          <div className="absolute left-0 right-0" style={{ top: '62%' }}>
-            <svg viewBox="0 0 1000 24" preserveAspectRatio="none" className="w-full h-6">
-              <motion.line
-                x1="0"
-                y1="12"
-                x2="1000"
-                y2="12"
-                stroke="#FFFFFF"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeDasharray="30 22"
-                initial={{ strokeDashoffset: 1000 }}
-                animate={{ strokeDashoffset: 0 }}
-                transition={{ duration: 1.6, delay: 0.35, ease: [0.22, 0.61, 0.36, 1] }}
-              />
-            </svg>
-          </div>
+          {/* Logo */}
+          <motion.img
+            src="/app-icon-512.png"
+            alt="CarMasr"
+            className="w-24 h-24 sm:w-32 sm:h-32 rounded-3xl shadow-2xl logo-gloss"
+            initial={{ scale: 0.6, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
+          />
 
+          {/* Brand name */}
+          <motion.h1
+            className="mt-6 text-4xl sm:text-5xl font-black leading-none tracking-[0.12em] text-white"
+            style={{ textShadow: '0 0 24px rgba(255,140,47,0.6)' }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35, ease: 'easeOut' }}
+          >
+            CarMasr
+          </motion.h1>
+
+          <motion.p
+            className="mt-2 text-lg sm:text-xl font-bold"
+            style={{ color: ORANGE }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+          >
+            كار مصر
+          </motion.p>
+
+          <motion.p
+            className="mt-3 text-[13px] sm:text-sm font-semibold text-white/70"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7, ease: 'easeOut' }}
+          >
+            سوق السيارات الملاكي في مصر
+          </motion.p>
+
+          {/* Progress bar */}
+          <motion.div
+            className="absolute bottom-16 left-1/2 -translate-x-1/2 w-40 h-1 rounded-full bg-white/10 overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+          >
+            <motion.div
+              className="h-full bg-orange rounded-full"
+              initial={{ width: '0%' }}
+              animate={{ width: '100%' }}
+              transition={{ duration: 1.2, delay: 0.9, ease: 'easeInOut' }}
+            />
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
