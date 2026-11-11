@@ -84,7 +84,7 @@ function HomeHeader() {
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
-          <Link to="/" className="flex items-center gap-2 shrink-0">
+          <Link to="/home" className="flex items-center gap-2 shrink-0">
             <img src="/app-icon-128.png" alt="كار مصر" className="h-10 w-10 rounded-xl object-cover logo-gloss" />
             <span className="text-text font-extrabold text-lg sm:text-xl leading-none">كار مصر</span>
           </Link>
@@ -185,7 +185,7 @@ function HeroSearch() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#07172d] via-[#0b2748] to-[#123a63] text-white">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#172554] to-[#1D4ED8] text-white">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-orange/30 blur-3xl" />
         <div className="absolute -bottom-20 left-0 w-96 h-96 rounded-full bg-cyan-400/20 blur-3xl" />
@@ -318,7 +318,7 @@ function HowItWorks() {
           <div className="space-y-4">
             {stepsSell.map(s => (
               <div key={s.n} className="flex gap-3 items-start">
-                <div className="w-8 h-8 shrink-0 rounded-full bg-[#0B1E3A] text-white font-extrabold flex items-center justify-center text-sm">{s.n}</div>
+                <div className="w-8 h-8 shrink-0 rounded-full bg-[#0F172A] text-white font-extrabold flex items-center justify-center text-sm">{s.n}</div>
                 <div>
                   <p className="font-bold text-text text-sm sm:text-base">{s.title}</p>
                   <p className="text-xs sm:text-sm text-text-muted mt-0.5">{s.desc}</p>
@@ -468,7 +468,7 @@ function CarCard({ listing }: { listing: Listing }) {
         )}
         <div className="absolute top-2 right-2 flex flex-col gap-1 items-start">
           {listing.featured && <span className="bg-orange text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><Star className="w-3 h-3" /> مميز</span>}
-          {listing.condition && <span className="bg-white/95 text-[#0B1E3A] text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow">{listing.condition === 'new' ? 'جديدة' : 'مستعملة'}</span>}
+          {listing.condition && <span className="bg-white/95 text-[#0F172A] text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow">{listing.condition === 'new' ? 'جديدة' : 'مستعملة'}</span>}
           {listing.listingType === 'rent' && <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow">إيجار</span>}
         </div>
       </div>
@@ -507,7 +507,7 @@ function ShowcaseCard({ car }: { car: typeof NEW_CAR_SHOWCASE[number] }) {
     <Link to={`/listings?brand=${encodeURIComponent(car.brand)}&model=${encodeURIComponent(car.model)}`} className="group bg-surface border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-orange/40 transition-all btn-press flex flex-col">
       <div className="relative aspect-[4/3] bg-gradient-to-b from-slate-50 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden">
         <img src={car.image} alt={car.variant} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-        <span className="absolute top-2 right-2 bg-white/95 text-[#0B1E3A] text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow">جديدة</span>
+        <span className="absolute top-2 right-2 bg-white/95 text-[#0F172A] text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow">جديدة</span>
       </div>
       <div className="p-3.5 sm:p-4 flex flex-col flex-1 text-center sm:text-right">
         <h3 className="font-extrabold text-text text-base sm:text-lg line-clamp-1 leading-snug">{car.model}</h3>

@@ -30,11 +30,12 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-navy: #0D1B2A;
-  --color-navy-light: #1B263B;
-  --color-orange: #F4700A;
-  --color-orange-dark: #D65F05;
-  --color-orange-700: #C2410C;
+  --color-navy: #0F172A;
+  --color-navy-light: #1E293B;
+  --color-orange: #2563EB;
+  --color-orange-dark: #1D4ED8;
+  --color-orange-700: #1E40AF;
+  --color-accent: #06B6D4;
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-danger: #EF4444;

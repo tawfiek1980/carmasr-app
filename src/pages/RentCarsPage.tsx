@@ -27,7 +27,7 @@ export default function RentCarsPage() {
   return (
     <div className="min-h-screen bg-bg pb-20 sm:pb-8">
       <SeoHead title="سيارات للإيجار — كار مصر" description="تصفح سيارات للإيجار، قارن الأسعار، وتواصل مع المعلن مباشرة." />
-      <div className="bg-gradient-to-br from-[#1e1b4b] via-[#312e81] to-[#4338ca] text-white py-10">
+      <div className="bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#2563EB] text-white py-10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
           <nav className="flex items-center gap-2 text-sm text-white/70 mb-4">
             <Link to="/" className="hover:text-orange">الرئيسية</Link><ChevronLeft className="w-4 h-4" /><span className="text-white">سيارات للإيجار</span>

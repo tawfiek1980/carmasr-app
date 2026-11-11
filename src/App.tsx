@@ -253,7 +253,8 @@ function App() {
           </ProtectedRoute>
         } />
 
-        <Route path="/" element={<WithLayout><Home /></WithLayout>} />
+        <Route path="/" element={<WithLayout><SellCarPage /></WithLayout>} />
+        <Route path="/home" element={<WithLayout><Home /></WithLayout>} />
         <Route path="/join" element={<WithLayout><Join /></WithLayout>} />
         <Route path="/platform" element={<WithLayout><PlatformLanding /></WithLayout>} />
         <Route path="/vehicles"    element={<WithLayout><Vehicles /></WithLayout>} />

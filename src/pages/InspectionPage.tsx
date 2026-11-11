@@ -20,7 +20,7 @@ export default function InspectionPage() {
   return (
     <div className="min-h-screen bg-bg pb-20 sm:pb-8">
       <SeoHead title="فحص قبل الشراء — كار مصر" description="قائمة فحص سيارة قبل الشراء." />
-      <div className="bg-gradient-to-br from-[#0B1E3A] to-[#122B4F] text-white py-10">
+      <div className="bg-gradient-to-br from-[#0F172A] via-[#172554] to-[#1D4ED8] text-white py-10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
           <h1 className="text-3xl font-extrabold flex items-center gap-3">
             <ShieldCheck className="w-8 h-8 text-orange" /> فحص قبل الشراء
