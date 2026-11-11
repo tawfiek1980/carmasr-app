@@ -245,6 +245,7 @@ function App() {
         <Route path="/join" element={<WithLayout><Join /></WithLayout>} />
         <Route path="/platform" element={<WithLayout><PlatformLanding /></WithLayout>} />
         <Route path="/vehicles"    element={<WithLayout><Vehicles /></WithLayout>} />
+        <Route path="/listings"   element={<WithLayout><Vehicles /></WithLayout>} />
         <Route path="/search"      element={<WithLayout><Search /></WithLayout>} />
         <Route path="/equipment"   element={<WithLayout><Equipment /></WithLayout>} />
         <Route path="/loads"       element={<WithLayout><Loads /></WithLayout>} />

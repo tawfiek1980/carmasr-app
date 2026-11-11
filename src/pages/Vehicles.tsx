@@ -29,12 +29,14 @@ export default function Vehicles() {
   const [alertMsg, setAlertMsg] = useState('');
 
   const category = searchParams.get('category') || '';
+  const subcategory = searchParams.get('subcategory') || '';
+  const condition = searchParams.get('condition') || '';
   const governorate = searchParams.get('governorate') || '';
-  const search = searchParams.get('search') || '';
+  const search = searchParams.get('search') || searchParams.get('q') || '';
   const brand = searchParams.get('brand') || '';
   const model = searchParams.get('model') || '';
-  const priceMin = searchParams.get('priceMin') || '';
-  const priceMax = searchParams.get('priceMax') || '';
+  const priceMin = searchParams.get('priceMin') || searchParams.get('minPrice') || '';
+  const priceMax = searchParams.get('priceMax') || searchParams.get('maxPrice') || '';
   const yearMin = searchParams.get('yearMin') || '';
   const yearMax = searchParams.get('yearMax') || '';
 
@@ -44,13 +46,16 @@ export default function Vehicles() {
       .then(data => {
         let filtered = data.filter(l =>
           ['active', 'sold'].includes(l.status) &&
-          ['trucks', 'equipment', 'trailers', 'buses', 'spare-parts'].includes(l.category)
+          ['cars', 'spare-parts'].includes(l.category)
         );
         if (category) filtered = filtered.filter(l => l.category === category);
+        if (subcategory) filtered = filtered.filter(l => l.subcategory === subcategory);
+        if (condition) filtered = filtered.filter(l => l.condition === condition);
         if (governorate) filtered = filtered.filter(l => l.governorate === governorate);
         if (search) filtered = filtered.filter(l =>
           l.title?.toLowerCase().includes(search.toLowerCase()) ||
-          l.brand?.toLowerCase().includes(search.toLowerCase())
+          l.brand?.toLowerCase().includes(search.toLowerCase()) ||
+          l.model?.toLowerCase().includes(search.toLowerCase())
         );
         if (brand) filtered = filtered.filter(l => l.brand?.toLowerCase().includes(brand.toLowerCase()));
         if (model) filtered = filtered.filter(l => l.model?.toLowerCase().includes(model.toLowerCase()));
@@ -63,7 +68,7 @@ export default function Vehicles() {
       })
       .catch(console.error)
       .finally(() => setLoading(false));
-  }, [category, governorate, search, brand, model, priceMin, priceMax, yearMin, yearMax]);
+  }, [category, subcategory, condition, governorate, search, brand, model, priceMin, priceMax, yearMin, yearMax]);
 
   const updateFilter = (key: string, value: string) => {
     const p = new URLSearchParams(searchParams);
@@ -79,14 +84,18 @@ export default function Vehicles() {
 
   const cats = [
     { id: '', name: 'الكل', icon: '' },
-    { id: 'trucks', name: 'شاحنات', icon: 'trucks' },
-    { id: 'equipment', name: 'معدات', icon: 'equipment' },
-    { id: 'trailers', name: 'مقطورات', icon: 'trailers' },
-    { id: 'buses', name: 'حافلات', icon: 'buses' },
+    { id: 'sedan', name: 'سيدان', icon: 'cars' },
+    { id: 'suv', name: 'SUV', icon: 'cars' },
+    { id: 'hatchback', name: 'هاتشباك', icon: 'cars' },
+    { id: 'pickup', name: 'بيك أب', icon: 'cars' },
+    { id: 'coupe', name: 'كوبيه', icon: 'cars' },
+    { id: 'van', name: 'فان', icon: 'cars' },
     { id: 'spare-parts', name: 'قطع غيار', icon: 'spare-parts' },
   ];
 
-  const catName = cats.find(c => c.id === category)?.name || 'المركبات';
+  const activeCat = subcategory || category;
+  const catName = cats.find(c => c.id === activeCat)?.name || (category === 'cars' ? 'سيارات' : 'مركبات');
+
 
   const openAlertPanel = () => {
     if (!user) { navigate('/login'); return; }
@@ -122,7 +131,7 @@ export default function Vehicles() {
       <div className="bg-navy py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-white">المركبات والمعدات</h1>
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-white">سيارات للبيع</h1>
             <Link to="/post-listing"
               className="flex items-center gap-1.5 bg-orange hover:bg-orange-dark text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
               <Plus className="w-4 h-4" /><span className="hidden sm:inline">أضف إعلان</span>
@@ -194,7 +203,11 @@ export default function Vehicles() {
           {/* Category tabs */}
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
             {cats.map(c => (
-              <button key={c.id} onClick={() => updateFilter('category', c.id)}
+              <button key={c.id} onClick={() => {
+                if (c.id === 'spare-parts') { updateFilter('category', 'spare-parts'); updateFilter('subcategory', ''); }
+                else if (c.id === '') { updateFilter('category', ''); updateFilter('subcategory', ''); }
+                else { updateFilter('category', 'cars'); updateFilter('subcategory', c.id); }
+              }}
                 className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors flex items-center gap-1.5 ${category === c.id ? 'bg-orange text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>
                 {c.icon && <CategorySvgIcon categoryId={c.icon} className="w-4 h-4" />}
                 {c.name}
