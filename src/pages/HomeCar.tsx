@@ -271,30 +271,85 @@ function BrandStrip() {
 /* ────────────────────────── المزيد على كار مصر ────────────────────────── */
 function MoreOnCarMasr() {
   const items = [
-    { to: '/prices', icon: Tag, title: 'أسعار السيارات', desc: 'دليل أسعار الجديد والمستعمل' },
-    { to: '/compare', icon: Scale, title: 'مقارنة السيارات', desc: 'قارن بين عربيتين بسهولة' },
-    { to: '/evaluate', icon: Gauge, title: 'تقييم سيارتك', desc: 'اعرف سعر عربيتك في السوق' },
-    { to: '/finance', icon: Landmark, title: 'تمويل وتقسيط', desc: 'حلول تمويل مرنة' },
-    { to: '/exhibitions', icon: Building2, title: 'المعارض', desc: 'معارض ووكلاء موثوقون' },
-    { to: '/maintenance', icon: Wrench, title: 'الصيانة', desc: 'مراكز وخدمات صيانة' },
-    { to: '/inspection', icon: ShieldCheck, title: 'فحص السيارة', desc: 'اطمئن قبل الشراء' },
-    { to: '/emergency', icon: Siren, title: 'مساعدة على الطريق', desc: 'خدمة طوارئ وسحب' },
+    {
+      to: '/prices',
+      title: 'أسعار السيارات الجديدة',
+      desc: 'اكتشف أحدث الأسعار للسيارات الجديدة.',
+      icon: Tag,
+      bg: 'from-orange/15 to-amber-100 dark:from-orange/20 dark:to-amber-900/20',
+    },
+    {
+      to: '/listings?condition=used',
+      title: 'أسعار السيارات المستعملة',
+      desc: 'احصل على أفضل العروض على السيارات المستعملة الموثوقة',
+      icon: Car,
+      bg: 'from-sky-100 to-blue-100 dark:from-sky-900/30 dark:to-blue-900/20',
+    },
+    {
+      to: '/compare',
+      title: 'مقارنة السيارات',
+      desc: 'محتار بين عربيتين؟ قارن بينهم وخد القرار الصح',
+      icon: Scale,
+      bg: 'from-violet-100 to-fuchsia-100 dark:from-violet-900/30 dark:to-fuchsia-900/20',
+    },
+    {
+      to: '/maintenance',
+      title: 'الصيانة الخاصة بي',
+      desc: 'إدارة وتتبع صيانة سيارتك',
+      icon: Wrench,
+      bg: 'from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/20',
+    },
+    {
+      to: '/finance',
+      title: 'تمويل السيارات',
+      desc: 'احصل على تمويل مريح بموافقة سريعة',
+      icon: Landmark,
+      bg: 'from-amber-100 to-yellow-100 dark:from-amber-900/30 dark:to-yellow-900/20',
+    },
+    {
+      to: '/listings?q=electric',
+      title: 'سيارات كهربائية',
+      desc: 'استكشف أفضل السيارات الكهربائية، واعثر على محطات الشحن، واكتشف مقدار ما يمكنك توفيره.',
+      icon: Zap,
+      bg: 'from-cyan-100 to-sky-100 dark:from-cyan-900/30 dark:to-sky-900/20',
+    },
+    {
+      to: '/listings?listingType=rent',
+      title: 'سيارات للإيجار',
+      desc: 'تصفح سيارات للإيجار، قارن الأسعار، واحجز رحلتك القادمة',
+      icon: Calendar,
+      bg: 'from-rose-100 to-orange-100 dark:from-rose-900/30 dark:to-orange-900/20',
+      badge: 'جديد',
+    },
   ];
+
   return (
     <section className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg sm:text-xl font-extrabold text-text">المزيد على كار مصر</h2>
         <Link to="/services" className="text-orange text-sm font-bold flex items-center gap-1 hover:underline">كل الخدمات <ChevronLeft className="w-4 h-4" /></Link>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {items.map((it) => (
-          <Link key={it.title} to={it.to} className="group bg-surface border border-border rounded-2xl p-4 hover:border-orange/50 hover:shadow-md transition-all btn-press flex gap-3 items-start">
-            <div className="w-11 h-11 shrink-0 rounded-xl bg-orange/10 flex items-center justify-center group-hover:bg-orange transition-colors">
-              <it.icon className="w-5 h-5 text-orange group-hover:text-white transition-colors" />
+          <Link
+            key={it.title}
+            to={it.to}
+            className="group bg-surface border border-border rounded-2xl overflow-hidden hover:border-orange/50 hover:shadow-lg transition-all btn-press flex flex-col"
+          >
+            <div className={`relative h-36 bg-gradient-to-br ${it.bg} flex items-center justify-center overflow-hidden`}>
+              <div className="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-white/30 dark:bg-white/5 blur-1xl" />
+              <div className="w-16 h-16 rounded-2xl bg-white/70 dark:bg-black/20 backdrop-blur flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+                <it.icon className="w-8 h-8 text-orange" />
+              </div>
+              {it.badge && (
+                <span className="absolute top-3 left-3 bg-orange text-white text-[11px] font-extrabold px-2.5 py-1 rounded-full shadow">
+                  {it.badge}
+                </span>
+              )}
             </div>
-            <div className="min-w-0">
-              <p className="font-bold text-text text-sm leading-snug">{it.title}</p>
-              <p className="text-xs text-text-muted mt-0.5 leading-snug">{it.desc}</p>
+            <div className="p-4 flex-1 flex flex-col">
+              <h3 className="font-extrabold text-text text-[15px] leading-snug">{it.title}</h3>
+              <p className="mt-1.5 text-sm text-text-muted leading-relaxed">{it.desc}</p>
             </div>
           </Link>
         ))}
@@ -307,41 +362,67 @@ function MoreOnCarMasr() {
 function CarCard({ listing }: { listing: Listing }) {
   const img = listing.images?.[0];
   const km = (listing as any).mileage ?? (listing as any).kilometers;
-  const subtitle = [listing.brand, listing.model, listing.year ? String(listing.year) : null].filter(Boolean).join(' ');
+  const title = [listing.brand, listing.model].filter(Boolean).join(' ') || listing.title;
+  const subtitle = [listing.title && title !== listing.title ? listing.title : null, listing.year ? String(listing.year) : null, (listing as any).trim].filter(Boolean).join(' • ');
   return (
     <Link to={listingUrl(listing.id, listing.slug)} className="group bg-surface border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-orange/40 transition-all btn-press flex flex-col">
-      <div className="relative aspect-[4/3] sm:aspect-[16/10] bg-gradient-to-b from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden">
+      <div className="relative aspect-[4/3] bg-gradient-to-b from-slate-50 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden">
         {img ? (
-          <OptimizedImage src={optimizeImage(img, 'large')} alt={listing.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <OptimizedImage src={optimizeImage(img, 'large')} alt={title} className="w-full h-full object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-500" />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center text-text-muted gap-2">
-            <Car className="w-14 h-14 opacity-50" />
-            <span className="text-xs font-semibold">لا توجد صورة</span>
+            <Car className="w-16 h-16 opacity-40" />
+            <span className="text-xs font-semibold">صورة السيارة</span>
           </div>
         )}
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
         <div className="absolute top-2 right-2 flex flex-col gap-1 items-start">
           {listing.featured && <span className="bg-orange text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><Star className="w-3 h-3" /> مميز</span>}
-          {listing.condition && <span className="bg-white/90 text-[#0B1E3A] text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow">{listing.condition === 'new' ? 'جديدة' : 'مستعملة'}</span>}
+          {listing.condition && <span className="bg-white/95 text-[#0B1E3A] text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow">{listing.condition === 'new' ? 'جديدة' : 'مستعملة'}</span>}
           {listing.listingType === 'rent' && <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow">إيجار</span>}
         </div>
       </div>
-      <div className="p-3.5 flex flex-col flex-1">
-        <h3 className="font-extrabold text-text text-[15px] sm:text-base line-clamp-1 leading-snug">{listing.title}</h3>
-        {subtitle && <p className="mt-0.5 text-xs text-text-muted line-clamp-1">{subtitle}</p>}
-        <div className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-text-muted">
+      <div className="p-3.5 sm:p-4 flex flex-col flex-1 text-center sm:text-right">
+        <h3 className="font-extrabold text-text text-base sm:text-lg line-clamp-1 leading-snug">{title}</h3>
+        {subtitle && <p className="mt-1 text-xs sm:text-sm text-text-muted line-clamp-1">{subtitle}</p>}
+        <div className="mt-2 flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 text-[11px] text-text-muted">
           {listing.year && <span className="inline-flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />{listing.year}</span>}
           {km != null && km !== '' && <span className="inline-flex items-center gap-1"><Settings2 className="w-3.5 h-3.5" />{Number(km).toLocaleString('ar-EG')} كم</span>}
           {listing.governorate && <span className="inline-flex items-center gap-1"><MapPin className="w-3.5 h-3.5" />{listing.governorate}</span>}
         </div>
-        <div className="mt-auto pt-3 flex items-end justify-between gap-2 border-t border-border/70">
-          <div>
-            <span className="block text-orange font-extrabold text-lg sm:text-xl leading-none">
-              {listing.priceType === 'call' ? 'اتصل للسعر' : formatPrice(listing.price)}
-            </span>
-            {listing.listingType === 'rent' && listing.priceType !== 'call' && <span className="text-[10px] text-text-muted font-semibold">/ للفترة</span>}
-          </div>
-          {listing.brand && <span className="text-[10px] bg-bg border border-border text-text px-2 py-1 rounded-full font-bold">{listing.brand}</span>}
+        <div className="mt-auto pt-3">
+          <span className="block text-orange font-extrabold text-xl sm:text-2xl leading-none">
+            {listing.priceType === 'call' ? 'اتصل للسعر' : formatPrice(listing.price)}
+          </span>
+          {listing.listingType === 'rent' && listing.priceType !== 'call' && <span className="text-[10px] text-text-muted font-semibold">/ للفترة</span>}
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+const NEW_CAR_SHOWCASE = [
+  { brand: 'Kia', model: 'Sportage', variant: 'Kia Sportage 2025', price: '1,700,000 جنيه', image: 'https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=800&q=60' },
+  { brand: 'Mercedes', model: 'C180', variant: 'Mercedes C180 2026', price: '6,000,000 جنيه', image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=60' },
+  { brand: 'BMW', model: 'X6', variant: 'BMW X6 2025 / M60i xDrive', price: '9,200,000 جنيه', image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=60' },
+  { brand: 'Hyundai', model: 'Elantra CN7', variant: 'Hyundai Elantra CN7 2025', price: '1,600,000 جنيه', image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=60' },
+  { brand: 'Hyundai', model: 'Ioniq 6', variant: 'Hyundai Ioniq 6 2025', price: '2,300,000 جنيه', image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=60' },
+  { brand: 'Hyundai', model: 'Santa Fe', variant: 'Hyundai Santa Fe 2025', price: '3,000,000 جنيه', image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=60' },
+  { brand: 'MG', model: '4 EV', variant: 'MG 4 EV 2025', price: '1,400,000 جنيه', image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=60' },
+  { brand: 'MG', model: 'ZS', variant: 'MG ZS 2025', price: '1,049,990 جنيه', image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=60' },
+];
+
+function ShowcaseCard({ car }: { car: typeof NEW_CAR_SHOWCASE[number] }) {
+  return (
+    <Link to={`/listings?brand=${encodeURIComponent(car.brand)}&model=${encodeURIComponent(car.model)}`} className="group bg-surface border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-orange/40 transition-all btn-press flex flex-col">
+      <div className="relative aspect-[4/3] bg-gradient-to-b from-slate-50 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden">
+        <img src={car.image} alt={car.variant} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <span className="absolute top-2 right-2 bg-white/95 text-[#0B1E3A] text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow">جديدة</span>
+      </div>
+      <div className="p-3.5 sm:p-4 flex flex-col flex-1 text-center sm:text-right">
+        <h3 className="font-extrabold text-text text-base sm:text-lg line-clamp-1 leading-snug">{car.model}</h3>
+        <p className="mt-1 text-xs sm:text-sm text-text-muted line-clamp-1">{car.variant}</p>
+        <div className="mt-auto pt-3">
+          <span className="block text-orange font-extrabold text-xl sm:text-2xl leading-none">{car.price}</span>
         </div>
       </div>
     </Link>
@@ -386,6 +467,8 @@ function DiscoverCars() {
     { id: 'rent', label: 'إيجار', to: '/listings?listingType=rent' },
   ];
 
+  const showShowcase = tab === 'new' || (tab === 'all' && show.length < 4);
+
   return (
     <section className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
@@ -406,15 +489,31 @@ function DiscoverCars() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {Array.from({ length: 8 }).map((_, i) => <div key={i} className="h-[280px] rounded-2xl bg-surface border border-border animate-pulse" />)}
         </div>
-      ) : show.length === 0 ? (
-        <div className="bg-surface border border-border rounded-2xl p-10 text-center text-text-muted">
-          <Car className="w-12 h-12 mx-auto mb-2 opacity-40" />
-          <p className="font-semibold">لا توجد إعلانات في هذا القسم الآن</p>
-          <Link to="/post-listing" className="inline-block mt-3 text-orange font-bold hover:underline">أضف أول إعلان ←</Link>
-        </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {show.map((l) => <CarCard key={l.id} listing={l} />)}
+        <div className="space-y-6">
+          {show.length > 0 && (
+            <div>
+              {showShowcase && <h3 className="text-base font-extrabold text-text mb-3">إعلانات مميزة من المستخدمين</h3>}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {show.map((l) => <CarCard key={l.id} listing={l} />)}
+              </div>
+            </div>
+          )}
+          {showShowcase && (
+            <div>
+              <h3 className="text-base font-extrabold text-text mb-3">اكتشف السيارات الجديدة</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {NEW_CAR_SHOWCASE.map((car) => <ShowcaseCard key={car.variant} car={car} />)}
+              </div>
+            </div>
+          )}
+          {!show.length && !showShowcase && (
+            <div className="bg-surface border border-border rounded-2xl p-10 text-center text-text-muted">
+              <Car className="w-12 h-12 mx-auto mb-2 opacity-40" />
+              <p className="font-semibold">لا توجد إعلانات في هذا القسم الآن</p>
+              <Link to="/post-listing" className="inline-block mt-3 text-orange font-bold hover:underline">أضف أول إعلان ←</Link>
+            </div>
+          )}
         </div>
       )}
     </section>
