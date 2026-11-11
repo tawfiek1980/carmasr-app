@@ -1,0 +1,9 @@
+node_modules/
+android/
+ios/
+tareeq-backup-*/
+videos/
+screenshots/
+store-assets/
+icon-masters/
+secrets-backup/

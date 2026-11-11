@@ -1,0 +1,115 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/ai/index.js": {
+      "maxDuration": 30
+    },
+    "api/push.js": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/push?action=fbPost&mode=auto",
+      "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/push?action=fbCampaign",
+      "schedule": "0 13 * * *"
+    },
+    {
+      "path": "/api/push?action=merchantCron",
+      "schedule": "0 8 * * 0"
+    },
+    {
+      "path": "/api/alerts?action=match",
+      "schedule": "0 7 * * *"
+    },
+    {
+      "path": "/api/cleanup-expired?action=renewal",
+      "schedule": "0 10 * * 0"
+    },
+    {
+      "path": "/api/cleanup-expired?action=duplicates",
+      "schedule": "30 10 * * 1"
+    },
+    {
+      "path": "/api/cleanup-expired",
+      "schedule": "0 11 * * *"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "geolocation=(self), camera=(), microphone=(), payment=()" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/exhibitions/:id/:slug?",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|twitterbot|whatsapp|telegrambot|googlebot|bingbot|slackbot|discordbot|pinterest|linkedinbot|tumblr|outbrain|yandex|applebot|curl|python-requests|MetaInspector|developers.google.com).*" }],
+      "destination": "/api/og-pages?type=exhibition&id=:id",
+      "permanent": false
+    },
+    { "source": "/download/app/(.*)", "destination": "/download/" },
+    { "source": "/download/Tareeq.apk", "destination": "/download/" },
+    { "source": "/download/index.html", "destination": "/download/" }
+  ],
+  "rewrites": [
+    { "source": "/api/og", "destination": "/api/og-pages" },
+    { "source": "/api/share", "destination": "/api/og-pages" },
+    { "source": "/api/admin/(.*)", "destination": "/api/admin?action=$1" },
+    { "source": "/api/send-ad", "destination": "/api/whatsapp-notify?action=send-ad" },
+    { "source": "/api/shortlink", "destination": "/api/og-pages?action=shortlink" },
+    { "source": "/api/stats", "destination": "/api/alerts" },
+    { "source": "/api/seller-actions", "destination": "/api/alerts" },
+    { "source": "/s/:code", "destination": "/api/og-pages?s=:code" },
+    { "source": "/api/contact-advertiser", "destination": "/api/whatsapp-notify?action=contactAdvertiser" },
+    { "source": "/api/messenger-webhook", "destination": "/api/whatsapp-notify?action=bot" },
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    {
+      "source": "/listing/:id/:slug?",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|twitterbot|whatsapp|telegrambot|googlebot|bingbot|slackbot|discordbot|pinterest|linkedinbot|tumblr|outbrain|yandex|applebot|curl|python-requests|MetaInspector|developers.google.com).*" }],
+      "destination": "/api/og-pages?type=ad&id=:id"
+    },
+    {
+      "source": "/product/:id",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|twitterbot|whatsapp|telegrambot|googlebot|bingbot|slackbot|discordbot|pinterest|linkedinbot|tumblr|outbrain|yandex|applebot|curl|python-requests|MetaInspector|developers.google.com).*" }],
+      "destination": "/api/og-pages?type=product&id=:id"
+    },
+    {
+      "source": "/ad/:id",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|twitterbot|whatsapp|telegrambot|googlebot|bingbot|slackbot|discordbot|pinterest|linkedinbot|tumblr|outbrain|yandex|applebot|curl|python-requests|MetaInspector|developers.google.com).*" }],
+      "destination": "/api/og-pages?type=ad&id=:id"
+    },
+    {
+      "source": "/job/:id",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|twitterbot|whatsapp|telegrambot|googlebot|bingbot|slackbot|discordbot|pinterest|linkedinbot|tumblr|outbrain|yandex|applebot|curl|python-requests|MetaInspector|developers.google.com).*" }],
+      "destination": "/api/og-pages?type=job&id=:id"
+    },
+    {
+      "source": "/load/:id",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|twitterbot|whatsapp|telegrambot|googlebot|bingbot|slackbot|discordbot|pinterest|linkedinbot|tumblr|outbrain|yandex|applebot|curl|python-requests|MetaInspector|developers.google.com).*" }],
+      "destination": "/api/og-pages?type=load&id=:id"
+    },
+    { "source": "/download-page/(.*)", "destination": "/download-page/index.html" },
+    { "source": "/download/(.*)", "destination": "/download/$1" },
+    { "source": "/apk/(.*)", "destination": "/apk/$1" },
+    { "source": "/sitemap.xml", "destination": "/api/og-pages?type=sitemap" },
+    { "source": "/rss.xml", "destination": "/api/og-pages?type=feed" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

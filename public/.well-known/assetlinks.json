@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tareeq.app",
+      "sha256_cert_fingerprints": [
+        "F0:F5:ED:D9:43:D8:A0:48:3D:58:C0:6B:F3:84:7E:A3:2E:AD:EB:F9:0E:B4:19:C7:2E:0C:30:4E:24:66:F9:E9"
+      ]
+    }
+  }
+]

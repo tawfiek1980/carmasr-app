@@ -1,0 +1,25 @@
+{
+  "short_name": "كار مصر",
+  "name": "كار مصر CarMasr — سوق السيارات الملاكي",
+  "description": "بيع وشراء وإيجار السيارات وقطع الغيار في مصر — أضف إعلانك مجانًا على كار مصر.",
+  "start_url": "/",
+  "background_color": "#0B1E3A",
+  "theme_color": "#0B1E3A",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "id": "/",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/store-assets/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

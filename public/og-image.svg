@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0D1B2A"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#F4700A"/>
+  <text x="600" y="260" font-family="Cairo, sans-serif" font-size="72" font-weight="800" fill="#F4700A" text-anchor="middle">طريق</text>
+  <text x="600" y="350" font-family="Cairo, sans-serif" font-size="64" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="8">TAREEQ</text>
+  <text x="600" y="420" font-family="Cairo, sans-serif" font-size="28" font-weight="500" fill="#9CA3AF" text-anchor="middle">أكبر سوق إلكتروني للنقل الثقيل في مصر</text>
+  <rect x="480" y="460" width="240" height="2" rx="1" fill="#F4700A"/>
+  <text x="600" y="510" font-family="Cairo, sans-serif" font-size="18" font-weight="400" fill="#6B7280" text-anchor="middle">شاحنات · معدات ثقيلة · حمولات · وظائف نقل · تمويل · طوارئ</text>
+</svg>

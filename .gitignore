@@ -1,0 +1,65 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables (secrets - never commit)
+.env
+.env.local
+.env.production
+!.env.example
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vite-source-tags.js
+.vercel
+
+.vercel
+.env*
+data/
+
+# Android build artifacts
+android/app/build/
+android/.gradle/
+android/build/
+*.apk
+*.aab
+/apk/
+
+# Keystore (keep it safe!)
+*.keystore
+*.jks
+android/keystore/
+keystore.properties
+
+# Secrets - never commit
+secrets-backup/
+PASSWORD
+/screenshots/
+/store-assets/
+/playstore-preview.html
+public/download/Tareeq.apk.bak
+
+icon-masters/
+
+.env*
+.vercel
+videos/
+

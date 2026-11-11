@@ -1,0 +1,164 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAuth() { return request.auth != null; }
+    // الأدمن يُحدَّد عبر Custom Claim (token.admin) — غير قابل للتزوير من العميل.
+    // يُمنح من السيرفر (api/admin?action=sync-self / set-admin-claim) فقط.
+    // fallback انتقالي: نوع المستخدم type=='admin' صار آمنًا لأن قواعد users تمنع
+    // العميل من كتابته (create/update/delete للأدمن فقط) — يُضبط من السيرفر فقط.
+    function isAdmin() {
+      return isAuth() && (
+        request.auth.token.admin == true ||
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.type == 'admin'
+      );
+    }
+    function isExhibitionOwner(exhibitionId) { return isAuth() && exhibitionId != null && get(/databases/$(database)/documents/exhibitions/$(exhibitionId)).data.userId == request.auth.uid; }
+    // عدّاد المشاهدة/التواصل: يُسمح بزيادة حقل واحد فقط بمقدار 1 من أي زائر (حتى غير المسجّل)
+    function bumpedStat(field) {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([field])
+        && request.resource.data.get(field, 0) == resource.data.get(field, 0) + 1;
+    }
+    function isConvParticipant(convId) { return isAuth() && exists(/databases/$(database)/documents/conversations/$(convId)) && request.auth.uid in get(/databases/$(database)/documents/conversations/$(convId)).data.participants; }
+    match /users/{userId} {
+      // أي مستخدم مسجل يقدر يقرأ بروفايلات المستخدمين الآخرين — ضروري للشات
+      // بين العملاء (اسم/صورة الطرف الآخر) وطبيعة السوق المفتوح.
+      allow read:   if isAuth();
+      // منع الترقية الذاتية للأدمن فقط: المستخدم يغيّر نوعه بين الأدوار العادية
+      // (individual/company/dealer/...) لكنه لا يستطيع كتابة type:'admin' إطلاقًا.
+      allow create: if request.auth.uid == userId && request.resource.data.type != 'admin';
+      allow update: if isAdmin() || (request.auth.uid == userId && request.resource.data.type != 'admin');
+      allow delete: if isAdmin();
+    }
+    match /listings/{listingId} {
+      allow read:   if true;
+      // الإنشاء يتم من السيرفر بعد مراجعة ذكية، وأي كتابة مباشرة إلزامية بحالة pending
+      allow create: if isAuth() && (isAdmin() || request.resource.data.status == 'pending');
+      allow update: if isAuth() && (isAdmin() || (
+        resource.data.userId == request.auth.uid &&
+        request.resource.data.aiModeration == resource.data.aiModeration &&
+        (request.resource.data.status == 'pending' ||
+         request.resource.data.status == 'sold' ||
+         request.resource.data.status == resource.data.status)
+      ));
+      allow delete: if isAuth() && (resource.data.userId == request.auth.uid || isAdmin());
+    }
+    match /loads/{loadId} {
+      allow read:   if true;
+      allow create: if isAuth() && (isAdmin() || request.resource.data.status == 'pending');
+      allow update: if isAuth() && (isAdmin() || (
+        resource.data.userId == request.auth.uid &&
+        request.resource.data.aiModeration == resource.data.aiModeration &&
+        (request.resource.data.status in ['pending', 'delivered', 'cancelled'] ||
+         request.resource.data.status == resource.data.status)
+      ));
+      allow delete: if isAuth() && (resource.data.userId == request.auth.uid || isAdmin());
+    }
+    match /jobs/{jobId} {
+      allow read:   if true;
+      allow create: if isAuth() && (isAdmin() || request.resource.data.status == 'pending');
+      allow update: if isAuth() && (isAdmin() || (
+        resource.data.userId == request.auth.uid &&
+        request.resource.data.aiModeration == resource.data.aiModeration &&
+        (request.resource.data.status in ['pending', 'filled', 'closed'] ||
+         request.resource.data.status == resource.data.status)
+      ));
+      allow delete: if isAuth() && (resource.data.userId == request.auth.uid || isAdmin());
+    }
+    match /financeRequests/{reqId} {
+      allow read:   if isAuth() && (resource.data.userId == request.auth.uid || isAdmin());
+      // الطلب يُنشأ من العميل لصالح صاحبه فقط وبحالة 'new' — منع تزوير طلبات/تعديل حالتها
+      allow create: if isAuth()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.status == 'new';
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+    match /siteConfig/{docId} {
+      allow read:  if true;
+      allow write: if isAdmin();
+    }
+    // إعدادات النشر وربط فيسبوك (settings/*) — قراءة وكتابة من السيرفر فقط
+    match /settings/{docId} {
+      allow read, write: if false;
+    }
+    match /conversations/{convId} {
+      allow read:   if isAuth() && (resource == null || request.auth.uid in resource.data.participants);
+      allow create: if isAuth() && request.auth.uid in request.resource.data.participants;
+      allow update: if isAuth() && request.auth.uid in resource.data.participants;
+      allow delete: if isAdmin();
+      match /messages/{msgId} {
+        allow read:   if isConvParticipant(convId);
+        allow create: if isConvParticipant(convId) && request.resource.data.senderId == request.auth.uid;
+        allow update: if isConvParticipant(convId) && resource.data.senderId == request.auth.uid;
+        allow delete: if isAdmin();
+      }
+    }
+    match /notifications/{notifId} {
+      allow read:   if isAuth() && resource.data.userId == request.auth.uid;
+      allow create: if isAuth();
+      allow update: if isAuth() && resource.data.userId == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+    match /passwordResets/{docId} {
+      allow create: if true;
+      allow read:   if isAdmin();
+      allow update: if isAdmin();
+      allow delete: if false;
+    }
+    match /financeCompanies/{docId} {
+      allow read:   if true;
+      allow create: if isAdmin();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+    match /bannerAds/{docId} {
+      allow read:   if true;
+      allow create: if isAdmin();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+    match /products/{productId} {
+      allow read:   if true;
+      allow create: if isAuth();
+      allow update: if isAuth() && (resource.data.userId == request.auth.uid || isAdmin() || isExhibitionOwner(resource.data.exhibitionId));
+      allow delete: if isAuth() && (resource.data.userId == request.auth.uid || isAdmin() || isExhibitionOwner(resource.data.exhibitionId));
+    }
+    match /exhibitions/{docId} {
+      allow read:   if true;
+      allow create: if isAuth();
+      allow update: if (isAuth() && (resource.data.userId == request.auth.uid || isAdmin()))
+        || (resource.data.status == 'active' && (bumpedStat('views') || bumpedStat('contacts')));
+      allow delete: if isAdmin();
+      match /products/{productId} {
+        allow read:   if true;
+        allow create: if isAuth() && isExhibitionOwner(docId);
+        allow update: if isAuth() && (isExhibitionOwner(docId) || isAdmin());
+        allow delete: if isAuth() && (isExhibitionOwner(docId) || isAdmin());
+      }
+    }
+    match /payments/{docId} {
+      allow read:   if isAdmin();
+      // الدفع يُنشأ من السيرفر (admin SDK) — لا كتابة مباشرة من العميل، ولا تزوير مبالغ
+      allow create: if isAdmin();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+    match /ratings/{ratingId} {
+      allow read:   if true;
+      allow create: if isAuth();
+      allow update: if isAuth() && resource.data.fromUserId == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+    match /adAnalytics/{docId} {
+      allow read:   if isAdmin();
+      allow create, update: if isAuth();
+    }
+    // ورديات العملاء — كل مستخدم يرى/يعدّل وردياته فقط، والأدمن يرى الكل
+    match /shifts/{shiftId} {
+      allow read:   if isAuth() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isAuth() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuth() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow delete: if isAuth() && (resource.data.userId == request.auth.uid || isAdmin());
+    }
+  }
+}

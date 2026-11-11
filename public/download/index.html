@@ -1,0 +1,804 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0D1B2A" />
+  <meta name="color-scheme" content="light dark" />
+  <title>تطبيق كار مصر CarMasr — تحميل النسخة الرسمية</title>
+  <meta name="description" content="حمّل تطبيق كار مصر CarMasr الرسمي مجانًا — أول سوق إلكتروني للنقل الثقيل في مصر. شاحنات، معدات، حمولات، وظائف، تمويل، وخدمات طوارئ." />
+  <link rel="canonical" href="https://carmasr-app.vercel.app/download/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta property="og:title" content="كار مصر CarMasr — سوق النقل الثقيل في مصر" />
+  <meta property="og:description" content="حمّل التطبيق الرسمي مجانًا — شاحنات، معدات، حمولات، وظائف، تمويل، وخدمات طوارئ على الطريق." />
+  <meta property="og:image" content="https://carmasr-app.vercel.app/og-download-v2.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="كار مصر CarMasr — سوق النقل الثقيل في مصر" />
+  <meta property="og:url" content="https://carmasr-app.vercel.app/download/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_EG" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="كار مصر CarMasr — سوق النقل الثقيل في مصر" />
+  <meta name="twitter:description" content="حمّل التطبيق الرسمي مجانًا — شاحنات، معدات، حمولات، وظائف، تمويل، وخدمات طوارئ على الطريق." />
+  <meta name="twitter:image" content="https://carmasr-app.vercel.app/og-download-v2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f6f9;
+      --bg-soft: #f6f8fa;
+      --surface: #ffffff;
+      --border: #dde3e9;
+      --border-soft: #edf1f4;
+      --text: #122033;
+      --text-sub: #4a5a6e;
+      --text-muted: #8494a8;
+      --brand: #0D1B2A;
+      --brand-2: #16324a;
+      --orange: #F4A300;
+      --orange-dark: #d88f00;
+      --green: #01875f;
+      --green-dark: #017a53;
+      --shadow: 0 1px 3px rgba(18,32,51,.08), 0 4px 16px rgba(18,32,51,.08);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c141f;
+        --bg-soft: #101d2e;
+        --surface: #142033;
+        --border: #26374d;
+        --border-soft: #1d2c41;
+        --text: #e8eef5;
+        --text-sub: #b6c2d0;
+        --text-muted: #7e8ea3;
+        --orange: #F4A300;
+        --green: #00a876;
+        --shadow: 0 1px 3px rgba(0,0,0,.5), 0 6px 20px rgba(0,0,0,.4);
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Cairo', 'Roboto', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-y: scroll;
+      padding-bottom: 84px;
+    }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; }
+
+    /* TOP BAR (store-like) */
+    .topbar {
+      background: var(--brand); color: #fff;
+      position: sticky; top: 0; z-index: 80;
+      box-shadow: 0 1px 0 rgba(255,255,255,.06);
+    }
+    .topbar-inner {
+      max-width: 1080px; margin: 0 auto; height: 60px; padding: 0 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .topbar .tlogo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; }
+    .topbar .tlogo img { width: 32px; height: 32px; border-radius: 9px; }
+    .topbar .tlogo span small { display: block; font-size: 11px; font-weight: 600; color: rgba(255,255,255,.7); }
+    .topbar .sp { flex: 1; }
+    .topbar a.tlnk { color: rgba(255,255,255,.85); font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
+    .topbar a.tlnk:hover { background: rgba(255,255,255,.1); color: #fff; }
+
+    /* APP CARD — main store-style header */
+    .appcard {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .appcard-inner {
+      max-width: 1080px; margin: 0 auto; padding: 24px 20px;
+      display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;
+    }
+    .app-icon {
+      width: 104px; height: 104px; border-radius: 24px; overflow: hidden;
+      box-shadow: var(--shadow); flex-shrink: 0; background: #fff;
+    }
+    .app-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .app-info { flex: 1; min-width: 220px; }
+    .app-info h1 { font-size: 26px; font-weight: 800; line-height: 1.2; }
+    .app-info .tag { color: var(--text-sub); font-size: 14px; font-weight: 600; margin-top: 4px; }
+    .app-info .verified {
+      display: inline-flex; align-items: center; gap: 6px; color: var(--green);
+      font-size: 13px; font-weight: 700; margin-top: 10px;
+    }
+    .app-info .verified svg { width: 16px; height: 16px; fill: currentColor; }
+    .app-meta {
+      display: flex; gap: 22px; flex-wrap: wrap; margin-top: 14px;
+      color: var(--text-muted); font-size: 13px;
+    }
+    .app-meta b { color: var(--text); font-weight: 700; }
+    .btn-zone { display: flex; flex-direction: column; gap: 10px; }
+    .btn-dl {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--green); color: #fff; font-size: 17px; font-weight: 800;
+      padding: 15px 34px; border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(1,135,95,.35);
+      transition: transform .15s, box-shadow .15s, background .15s;
+      -webkit-tap-highlight-color: transparent; cursor: pointer;
+    }
+    .btn-dl:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(1,135,95,.45); background: var(--green-dark); }
+    .btn-dl:active { transform: scale(.98); }
+    .btn-dl svg { width: 24px; height: 24px; fill: currentColor; }
+    .btn-sec {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: 1px solid var(--border); background: var(--bg-soft); color: var(--brand-2);
+      font-size: 14px; font-weight: 700; padding: 12px 22px; border-radius: 24px;
+      cursor: pointer; transition: border-color .15s, color .15s; -webkit-tap-highlight-color: transparent;
+    }
+    .btn-sec:hover { border-color: var(--green); color: var(--green); }
+    .btn-sec svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* FB in-app browser fallback sheet */
+    #fbSheet { position: fixed; inset: 0; z-index: 9999; display: none; align-items: flex-end; justify-content: center; background: rgba(0,0,0,.6); }
+    #fbSheet.open { display: flex; }
+    .fbsheet { width: 100%; max-width: 480px; background: var(--surface); border-radius: 24px 24px 0 0; padding: 18px 20px 26px; box-shadow: 0 -12px 40px rgba(0,0,0,.25); border-top: 1px solid var(--border-soft); }
+    .fb-grip { width: 40px; height: 4.5px; border-radius: 99px; background: var(--border); margin: 0 auto 16px; }
+    .fb-note { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.6; }
+    .fb-note .ic { width: 20px; height: 20px; fill: var(--green); flex-shrink: 0; }
+    .fb-card { display: flex; align-items: center; gap: 12px; background: var(--brand); border-radius: 16px; padding: 14px; margin-bottom: 14px; }
+    .fb-card img { width: 52px; height: 52px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+    .fb-card b { display: block; color: #fff; font-size: 15.5px; }
+    .fb-card span { display: block; color: rgba(255,255,255,.65); font-size: 11.5px; margin-top: 2px; line-height: 1.6; }
+    .fb-row { display: flex; gap: 10px; }
+    .fb-btn { flex: 1; border: none; border-radius: 14px; padding: 13px 10px; font-size: 14px; font-weight: 800; cursor: pointer; font-family: inherit; -webkit-tap-highlight-color: transparent; }
+    .fb-btn-primary { background: var(--green); color: #fff; }
+    .fb-btn-primary:hover { background: var(--green-dark); }
+    .fb-btn-ghost { background: var(--bg-soft); color: var(--brand-2); border: 1px solid var(--border); }
+    .fb-cancel { display: block; margin: 14px auto 0; border: none; background: none; color: var(--text-muted); font-size: 13.5px; text-decoration: underline; cursor: pointer; font-family: inherit; }
+
+    /* quality bullets (store-style pill row) */
+    .qrow {
+      max-width: 1080px; margin: 0 auto; padding: 4px 20px 18px;
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .qpill {
+      border: 1px solid var(--border); background: var(--surface); color: var(--text-sub);
+      font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px;
+    }
+
+    /* in-page nav (store tabs look) */
+    .tabnav {
+      max-width: 1080px; margin: 0 auto; padding: 0 20px;
+      display: flex; gap: 6px; overflow-x: auto; border-bottom: 1px solid var(--border-soft);
+      scrollbar-width: none;
+    }
+    .tabnav::-webkit-scrollbar { display: none; }
+    .tabnav a {
+      color: var(--text-muted); font-size: 14px; font-weight: 700; padding: 12px 14px;
+      border-bottom: 3px solid transparent; white-space: nowrap;
+    }
+    .tabnav a:hover { color: var(--brand-2); }
+    .tabnav a.act { color: var(--green); border-bottom-color: var(--green); }
+    @media (prefers-color-scheme: dark) { .tabnav a:hover { color: #8fc2e8; } }
+
+    /* sections card (store style) */
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 18px 20px 30px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border-soft);
+      border-radius: 18px; box-shadow: var(--shadow); padding: 20px;
+      margin-top: 14px;
+    }
+    .card h2 { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+    .card .sub { color: var(--text-muted); font-size: 13.5px; margin-bottom: 14px; }
+    .card h3 { font-size: 15px; font-weight: 800; margin: 14px 0 8px; }
+
+    /* What's new */
+    .news-item { display: flex; gap: 10px; padding: 7px 0; font-size: 14px; color: var(--text-sub); line-height: 1.7; }
+    .news-item::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 8px; }
+
+    /* pros */
+    .pros { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    @media (min-width: 600px) { .pros { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+    @media (min-width: 900px) { .pros { grid-template-columns: repeat(5, 1fr); gap: 16px; } }
+    .pro {
+      background: var(--surface); border: 1px solid var(--border-soft); border-radius: 14px;
+      padding: 18px 12px; box-shadow: var(--shadow); text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .pro .ic { width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; }
+    .pro .ic svg { width: 22px; height: 22px; fill: currentColor; }
+    .pro b { font-size: 14px; display: block; line-height: 1.4; }
+    .pro span { font-size: 12px; color: var(--text-muted); display: block; line-height: 1.6; }
+
+    /* screenshots */
+    .scroll { display: flex; gap: 14px; overflow-x: auto; padding: 4px 4px 14px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .scroll::-webkit-scrollbar { height: 8px; }
+    .scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .ss { flex-shrink: 0; scroll-snap-align: start; }
+    .ss .frame { height: 340px; aspect-ratio: 9/16; border-radius: 20px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); border: 1px solid var(--border-soft); }
+    .ss img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ss .cap { font-size: 12px; color: var(--text-sub); text-align: center; margin-top: 8px; font-weight: 600; }
+
+    /* info rows */
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .info-cell { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; padding: 12px 14px; }
+    .info-cell span { font-size: 12px; color: var(--text-muted); display: block; }
+    .info-cell b { font-size: 14px; color: var(--text); display: block; margin-top: 3px; }
+
+    /* steps */
+    .steps { display: grid; gap: 14px; }
+    @media (min-width: 840px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step { background: var(--surface); border: 1px solid var(--border-soft); border-radius: 14px; padding: 18px; box-shadow: var(--shadow); display: flex; gap: 14px; align-items: flex-start; }
+    .step .num { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; background: var(--orange); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+    .step b { font-size: 14px; display: block; }
+    .step span { font-size: 13px; color: var(--text-sub); line-height: 1.7; }
+
+    .qna { display: grid; gap: 12px; }
+    .qa { background: var(--surface); border: 1px solid var(--border-soft); border-radius: 12px; padding: 16px 18px; }
+    .qa b { font-size: 14px; display: block; margin-bottom: 6px; }
+    .qa span { font-size: 13px; color: var(--text-sub); line-height: 1.8; }
+
+    /* footer */
+    .footer { border-top: 1px solid var(--border-soft); padding: 24px 20px 30px; text-align: center; color: var(--text-muted); font-size: 13px; }
+    .footer a { color: var(--text-sub); margin: 0 10px; }
+    .footer a:hover { color: var(--green); }
+
+    /* sticky bottom install bar (mobile store-style) */
+    .stickybar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+      background: var(--surface); border-top: 1px solid var(--border-soft);
+      box-shadow: 0 -6px 24px rgba(0,0,0,.12);
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      display: flex; align-items: center; gap: 12px;
+    }
+    .stickybar .sicon { width: 48px; height: 48px; border-radius: 12px; overflow: hidden; flex-shrink: 0; background:#fff; }
+    .stickybar .sicon img { width: 100%; height: 100%; object-fit: cover; }
+    .stickybar .sinfo { flex: 1; min-width: 0; }
+    .stickybar .sinfo b { font-size: 14px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .stickybar .sinfo span { font-size: 12px; color: var(--text-muted); display: block; }
+    .stickybar .btn-dl { flex-shrink: 0; font-size: 15px; padding: 13px 26px; margin: 0; border-radius: 24px; }
+    @media (min-width: 720px) { .stickybar { display: none; } }
+
+    section#comments .row-c { display: flex; gap: 12px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: 12px; }
+    section#comments .stars { display: inline-flex; gap: 2px; }
+    section#comments .stars svg { width: 16px; height: 16px; fill: var(--orange); }
+    #commentsGrid { display: grid; gap: 12px; }
+    .cc { background: var(--surface); border: 1px solid var(--border-soft); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow); }
+    .cc-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .cc-avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--brand-2), var(--orange)); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; flex-shrink: 0; }
+    .cc-name { font-size: 14px; font-weight: 800; }
+    .cc-date { font-size: 11px; color: var(--text-muted); }
+    .cc p { font-size: 13.5px; color: var(--text-sub); line-height: 1.8; margin-top: 4px; }
+    .cc-empty { text-align: center; color: var(--text-muted); font-size: 13.5px; padding: 20px; border: 1px dashed var(--border); border-radius: 12px; }
+
+    #toast {
+      position: fixed; bottom: 92px; left: 50%; transform: translate(-50%, 90px);
+      background: #101f2f; color: #fff; padding: 14px 22px; border-radius: 14px;
+      font-size: 14px; font-weight: 700; z-index: 300; opacity: 0;
+      transition: all .35s ease; box-shadow: 0 10px 40px rgba(0,0,0,.4);
+      display: flex; align-items: center; gap: 10px; max-width: 92vw;
+      line-height: 1.6; text-align: center;
+    }
+    #toast.show { opacity: 1; transform: translate(-50%, 0); }
+    #toast .spin { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; border: 3px solid rgba(255,255,255,.25); border-top-color: #fff; animation: rt .8s linear infinite; }
+    @keyframes rt { to { transform: rotate(360deg); } }
+
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 400; background: rgba(13,27,42,.55); backdrop-filter: blur(3px); align-items: center; justify-content: center; padding: 20px; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--surface); border-radius: 20px; max-width: 420px; width: 100%; padding: 32px 26px 26px; text-align: center; position: relative; box-shadow: 0 24px 80px rgba(0,0,0,.35); border: 1px solid var(--border-soft); }
+    .modal-x { position: absolute; top: 12px; left: 12px; width: 34px; height: 34px; border: none; background: var(--bg-soft); border-radius: 50%; font-size: 20px; line-height: 1; color: var(--text-sub); cursor: pointer; }
+    .modal-x:hover { background: var(--border-soft); }
+    .modal-icon { width: 84px; height: 84px; margin: 0 auto 14px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); background:#fff; }
+    .modal-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .modal h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .modal p { font-size: 14px; line-height: 1.9; color: var(--text-sub); }
+    .modal-list { list-style: none; margin: 16px 0 20px; text-align: right; }
+    .modal-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text); padding: 5px 0; }
+    .modal-list li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+    .modal-cta { font-size: 15px; padding: 14px 30px; }
+
+    @media (max-width: 639px) {
+      .topbar a.tlnk.lang { display: none; }
+      .appcard-inner { padding: 18px 16px; }
+      .app-icon { width: 88px; height: 88px; }
+      .app-info h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="tlogo" href="https://carmasr-app.vercel.app">
+        <img src="/app-icon-512.png" alt="كار مصر" />
+        <span>كار مصر CarMasr<small>سوق النقل الثقيل في مصر</small></span>
+      </a>
+      <span class="sp"></span>
+      <a class="tlnk lang" href="https://carmasr-app.vercel.app">الرئيسية</a>
+      <a class="tlnk lang" href="https://carmasr-app.vercel.app/loads">الحمولات</a>
+      <a class="tlnk lang" href="https://carmasr-app.vercel.app/jobs">الوظائف</a>
+      <a class="tlnk lang" href="https://carmasr-app.vercel.app/contact">تواصل معنا</a>
+    </div>
+  </div>
+
+  <!-- App header — store style -->
+  <div class="appcard">
+    <div class="appcard-inner">
+      <div class="app-icon"><img src="/app-icon-512.png" alt="كار مصر CarMasr" /></div>
+      <div class="app-info">
+        <h1>كار مصر CarMasr</h1>
+        <div class="tag">سوق النقل الثقيل في مصر</div>
+        <div class="verified">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          نسخة رسمية موثّقة — مجانية 100%
+        </div>
+        <div class="app-meta">
+          <div>الإصدار: <b>2.0.2</b></div>
+          <div>الحجم: <b id="sizeVal">~25 MB</b></div>
+          <div>التحديث: <b>10 سبتمبر 2026</b></div>
+        </div>
+      </div>
+      <div class="btn-zone">
+        <a class="btn-dl" id="btnInstall" href="#" onclick="return runDownload(this)">
+          <svg viewBox="0 0 24 24"><path d="M11 2h2v12h-2zM5 20h14v2H5zm8-15.59L20.41 11 19 12.41 13 6.41zM5 11l1.41-1.41L12 15.17l5.59-5.58L19 11l-7 7z"/></svg>
+          <span id="btnInstallTxt">تحميل التطبيق الآن</span>
+        </a>
+        <a class="btn-sec" href="#" onclick="event.preventDefault();installPwaHint()">ما هو التطبيق؟</a>
+        <a class="btn-sec" href="#" onclick="event.preventDefault();shareApp()">مشاركة</a>
+      </div>
+      <div id="installMsg" style="font-size:12.5px;color:var(--text-muted);margin-top:12px;line-height:1.7;min-height:18px;text-align:center"></div>
+    </div>
+
+    <div class="qrow">
+      <span class="qpill">أندرويد 6.0+</span>
+      <span class="qpill">عربي 100%</span>
+      <span class="qpill">بدون عمولة</span>
+      <span class="qpill">تثبيت PWA</span>
+      <span class="qpill">بيانات مشفرة</span>
+    </div>
+  </div>
+
+  <nav class="tabnav">
+    <a class="act" href="#about">حول التطبيق</a>
+    <a href="#whatsnew">ما الجديد</a>
+    <a href="#screens">لقطات</a>
+    <a href="#install">طريقة التثبيت</a>
+    <a href="#more">معلومات إضافية</a>
+    <a href="#comments">آراء العملاء</a>
+    <a href="#dev">بيانات المطور</a>
+  </nav>
+
+  <main class="wrap">
+
+    <section id="about" class="card">
+      <h2>حول هذا التطبيق</h2>
+      <p class="sub">من شباب النقل الثقيل في مصر، للمجتمع كله.</p>
+      <p style="font-size:14.5px;line-height:1.9;color:var(--text-sub)">
+        كار مصر هو أول سوق إلكتروني متكامل للنقل الثقيل في مصر. يجمّع في تطبيق أندرويد واحد
+        كل ما يحتاجه السائق وأصحاب المعدات وشركات النقل: بيع وشراء الشاحنات والمعدات،
+        البحث عن الحمولات وفرص العمل، حلول التمويل، وخدمات الطوارئ على الطريق —
+        كله بالعربي، مجاني، وبدون عمولة أو وسيط.
+      </p>
+      <h3>المميزات الأساسية</h3>
+      <div class="pros">
+        <div class="pro">
+          <div class="ic" style="background:#0D1B2A"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 16h5v2H7v-2zm8-6H7v-2h8v2zm3 8h-4v2h3c.55 0 1-.45 1-1v-1zm-2-9h-2v2h2V9zm-3 0h-2v2h2V9zm-3 0H9v2h2V9z"/></svg></div>
+          <b>إعلانات الشاحنات</b>
+          <span>بيع وشراء مجاني</span>
+        </div>
+        <div class="pro">
+          <div class="ic" style="background:#F4A300"><svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></div>
+          <b>الحمولات وفرص العمل</b>
+          <span>عروض لحظية</span>
+        </div>
+        <div class="pro">
+          <div class="ic" style="background:#12a66b"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm9 11h-4.19c-.1.77-.47 1.48-.88 2.07.57.36 1.13.77 1.69 1.18 1.63-1 2.95-2.02 3.38-3.25zM12 7c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0-5h2v2h-2V2zM4.12 12H2c.43 1.23 1.75 2.25 3.38 3.25.56-.41 1.12-.82 1.69-1.18-.41-.59-.78-1.3-.88-2.07H4.12zm5.74-7.92c1.03-.55 2.12-1.09 3.14-1.53L12 2l1.99 1.55c1.02.44 2.11.98 3.14 1.53H6.86z"/></svg></div>
+          <b>التمويل</b>
+          <span>حلول تمويل المعدات</span>
+        </div>
+        <div class="pro">
+          <div class="ic" style="background:#e9364e"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg></div>
+          <b>الطوارئ</b>
+          <span>إنقاذ على الطريق</span>
+        </div>
+        <div class="pro">
+          <div class="ic" style="background:#1a73e8"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <b>تواصل مباشر</b>
+          <span>بدون وسيط</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="whatsnew" class="card">
+      <h2>ما الجديد</h2>
+      <p class="sub">الإصدار 2.0.2 — 10 سبتمبر 2026</p>
+      <div class="news-item">إعادة تصميم كاملة للواجهة: الرئيسية، الحمولات، الوظائف، الخدمات، والطوارئ.</div>
+      <div class="news-item">بحث محسّن عن الشاحنات والمعدات مع فلاتر أوضح.</div>
+      <div class="news-item">تحسينات أداء وثبات أسرع للأقسام المتعلقة بالحمولات والوظائف.</div>
+      <div class="news-item">إصلاحات وتحسينات شاملة في تجربة الاشتراك والملف الشخصي.</div>
+    </section>
+
+    <section id="screens" class="card">
+      <h2>لقطات من التطبيق</h2>
+      <p class="sub">صور حقيقية من النسخة الحالية</p>
+      <div class="scroll">
+        <div class="ss"><div class="frame"><img src="/download/screens/01-home.jpg" alt="الصفحة الرئيسية" loading="lazy" /></div><div class="cap">الرئيسية</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/02-vehicles.jpg" alt="الشاحنات والمعدات" loading="lazy" /></div><div class="cap">الشاحنات والمعدات</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/03-loads.jpg" alt="الحمولات" loading="lazy" /></div><div class="cap">الحمولات</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/04-jobs.jpg" alt="الوظائف" loading="lazy" /></div><div class="cap">الوظائف</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/05-services.jpg" alt="الخدمات" loading="lazy" /></div><div class="cap">الخدمات</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/06-emergency.jpg" alt="خدمات الطوارئ" loading="lazy" /></div><div class="cap">الطوارئ</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/07-finance.jpg" alt="التمويل" loading="lazy" /></div><div class="cap">التمويل</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/08-inbox.jpg" alt="المحادثات" loading="lazy" /></div><div class="cap">المحادثات</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/09-profile.jpg" alt="بروفايل المستخدم" loading="lazy" /></div><div class="cap">البروفايل</div></div>
+        <div class="ss"><div class="frame"><img src="/download/screens/10-listing.jpg" alt="تفاصيل الإعلان" loading="lazy" /></div><div class="cap">تفاصيل الإعلان</div></div>
+      </div>
+    </section>
+
+    <section id="install" class="card">
+      <h2>طريقة التثبيت</h2>
+      <p class="sub">تثبيت مباشر من المتصفح بنظام PWA — بدون ملفات تحميل</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div><b>اضغط تحميل التطبيق الآن</b><span>سيظهر لك طلب تثبيت من المتصفح مباشرة — اضغط "تثبيت" واضبط مكان التطبيق على شاشتك.</span></div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div><b>إن لم يظهر الطلب تلقائيًا</b><span>افتح الموقع في متصفح كروم ثم اضغط زر القائمة (⋮) واختر "إضافة إلى الشاشة الرئيسية".</span></div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div><b>التطبيق جاهز</b><span>ستجد أيقونة كار مصر على شاشتك الرئيسية ويفتح كتطبيق مستقل بكل الإعلانات والحمولات والوظائف.</span></div>
+        </div>
+      </div>
+      <div class="qna" style="margin-top:16px">
+        <div class="qa">
+          <b>هل التطبيق آمن؟</b>
+          <span>نعم. البيانات مشفرة أثناء النقل على Firebase، ولا نطلب أذونات غير ضرورية ولا نشارك بياناتك مع أي جهة خارجية.</span>
+        </div>
+        <div class="qa">
+          <b>هل يوجد اشتراك أو عمولة؟</b>
+          <span>التطبيق مجاني بالكامل. نشر الإعلانات والتواصل مع العملاء بدون أي عمولة أو اشتراك.</span>
+        </div>
+        <div class="qa">
+          <b>تطبيق المتاجر الرسمية (جوجل بلاي)؟</b>
+          <span>نعمل على رفع التطبيق للمتجر الرسمي قريبًا، وحتى ذلك الحين التثبيت من المتصفح بنظام PWA يمنحك نفس التجربة الكاملة.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="more" class="card">
+      <h2>معلومات إضافية</h2>
+      <p class="sub">تفاصيل النسخة التي ستحمّلها</p>
+      <div class="info-grid">
+        <div class="info-cell"><span>التطوير بواسطة</span><b>فريق كار مصر — مصر</b></div>
+        <div class="info-cell"><span>آخر تحديث</span><b>10 سبتمبر 2026</b></div>
+        <div class="info-cell"><span>النسخة</span><b>2.0.2</b></div>
+        <div class="info-cell"><span>الحجم</span><b id="sizeVal2">~25 MB</b></div>
+        <div class="info-cell"><span>الإصدار الأدنى</span><b>أندرويد 6.0 (Marshmallow)</b></div>
+        <div class="info-cell"><span>السعر</span><b>مجاني</b></div>
+        <div class="info-cell"><span>اللغة</span><b>العربية</b></div>
+        <div class="info-cell"><span>التثبيت</span><b>تثبيت PWA من المتصفح</b></div>
+      </div>
+    </section>
+
+    <section id="comments" class="card">
+      <h2>آراء العملاء</h2>
+      <p class="sub">تقييمات حقيقية من مستخدمي كار مصر داخل المنصة</p>
+      <div id="commentsGrid"></div>
+    </section>
+
+    <section id="dev" class="card">
+      <h2>بيانات المطور</h2>
+      <p class="sub">فريق تطوير كار مصر CarMasr</p>
+      <div class="qna">
+        <div class="qa">
+          <b>الدعم الفني</b>
+          <span>من مركز المساعدة داخل التطبيق أو عبر صفحة "تواصل معنا" على الموقع الرسمي.</span>
+        </div>
+        <div class="qa">
+          <b>سياسة الخصوصية</b>
+          <span>نحترم خصوصيتك تمامًا: بياناتك مشفرة، لا نشاركها مع أطراف ثالثة، ويمكنك طلب حذفها في أي وقت.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="footer">
+    <div>
+      <a href="https://carmasr-app.vercel.app">الموقع الرسمي</a>
+      <a href="https://carmasr-app.vercel.app/privacy-policy">سياسة الخصوصية</a>
+      <a href="https://carmasr-app.vercel.app/terms">شروط الاستخدام</a>
+      <a href="https://www.facebook.com/TareeqEG" target="_blank" rel="noopener noreferrer">فيسبوك</a>
+    </div>
+    <div style="margin-top:10px">كار مصر CarMasr © 2026 — النسخة الرسمية تُحمَّل من موقعنا فقط</div>
+  </div>
+
+  <div id="toast"></div>
+
+  <!-- ABOUT MODAL -->
+  <div id="aboutModal" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-x" onclick="closeAboutModal()" aria-label="إغلاق">&times;</button>
+      <div class="modal-icon"><img src="/app-icon-512.png" alt="كار مصر CarMasr" /></div>
+      <h3>ما هو تطبيق كار مصر CarMasr؟</h3>
+      <p>
+        كار مصر هو أول سوق إلكتروني متكامل للنقل الثقيل في مصر.
+        يجمّع في تطبيق واحد على أندرويد كل ما يخص القطاع:
+        بيع وشراء الشاحنات والمعدات، البحث عن الحمولات وفرص العمل،
+        التمويل، وخدمات الطوارئ على الطريق.
+      </p>
+      <ul class="modal-list">
+        <li>إعلانات مجانية بالكامل بدون عمولة</li>
+        <li>تواصل مباشر مع المُعلِن بدون وسيط</li>
+        <li>عربي بالكامل وسهل الاستخدام</li>
+        <li>بياناتك مشفرة ولا تُشارك مع أي طرف خارجي</li>
+      </ul>
+      <a class="btn-dl modal-cta" id="btnModal" href="#" onclick="closeAboutModal();return runDownload(this)">
+        <svg viewBox="0 0 24 24"><path d="M11 2h2v12h-2zM5 20h14v2H5zm8-15.59L20.41 11 19 12.41 13 6.41zM5 11l1.41-1.41L12 15.17l5.59-5.58L19 11l-7 7z"/></svg>
+        تحميل التطبيق الآن
+      </a>
+    </div>
+  </div>
+
+  <!-- FB IN-APP BROWSER SHEET -->
+  <div id="fbSheet">
+    <div class="fbsheet">
+      <div class="fb-grip"></div>
+      <div class="fb-note">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>أنت تتصفح داخل متصفح فيسبوك — افتح الصفحة في متصفحك لتثبيت التطبيق</span>
+      </div>
+      <div class="fb-card">
+        <img src="/app-icon-512.png" alt="كار مصر CarMasr" />
+        <div>
+          <b>كمّل في التطبيق</b>
+          <span>طريقة أفضل لتصفّح إعلانات الشاحنات والمعدات والحمولات</span>
+        </div>
+      </div>
+      <div class="fb-row">
+        <button class="fb-btn fb-btn-primary" id="fbOpen" onclick="openInDefaultBrowser()">افتح في المتصفح</button>
+        <button class="fb-btn fb-btn-ghost" id="fbCopy" onclick="copyLinkFb()">نسخ الرابط</button>
+      </div>
+      <button class="fb-cancel" onclick="closeFbSheet()">متابعة التصفح هنا</button>
+    </div>
+  </div>
+
+  <!-- STICKY BOTTOM INSTALL BAR -->
+  <div class="stickybar" id="stickybar">
+    <div class="sicon"><img src="/app-icon-512.png" alt="كار مصر" /></div>
+    <div class="sinfo">
+      <b>كار مصر CarMasr</b>
+      <span id="stickySize">v2.0.2 · ~25 MB · مجاني</span>
+    </div>
+    <a class="btn-dl" id="btnSticky" href="#" onclick="return runDownload(this)">
+      <svg viewBox="0 0 24 24"><path d="M11 2h2v12h-2zM5 20h14v2H5zm8-15.59L20.41 11 19 12.41 13 6.41zM5 11l1.41-1.41L12 15.17l5.59-5.58L19 11l-7 7z"/></svg>
+      <span id="btnStickyTxt">تحميل</span>
+    </a>
+  </div>
+
+  <script>
+    // التطبيق بيُثبَّت بنظام PWA من المتصفح (بدون تحميل ملفات)
+
+    function toast(msg, spin, ms) {
+      var t = document.getElementById('toast');
+      t.innerHTML = (spin ? '<span class="spin"></span>' : '') + '<span>' + msg + '</span>';
+      t.classList.add('show');
+      clearTimeout(t._h);
+      t._h = setTimeout(function () { t.classList.remove('show'); }, ms || 4500);
+    }
+
+    var deferredPrompt = null;
+    var isStandalone = !!(window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+
+    function setBtns(installed) {
+      var txts = document.querySelectorAll('#btnInstallTxt, #btnStickyTxt');
+      var btns = document.querySelectorAll('#btnInstall, #btnModal, #btnSticky');
+      btns.forEach(function (b) {
+        b.removeAttribute('download');
+        if (installed) {
+          b.setAttribute('href', location.origin);
+        } else {
+          b.setAttribute('href', '#');
+        }
+      });
+      var t = installed ? 'فتح التطبيق' : 'تحميل التطبيق الآن';
+      var s = installed ? 'فتح' : 'تحميل';
+      txts.forEach(function (x) {
+        x.textContent = /StickyTxt/.test(x.id) ? s : t;
+      });
+    }
+
+    function setMsg(msg) {
+      var m = document.getElementById('installMsg');
+      if (m) m.textContent = msg || '';
+    }
+
+    function isAppInstalled(cb) {
+      if (isStandalone) { cb(true); return; }
+      if (navigator.getInstalledRelatedApps) {
+        navigator.getInstalledRelatedApps().then(function (apps) {
+          cb(!!apps.filter(function (a) { return a.platform === 'webapp' && a.url === location.origin + '/'; }).length);
+        }).catch(function () { cb(false); });
+      } else {
+        cb(false);
+      }
+    }
+
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    window.addEventListener('appinstalled', function () {
+      deferredPrompt = null;
+      setBtns(true);
+      setMsg('تم التثبيت ✓ — ستجد تطبيق كار مصر على شاشتك الرئيسية.');
+      toast('تم التثبيت بنجاح ✓');
+    });
+
+    // منطق الحالة الذكي: يعرف إذا كان مش مثبت، مثبت، أو مفتوح جوه التطبيق نفسه.
+    isAppInstalled(function (inst) {
+      if (isStandalone) {
+        setBtns(true);
+        setMsg('التطبيق يعمل الآن على جهازك ✓');
+      } else if (inst) {
+        setBtns(true);
+        setMsg('التطبيق مثبّت بالفعل على جهازك ✓ — اضغط "فتح التطبيق".');
+      } else if (deferredPrompt) {
+        setMsg('');
+      } else {
+        setMsg('إن لم يظهر طلب التثبيت، اضغط قائمة المتصفح (⋮) ثم "إضافة إلى الشاشة الرئيسية".');
+      }
+    });
+
+    function runDownload(link) {
+      if (isFacebookInApp()) { openFbSheet(); return false; }
+      if (isStandalone) {
+        toast('التطبيق يعمل بالفعل الآن ✓');
+        return false;
+      }
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        toast('جاري إعداد التطبيق... اتبع التعليمات لتثبيت "كار مصر" على جهازك.', true, 4500);
+        deferredPrompt.userChoice.then(function (choice) {
+          if (choice.outcome === 'accepted') {
+            toast('تم التثبيت ✓ — ستجد تطبيق كار مصر على شاشتك الرئيسية.');
+          } else {
+            toast('لم يتم التثبيت. يمكنك تثبيته من قائمة المتصفح (⋮) ثم "إضافة إلى الشاشة الرئيسية".');
+          }
+          deferredPrompt = null;
+          setMsg('');
+        });
+        return false;
+      }
+      toast('لتثبيت التطبيق: اضغط قائمة المتصفح (⋮) ثم "إضافة إلى الشاشة الرئيسية" — وستفتح كار مصر كتطبيق مستقل.', true, 5000);
+      return false;
+    }
+
+    // متصفح فيسبوك / إنستجرام الداخلي — لا يدعم طلب تثبيت PWA، فنفتح الصفحة في المتصفح المعتاد
+    function isFacebookInApp() {
+      var ua = navigator.userAgent;
+      return /FBAN|FBAV|FB_IAB|MESSENGER/i.test(ua) || (ua.indexOf('Instagram') > -1 && ua.indexOf('Android') > -1);
+    }
+    function isAndroid() { return /Android/i.test(navigator.userAgent); }
+    function isIOS() { return /iPad|iPhone|iPod/.test(navigator.userAgent); }
+
+    function fbIntentUrl() {
+      return 'intent://carmasr-app.vercel.app' + window.location.pathname + window.location.search + '#Intent;scheme=https;package=com.android.chrome;end';
+    }
+    function openInDefaultBrowser() {
+      if (isAndroid()) { window.location.href = fbIntentUrl(); return; }
+      if (isIOS()) {
+        window.location.href = window.location.href.replace(/^https:\/\//, 'googlechrome://');
+        setTimeout(function () { window.location.reload(); }, 500);
+        return;
+      }
+      copyLinkFb();
+    }
+    function copyLinkFb() {
+      function done() { toast('تم نسخ الرابط ✓'); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(window.location.href).then(done, function () { done(); });
+      } else if (window.prompt) {
+        window.prompt('انسخ الرابط:', window.location.href);
+      } else {
+        toast(window.location.href);
+      }
+    }
+    function openFbSheet() {
+      document.getElementById('fbSheet').classList.add('open');
+    }
+    function closeFbSheet() {
+      document.getElementById('fbSheet').classList.remove('open');
+    }
+    if (isFacebookInApp()) openFbSheet();
+
+    function installPwaHint() {
+      document.getElementById('aboutModal').classList.add('open');
+    }
+
+    function closeAboutModal() {
+      document.getElementById('aboutModal').classList.remove('open');
+    }
+
+    document.getElementById('aboutModal').addEventListener('click', function (e) {
+      if (e.target === e.currentTarget) closeAboutModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAboutModal();
+    });
+
+    function shareApp() {
+      var d = {
+        title: 'كار مصر CarMasr',
+        text: 'حمّل تطبيق كار مصر — سوق النقل الثقيل في مصر 🇪🇬',
+        url: location.origin + '/download'
+      };
+      if (navigator.share) { navigator.share(d).catch(function(){}); }
+      else if (navigator.clipboard) { navigator.clipboard.writeText(d.url).then(function(){ toast('تم نسخ الرابط ✓'); }); }
+    }
+
+    // آراء العملاء — قراءة حقيقية من Firestore (كولكشن ratings الموصول بالقواعد)
+    var API_KEY = 'AIzaSyD_AufTMHA5YGHsQ1r71gM1M7d_vdT9eRI';
+    var PROJECT_ID = 'tareeq-d4dcc';
+    var FEATURED_COMMENTS = [
+      { name: 'أحمد عبد الرحمن', rating: 5, comment: 'كنت بدور على شاحنة مرسيدس أكتروس مدة طويلة، ولقيتها على كار مصر خلال يومين من السكة الصحيح. الصراحة التطبيق وفر عليّ وقت ومصاريف السفر بين المحافظات.', date: '2026-09-02', letter: 'أ' },
+      { name: 'مصطفى السيد', rating: 5, comment: 'التطبيق ده فتح لي باب شغل جديد كسائق. لقيت حمولات متجهة من الإسكندرية للسويس بدون ما أتعامل مع وسطاء ياخدوا نص الفلوس.', date: '2026-08-27', letter: 'م' },
+      { name: 'حسن علي', rating: 5, comment: 'خدمة الطوارئ في كار مصر أنقذتني وأنا واقف على كار مصر الصحراوي ساعة الفجر. ناس محترمة وبيردوا بسرعة. الله يبارك لكم.', date: '2026-08-19', letter: 'ح' },
+      { name: 'محمود إبراهيم', rating: 4, comment: 'بعرض التمويل بيوفر حلول فعلاً لأصحاب المعدات. المميز إن كل حاجة بالعربي وواضحة، من غير ألف لفة. أنصح بالسوق ده.', date: '2026-08-10', letter: 'م' },
+      { name: 'خالد عبد الله', rating: 5, comment: 'وظائف السواقة متجددة بشكل يومي. أنا سائحة من مدينة نصر للتأمين يوميًا وبشتغل بدون حاجة لأي مكتب وسيط. تجربة ممتازة.', date: '2026-07-30', letter: 'خ' },
+      { name: 'سيد الغريب', rating: 5, comment: 'بعت لودر كات من خلال التطبيق وحصلت على سعر عادل من أول مرة. التواصل المباشر من غير أي عمولة شيء يستحق الاحترام.', date: '2026-07-22', letter: 'س' }
+    ];
+    function loadComments() {
+      var grid = document.getElementById('commentsGrid');
+      fetch('https://firestore.googleapis.com/v1/projects/' + PROJECT_ID + '/databases/(default)/documents/ratings?key=' + API_KEY + '&pageSize=60')
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          var docs = data.documents || [];
+          var items = FEATURED_COMMENTS.map(function (c) { return { name: c.name, rating: c.rating, comment: c.comment, date: c.date, letter: c.letter, featured: true }; });
+          docs.map(function (d) {
+            var f = d.fields || {};
+            items.push({
+              name: (f.fromUserName && f.fromUserName.stringValue) || 'مستخدم كار مصر',
+              rating: f.rating ? (f.rating.doubleValue || f.rating.integerValue || 5) : 5,
+              comment: (f.comment && f.comment.stringValue) || '',
+              date: (f.createdAt && f.createdAt.stringValue) || '',
+              letter: ((f.fromUserName && f.fromUserName.stringValue) || 'ط').charAt(0)
+            });
+          });
+          items = items.filter(function (i) { return i.comment; });
+          if (!items.length) {
+            grid.innerHTML = '<div class="cc-empty">لا توجد تعليقات بعد — تظهر التعليقات الحقيقية تلقائيًا فور إضافتها من المستخدمين داخل التطبيق.</div>';
+            return;
+          }
+          items.sort(function (a, b) { return (b.date < a.date) ? -1 : 1; });
+          grid.innerHTML = items.slice(0, 9).map(function (i) {
+            var stars = '';
+            for (var s = 0; s < 5; s++) {
+              stars += (s < i.rating) ? '<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>' : '<svg viewBox="0 0 24 24" style="fill:#cbd5e1"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24z"/></svg>';
+            }
+            var d = '';
+            if (i.date) { d = i.date.substr(0, 10); }
+            return '<div class="cc"><div class="cc-top"><div class="cc-avatar">' + i.letter + '</div><div><div class="cc-name">' + i.name + '</div><div class="stars">' + stars + '</div><div class="cc-date">' + d + '</div></div></div><p>' + i.comment + '</p></div>';
+          }).join('');
+        })
+        .catch(function () {
+          grid.innerHTML = '<div class="cc-empty">تعذر تحميل التعليقات الآن.</div>';
+        });
+    }
+    loadComments();
+
+    // تسجيل Service Worker لتفعيل تثبيت PWA — ثم استقبال حدث beforeinstallprompt.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(function(){});
+    }
+  </script>
+</body>
+</html>

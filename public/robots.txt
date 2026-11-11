@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /profile
+Disallow: /favorites
+Disallow: /inbox
+Disallow: /chat
+
+Sitemap: https://carmasr-app.vercel.app/sitemap.xml

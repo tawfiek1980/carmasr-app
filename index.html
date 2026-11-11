@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=1" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=1" />
+    <link rel="apple-touch-icon" href="/app-icon-512.png?v=1" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="https://carmasr-app.vercel.app" />
+
+    <!-- Critical meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#0B1E3A" />
+    <meta name="description" content="كار مصر CarMasr — سوق السيارات الملاكي في مصر: بيع وشراء سيارات مستعملة وجديدة، إيجار، قطع غيار، معارض، وتقسيط. أضف إعلانك مجانًا في دقيقة." />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="سيارات للبيع, سيارات مستعملة, سيارات جديدة, إيجار سيارات, قطع غيار سيارات, معارض سيارات, تقسيط سيارات, سوق السيارات, كار مصر, CarMasr" />
+    <meta name="author" content="كار مصر CarMasr" />
+    <meta name="application-name" content="كار مصر CarMasr" />
+    <meta name="apple-mobile-web-app-title" content="كار مصر" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="كار مصر CarMasr — سوق السيارات الملاكي في مصر" />
+    <meta property="og:description" content="بيع وشراء وإيجار السيارات وقطع الغيار في مكان واحد. أضف إعلانك مجانًا ووصّل لعملاء جادين." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://carmasr-app.vercel.app" />
+    <meta property="og:image" content="https://carmasr-app.vercel.app/og-image.jpg?v=1" />
+    <meta property="og:image:secure_url" content="https://carmasr-app.vercel.app/og-image.jpg?v=1" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="كار مصر CarMasr — سوق السيارات الملاكي في مصر" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta property="og:site_name" content="كار مصر CarMasr" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="كار مصر CarMasr — سوق السيارات الملاكي في مصر" />
+    <meta name="twitter:description" content="بيع وشراء وإيجار السيارات وقطع الغيار في مكان واحد. أضف إعلانك مجانًا." />
+    <meta name="twitter:image" content="https://carmasr-app.vercel.app/og-image.jpg?v=1" />
+    <meta name="twitter:image:alt" content="كار مصر CarMasr — سوق السيارات الملاكي في مصر" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://firestore.googleapis.com" />
+    <link rel="preconnect" href="https://identitytoolkit.googleapis.com" />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="/fonts/cairo-arabic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/cairo-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Almarai:wght@400;700;800&family=Changa:wght@400;600;700;800&family=El+Messiri:wght@400;600;700&family=Reem+Kufi:wght@400;600;700&family=Lalezar&family=Rakkas&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Lemonada:wght@400;600;700&family=Marhey:wght@400;600;700&family=Kufam:wght@400;600;700&family=Noto+Kufi+Arabic:wght@400;700;900&display=swap" />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "كار مصر CarMasr",
+      "url": "https://carmasr-app.vercel.app",
+      "description": "سوق السيارات الملاكي في مصر — بيع وشراء وإيجار وقطع غيار",
+      "inLanguage": "ar",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://carmasr-app.vercel.app/vehicles?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <title>كار مصر CarMasr — سوق السيارات الملاكي: بيع وشراء وإيجار وقطع غيار</title>
+
+    <!-- Apply the saved/system theme before first paint -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('carmasr_theme') || localStorage.getItem('tareeq_theme');
+          var dark = saved === 'dark' ||
+            (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
