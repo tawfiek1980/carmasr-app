@@ -49,7 +49,7 @@ interface Props {
 }
 
 const accountTypes: { value: User["type"]; label: string }[] = [
-  { value: "individual", label: "مستخدم" },
+  { value: "individual", label: "فرد" },
   { value: "seller", label: "بائع" },
   { value: "driver", label: "سائق" },
   { value: "dealer", label: "معرض" },

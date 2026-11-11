@@ -14,7 +14,7 @@ import { syncAdminClaim } from '../lib/userService';
 import type { User as UserType } from '../types';
 
 const userTypes = [
-  { id: 'individual', name: 'مستخدم' },
+  { id: 'individual', name: 'فرد' },
   { id: 'seller', name: 'بائع' },
   { id: 'driver', name: 'سائق' },
   { id: 'dealer', name: 'معرض' },

@@ -132,7 +132,7 @@ export default function Profile() {
   const maxTrend = Math.max(1, ...(stats?.trend.map(t => t.impressions) || [1]));
 
     const userTypeLabels: Record<string, string> = {
-    individual: 'مستخدم',
+    individual: 'فرد',
     seller: 'بائع',
     driver: 'سائق',
     dealer: 'معرض',
