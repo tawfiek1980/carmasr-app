@@ -123,10 +123,10 @@ export const updateUser = async (
 ): Promise<void> => {
   const ref = doc(db, "users", id);
 
-  await updateDoc(ref, {
+  await setDoc(ref, {
     ...data,
     updatedAt: serverTimestamp(),
-  });
+  }, { merge: true });
 };
 
 export const userExists = async (

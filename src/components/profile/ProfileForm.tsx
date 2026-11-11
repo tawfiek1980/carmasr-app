@@ -137,12 +137,12 @@ export default function ProfileForm({ saving, setSaving }: Props) {
       return;
     }
 
-    if (type === "individual" && (!drivingType || !experienceYears)) {
+    if ((type === "individual" || type === "driver") && (!drivingType || !experienceYears)) {
       alert("من فضلك أكمل بيانات السائق (نوع القيادة وسنوات الخبرة).");
       return;
     }
 
-    if (["dealer", "company", "workshop", "finance"].includes(type) && !businessName) {
+    if (["dealer", "seller", "workshop", "finance"].includes(type) && !businessName) {
       alert("من فضلك أدخل اسم النشاط/الشركة.");
       return;
     }
@@ -164,9 +164,9 @@ export default function ProfileForm({ saving, setSaving }: Props) {
         avatar,
         currentLocation,
         type,
-        drivingType: type === "individual" ? drivingType : "",
-        experienceYears: type === "individual" ? Number(experienceYears) : 0,
-        businessName: ["dealer", "company", "workshop", "finance"].includes(type) ? businessName : "",
+        drivingType: (type === "individual" || type === "driver") ? drivingType : "",
+        experienceYears: (type === "individual" || type === "driver") ? Number(experienceYears) : 0,
+        businessName: ["dealer", "seller", "workshop", "finance"].includes(type) ? businessName : "",
         specialization: type === "workshop" ? specialization : "",
       };
 
@@ -182,7 +182,7 @@ export default function ProfileForm({ saving, setSaving }: Props) {
       navigate("/profile");
     } catch (error) {
       console.error(error);
-      alert("حدث خطأ أثناء الحفظ");
+      alert("خطأ أثناء الحفظ: " + ((error as any)?.message || String(error)));
     } finally {
       setSaving(false);
     }
