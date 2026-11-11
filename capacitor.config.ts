@@ -1,14 +1,14 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.tareeq.app',
-  appName: 'Tareeq',
+  appId: 'com.carmasr.app',
+  appName: 'كار مصر',
   webDir: 'dist',
   server: {
-    url: 'https://tareeq-eg.vercel.app',
+    url: 'https://carmasr-app.vercel.app',
   },
   android: {
-    backgroundColor: '#0D1B2A',
+    backgroundColor: '#0B1E3A',
   },
   plugins: {
     FirebaseAuthentication: {
@@ -16,7 +16,7 @@ const config: CapacitorConfig = {
       skipNativeAuth: true,
       config: {
         google: {
-          serverClientId: "725660784165-9dvgvdshg3epjbmnc83kaao80brakenh.apps.googleusercontent.com",
+          serverClientId: "218607261985-eo1sstr3om7rqgbdovq04h2o4qsdmjlt.apps.googleusercontent.com",
         },
       },
     },

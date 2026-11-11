@@ -6,14 +6,14 @@ if (keystorePropsFile.exists()) {
     keystorePropsFile.withReader('UTF-8') { keystoreProps.load(it) }
 }
 
-def storePath = System.getenv("TAREEQ_STORE_FILE") ?: keystoreProps["storeFile"] ?: "keystore/tareeq-release-key.jks"
+def storePath = System.getenv("CARMASR_STORE_FILE") ?: keystoreProps["storeFile"] ?: "keystore/carmasr-release-key.jks"
 def resolvedStoreFile = new File(storePath).isAbsolute() ? storePath : rootProject.file(storePath).path
 
 android {
-    namespace = "com.tareeq.app"
+    namespace = "com.carmasr.app"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.tareeq.app"
+        applicationId "com.carmasr.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 9
@@ -26,14 +26,14 @@ android {
     signingConfigs {
         release {
             storeFile file(resolvedStoreFile)
-            storePassword System.getenv("TAREEQ_STORE_PASSWORD") ?: keystoreProps["storePassword"]
-            keyAlias System.getenv("TAREEQ_KEY_ALIAS") ?: keystoreProps["keyAlias"] ?: "tareeq"
-            keyPassword System.getenv("TAREEQ_KEY_PASSWORD") ?: keystoreProps["keyPassword"]
+            storePassword System.getenv("CARMASR_STORE_PASSWORD") ?: keystoreProps["storePassword"]
+            keyAlias System.getenv("CARMASR_KEY_ALIAS") ?: keystoreProps["keyAlias"] ?: "carmasr"
+            keyPassword System.getenv("CARMASR_KEY_PASSWORD") ?: keystoreProps["keyPassword"]
         }
     }
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = "Tareeq-v${defaultConfig.versionName}-${variant.name}.apk"
+            outputFileName = "CarMasr-v${defaultConfig.versionName}-${variant.name}.apk"
         }
     }
     buildTypes {

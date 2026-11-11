@@ -1,4 +1,4 @@
-package com.tareeq.app;
+package com.carmasr.app;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -53,3 +53,4 @@ public class MainActivity extends BridgeActivity {
         bridge.getWebView().post(() -> bridge.getWebView().loadUrl(finalUrl));
     }
 }
+

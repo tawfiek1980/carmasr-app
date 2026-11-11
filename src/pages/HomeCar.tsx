@@ -413,7 +413,7 @@ function FeaturedCars() {
   return (
     <section className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg sm:text-xl font-extrabold text-text">سيارات مميزة</h2>
+        <h2 className="text-lg sm:text-xl font-extrabold text-text">اكتشف السيارات</h2>
         <Link to="/listings" className="text-orange text-sm font-bold flex items-center gap-1 hover:underline">
           عرض الكل <ChevronLeft className="w-4 h-4" />
         </Link>
@@ -431,11 +431,9 @@ function FeaturedCars() {
           <Link to="/post-listing" className="inline-block mt-3 text-orange font-bold hover:underline">أضف أول إعلان ←</Link>
         </div>
       ) : (
-        <div className="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((l) => (
-            <div key={l.id} className="snap-start">
-              <CarCard listing={l} />
-            </div>
+            <CarCard key={l.id} listing={l} />
           ))}
         </div>
       )}

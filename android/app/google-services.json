@@ -1,126 +1,33 @@
 {
   "project_info": {
-    "project_number": "725660784165",
-    "project_id": "tareeq-d4dcc",
-    "storage_bucket": "tareeq-d4dcc.firebasestorage.app"
+    "project_number": "218607261985",
+    "project_id": "carmasr-app",
+    "storage_bucket": "carmasr-app.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:725660784165:android:3fee7ac776e04cca7811cc",
+        "mobilesdk_app_id": "1:218607261985:android:ef02476ba0514e961c8660",
         "android_client_info": {
-          "package_name": "com.tareeq.app"
+          "package_name": "com.carmasr.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "725660784165-5m0jeokn87rlrmi2j4njk92hdcardqi7.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tareeq.app",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
-          }
-        },
-        {
-          "client_id": "725660784165-6f0ibbnfibusv34qibiea2e2dmgv2iev.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tareeq.app",
-            "certificate_hash": "c3f1dbf287ed4ea366f3c5d061b555c35302a559"
-          }
-        },
-        {
-          "client_id": "725660784165-i7u0rn2fcq97c09lqrso78kvt5khphk4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tareeq.app",
-            "certificate_hash": "77435706d0f105d25d74ccdec8f5d20f64a567b8"
-          }
-        },
-        {
-          "client_id": "725660784165-nlkqud1uef2djqrltu50nn71a08gj1oe.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tareeq.app",
-            "certificate_hash": "a108f888d71cc17cac9ed2796f8fb3376895ed75"
-          }
-        },
-        {
-          "client_id": "725660784165-o820o8f2glh42m8f9ibgur1q8dad542f.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tareeq.app",
-            "certificate_hash": "e8671b805ae42098e351709cca1426e85f138666"
-          }
-        },
-        {
-          "client_id": "725660784165-9dvgvdshg3epjbmnc83kaao80brakenh.apps.googleusercontent.com",
+          "client_id": "218607261985-eo1sstr3om7rqgbdovq04h2o4qsdmjlt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBCl9kOWTqWx2emPhi_tAfhwzjXz53B3jo"
+          "current_key": "AIzaSyBE7CCe_i--63mf0ksY0DwI2TqLYAiX43c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "725660784165-9dvgvdshg3epjbmnc83kaao80brakenh.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:725660784165:android:f3ae941cdde316b87811cc",
-        "android_client_info": {
-          "package_name": "com.tareeq.marketplace"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "725660784165-5eihllb77f2ajkfgr114d7prf3fjs2h9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tareeq.marketplace",
-            "certificate_hash": "a108f888d71cc17cac9ed2796f8fb3376895ed75"
-          }
-        },
-        {
-          "client_id": "725660784165-ho1q743ns9sh1sp3dtf0g9kll5jft3rt.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tareeq.marketplace",
-            "certificate_hash": "77435706d0f105d25d74ccdec8f5d20f64a567b8"
-          }
-        },
-        {
-          "client_id": "725660784165-sn2heus5qohh043q8sjvbbrn5mj9k7pj.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tareeq.marketplace",
-            "certificate_hash": "e8671b805ae42098e351709cca1426e85f138666"
-          }
-        },
-        {
-          "client_id": "725660784165-9dvgvdshg3epjbmnc83kaao80brakenh.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBCl9kOWTqWx2emPhi_tAfhwzjXz53B3jo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "725660784165-9dvgvdshg3epjbmnc83kaao80brakenh.apps.googleusercontent.com",
+              "client_id": "218607261985-eo1sstr3om7rqgbdovq04h2o4qsdmjlt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
