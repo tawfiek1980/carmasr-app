@@ -1,4 +1,5 @@
 import admin from 'firebase-admin';
+import { getFirestore } from 'firebase-admin/firestore';
 
 export function getKey() {
   const raw = process.env.FIREBASE_SERVICE_ACCOUNT;
@@ -15,20 +16,20 @@ export function getKey() {
 
 export function initAdmin() {
   const key = getKey();
-  if (!key) throw new Error('مفاتيح Firebase غير مضبوطة');
+  if (!key) throw new Error('Firebase service account missing');
   if (!admin.apps.length) admin.initializeApp({ credential: admin.credential.cert(key) });
-  return admin;
+  return admin.app();
 }
 
 export function getDb() {
-  return initAdmin().firestore();
+  return getFirestore(initAdmin(), 'default');
 }
 
 export async function verifyUser(req) {
   try {
     const token = (req.headers.authorization || '').replace(/^Bearer\s+/i, '');
     if (!token) return null;
-    return await initAdmin().auth().verifyIdToken(token);
+    return await admin.auth().verifyIdToken(token);
   } catch {
     return null;
   }
