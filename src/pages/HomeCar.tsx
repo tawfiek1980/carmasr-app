@@ -24,10 +24,7 @@ function HomeHeader() {
       <div className="max-w-[1280px] mx-auto flex items-center justify-between h-[72px] px-4 sm:px-6 gap-3">
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
           <img src="/app-icon-128.png" alt="كار مصر" className="h-11 w-11 rounded-2xl object-cover" />
-          <div className="flex flex-col">
-            <span className="text-text font-extrabold text-xl leading-none">كار مصر</span>
-            <span className="text-orange-700 text-[11px] font-bold leading-none tracking-wider">CarMasr</span>
-          </div>
+          <span className="text-text font-extrabold text-xl leading-none">كار مصر</span>
         </Link>
 
         <div className="hidden md:flex flex-1 max-w-xl mx-4">
@@ -143,7 +140,7 @@ function HeroSearch() {
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold border border-white/20">
             <Sparkles className="w-3.5 h-3.5 text-orange" />
-            سوق السيارات الملاكي №1 في مصر
+            سوق السيارات الملاكي في مصر
           </span>
           <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
             ابحث عن سيارتك المثالية

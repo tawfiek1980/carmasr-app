@@ -39,6 +39,17 @@ const jobTypesList = [
 ];
 
 const subcategoriesByCategory: Record<string, { id: string; name: string }[]> = {
+  cars: [
+    { id: 'sedan', name: 'سيدان' },
+    { id: 'suv', name: 'SUV / كروس اوفر' },
+    { id: 'hatchback', name: 'هاتشباك' },
+    { id: 'pickup', name: 'بيك أب' },
+    { id: 'coupe', name: 'كوبيه' },
+    { id: 'convertible', name: 'مكشوفة' },
+    { id: 'van', name: 'فان / عائلية' },
+    { id: 'wagon', name: 'واجن' },
+    { id: 'other', name: 'أخرى' },
+  ],
   trucks: [
     { id: 'half-trucks', name: 'نصف نقل' },
     { id: 'quarter-trucks', name: 'ربع نقل' },
@@ -112,9 +123,10 @@ export default function PostListing() {
 
   // Vehicle form
   const [vf, setVf] = useState({
-    title: "", description: "", price: "", category: "trucks",
+    title: "", description: "", price: "", category: "cars",
     subcategory: "", governorate: "", location: "",
     year: "", brand: "", model: "", condition: "used",
+    fuel: "", transmission: "", mileage: "", color: "", engineSize: "",
     images: [] as string[],
     videoUrl: "",
     listingType: "sell" as "sell" | "rent",
@@ -233,6 +245,11 @@ export default function PostListing() {
         if (vf.brand)       listingData.brand = vf.brand;
         if (vf.model)       listingData.model = vf.model;
         if (vf.year)        listingData.year  = Number(vf.year);
+        if (vf.fuel)        listingData.fuel = vf.fuel;
+        if (vf.transmission) listingData.transmission = vf.transmission;
+        if (vf.mileage)     listingData.mileage = Number(vf.mileage);
+        if (vf.color)       listingData.color = vf.color;
+        if (vf.engineSize)  listingData.engineSize = vf.engineSize;
         if (vf.videoUrl)    listingData.videoUrl = vf.videoUrl;
         // نوع حقل الإيجار
         if (vf.listingType === "rent") {
@@ -356,7 +373,7 @@ export default function PostListing() {
           : "تم نشر إعلانك بنجاح.")}
       </p>
       <div className="flex gap-3">
-        <button onClick={() => { setDone(false); setVf({ title:"",description:"",price:"",category:"trucks",subcategory:"",governorate:"",location:"",year:"",brand:"",model:"",condition:"used",images:[],videoUrl:"",listingType:"sell",priceType:"fixed",dailyPrice:"",weeklyPrice:"",monthlyPrice:"",deposit:"",availableFrom:"",availableTo:"",insuranceRequired:false,contactPhone:"",whatsappPhone:"",advertiserName:"" }); }}
+        <button onClick={() => { setDone(false); setVf({ title:"",description:"",price:"",category:"cars",subcategory:"",governorate:"",location:"",year:"",brand:"",model:"",condition:"used",fuel:"",transmission:"",mileage:"",color:"",engineSize:"",images:[],videoUrl:"",listingType:"sell",priceType:"fixed",dailyPrice:"",weeklyPrice:"",monthlyPrice:"",deposit:"",availableFrom:"",availableTo:"",insuranceRequired:false,contactPhone:"",whatsappPhone:"",advertiserName:"" }); }}
           className="border border-border text-text px-6 py-3 rounded-xl font-semibold hover:border-orange transition-colors">
           إعلان جديد
         </button>
@@ -402,13 +419,13 @@ export default function PostListing() {
                   onChange={e => setVf({...vf,title:e.target.value})}
                   className={inp} placeholder={type === "spare-part" ? "مثال: طقم فرامل مرسيدس أكتروس أصلي" : "مثال: شاحنة فولفو 2020"} />
               </Field>
-              {type === "vehicle" && (
-                <Field label="الفئة">
-                  <CustomSelect value={vf.category} onChange={e => setVf({...vf,category:e.target.value, subcategory: ""})}>
-                    <option value="trucks">شاحنات</option>
-                    <option value="equipment">معدات ثقيلة</option>
-                    <option value="trailers">مقطورات</option>
-                    <option value="buses">حافلات</option>
+{type === "vehicle" && (
+                <Field label="نوع الهيكل">
+                  <CustomSelect value={vf.subcategory} onChange={e => setVf({...vf,subcategory:e.target.value})}>
+                    <option value="">اختر...</option>
+                    {subcategoriesByCategory['cars'].map(c => (
+                      <option key={c.id} value={c.id}>{c.name}</option>
+                    ))}
                   </CustomSelect>
                 </Field>
               )}
@@ -433,6 +450,39 @@ export default function PostListing() {
                     <option value="used">مستعمل</option>
                     <option value="new">جديد</option>
                   </CustomSelect>
+                </Field>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <Field label="الوقود">
+                  <CustomSelect value={vf.fuel} onChange={e => setVf({...vf,fuel:e.target.value})}>
+                    <option value="">اختر...</option>
+                    <option value="petrol">بنزين</option>
+                    <option value="diesel">ديزل</option>
+                    <option value="hybrid">هايبرد</option>
+                    <option value="electric">كهربائي</option>
+                    <option value="gas">گاز</option>
+                  </CustomSelect>
+                </Field>
+                <Field label="ناقل الحركة">
+                  <CustomSelect value={vf.transmission} onChange={e => setVf({...vf,transmission:e.target.value})}>
+                    <option value="">اختر...</option>
+                    <option value="automatic">أوتوماتيك</option>
+                    <option value="manual">يدوي</option>
+                    <option value="cvt">CVT</option>
+                  </CustomSelect>
+                </Field>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <Field label="المسافة (كم)">
+                  <input type="number" value={vf.mileage} onChange={e=>setVf({...vf,mileage:e.target.value})} className={inp} placeholder="0" />
+                </Field>
+                <Field label="اللون">
+                  <input value={vf.color} onChange={e=>setVf({...vf,color:e.target.value})} className={inp} placeholder="أبيض" />
+                </Field>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <Field label="سعة المحرك (لتر)">
+                  <input value={vf.engineSize} onChange={e=>setVf({...vf,engineSize:e.target.value})} className={inp} placeholder="2.0" />
                 </Field>
               </div>
             </div>

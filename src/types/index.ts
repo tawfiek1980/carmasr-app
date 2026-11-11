@@ -60,6 +60,12 @@ export interface Listing {
   condition?: "new" | "used";
   listingType?: "sell" | "rent";
   priceType?: "fixed" | "negotiable" | "call" | "sold";
+  fuel?: string;
+  transmission?: string;
+  mileage?: number;
+  color?: string;
+  engineSize?: string;
+  bodyType?: string;
   dailyPrice?: number;
   weeklyPrice?: number;
   monthlyPrice?: number;
