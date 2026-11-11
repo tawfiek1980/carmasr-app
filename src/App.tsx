@@ -26,6 +26,11 @@ const Join           = lazy(() => import("./pages/Join"));
 const PlatformLanding = lazy(() => import("./pages/PlatformLanding"));
 const Vehicles       = lazy(() => import("./pages/Vehicles"));
 const BrandPage      = lazy(() => import("./pages/BrandPage"));
+const PricesPage     = lazy(() => import("./pages/PricesPage"));
+const ComparePage    = lazy(() => import("./pages/ComparePage"));
+const EvaluatePage   = lazy(() => import("./pages/EvaluatePage"));
+const MaintenancePage= lazy(() => import("./pages/MaintenancePage"));
+const InspectionPage = lazy(() => import("./pages/InspectionPage"));
 const Equipment      = lazy(() => import("./pages/Equipment"));
 const Loads          = lazy(() => import("./pages/Loads"));
 const Jobs           = lazy(() => import("./pages/Jobs"));
@@ -248,6 +253,11 @@ function App() {
         <Route path="/vehicles"    element={<WithLayout><Vehicles /></WithLayout>} />
         <Route path="/listings"   element={<WithLayout><Vehicles /></WithLayout>} />
         <Route path="/brand/:brand" element={<WithLayout><BrandPage /></WithLayout>} />
+        <Route path="/prices" element={<WithLayout><PricesPage /></WithLayout>} />
+        <Route path="/compare" element={<WithLayout><ComparePage /></WithLayout>} />
+        <Route path="/evaluate" element={<WithLayout><EvaluatePage /></WithLayout>} />
+        <Route path="/maintenance" element={<WithLayout><MaintenancePage /></WithLayout>} />
+        <Route path="/inspection" element={<WithLayout><InspectionPage /></WithLayout>} />
         <Route path="/search"      element={<WithLayout><Search /></WithLayout>} />
         <Route path="/equipment"   element={<WithLayout><Equipment /></WithLayout>} />
         <Route path="/loads"       element={<WithLayout><Loads /></WithLayout>} />
