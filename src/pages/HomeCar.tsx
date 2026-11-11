@@ -241,6 +241,97 @@ function HeroSearch() {
   );
 }
 
+/* ────────────────────────── ليه كار مصر ────────────────────────── */
+function WhyCarMasr() {
+  const items = [
+    { icon: Search, title: 'بحث سهل وسريع', desc: 'فلتر بالماركة والموديل والسعر والمحافظة للوصول لعربيتك بسرعة.' },
+    { icon: BadgeCheck, title: 'إعلانات مباشرة', desc: 'تواصل مباشر مع البائع أو المعلن بدون وسطاء.' },
+    { icon: Scale, title: 'أدوات تساعدك تقرر', desc: 'قارن، قيّم، وتابع أسعار السوق قبل الشراء.' },
+    { icon: ShieldCheck, title: 'نصائح وفحص', desc: 'إرشادات فحص وخدمات مساعدة لاتخاذ قرار أوضح.' },
+    { icon: Tag, title: 'تنوع في الأسعار', desc: 'جديد ومستعمل وإيجار وقطع غيار — اختيارات تناسب ميزانيتك.' },
+    { icon: Plus, title: 'بيع مجاني وبسيط', desc: 'أضف إعلانك في دقائق ووصّل لمشترين مهتمين.' },
+  ];
+  return (
+    <section className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8">
+      <div className="text-center mb-6">
+        <h2 className="text-xl sm:text-2xl font-extrabold text-text">ليه كار مصر؟</h2>
+        <p className="text-text-muted mt-1 text-sm sm:text-base">تجربة أبسط لبيع وشراء السيارات في مصر</p>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {items.map((it) => (
+          <div key={it.title} className="bg-surface border border-border rounded-2xl p-4 flex gap-3 items-start hover:border-orange/40 transition-colors">
+            <div className="w-11 h-11 shrink-0 rounded-xl bg-orange/10 flex items-center justify-center">
+              <it.icon className="w-5 h-5 text-orange" />
+            </div>
+            <div>
+              <p className="font-extrabold text-text text-sm sm:text-base">{it.title}</p>
+              <p className="text-xs sm:text-sm text-text-muted mt-1 leading-relaxed">{it.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ────────────────────────── ازاي تشتري/تبيع ────────────────────────── */
+function HowItWorks() {
+  const stepsBuy = [
+    { n: '1', title: 'ابحث عن العربية المناسبة', desc: 'استخدم الفلاتر أو تصفح حسب الماركة والفئة والسعر.' },
+    { n: '2', title: 'قارن وتواصل', desc: 'راجع التفاصيل والصور، قارن الأسعار، وتواصل مع المعلن مباشرة.' },
+    { n: '3', title: 'اتفق وأتمم الشراء', desc: 'عاين العربية، اتفق على السعر، وأكمل الإجراءات بينكما بكل وضوح.' },
+  ];
+  const stepsSell = [
+    { n: '1', title: 'أضف إعلانك مجانًا', desc: 'سجّل تفاصيل العربية والصور والسعر في دقائق.' },
+    { n: '2', title: 'استقبل اهتمام المشترين', desc: 'إعلانك يظهر للباحثين في محافظتك وحسب الماركة.' },
+    { n: '3', title: 'تواصل وأكمل البيع', desc: 'رد على الاستفسارات واتفق مع المشتري المناسب.' },
+  ];
+  return (
+    <section className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8">
+      <div className="text-center mb-6">
+        <h2 className="text-xl sm:text-2xl font-extrabold text-text">ازاي تشتري أو تبيع على كار مصر؟</h2>
+        <p className="text-text-muted mt-1 text-sm sm:text-base">خطوات بسيطة وواضحة</p>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <div className="bg-surface border border-border rounded-2xl p-5">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="font-extrabold text-text text-lg">شراء عربية</h3>
+            <Link to="/listings" className="text-orange text-sm font-bold hover:underline">تصفح العربيات</Link>
+          </div>
+          <div className="space-y-4">
+            {stepsBuy.map(s => (
+              <div key={s.n} className="flex gap-3 items-start">
+                <div className="w-8 h-8 shrink-0 rounded-full bg-orange text-white font-extrabold flex items-center justify-center text-sm">{s.n}</div>
+                <div>
+                  <p className="font-bold text-text text-sm sm:text-base">{s.title}</p>
+                  <p className="text-xs sm:text-sm text-text-muted mt-0.5">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="bg-surface border border-border rounded-2xl p-5">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="font-extrabold text-text text-lg">بيع عربيتك</h3>
+            <Link to="/post-listing" className="text-orange text-sm font-bold hover:underline">أضف إعلانك</Link>
+          </div>
+          <div className="space-y-4">
+            {stepsSell.map(s => (
+              <div key={s.n} className="flex gap-3 items-start">
+                <div className="w-8 h-8 shrink-0 rounded-full bg-[#0B1E3A] text-white font-extrabold flex items-center justify-center text-sm">{s.n}</div>
+                <div>
+                  <p className="font-bold text-text text-sm sm:text-base">{s.title}</p>
+                  <p className="text-xs sm:text-sm text-text-muted mt-0.5">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ────────────────────────── Brand strip ────────────────────────── */
 function BrandStrip() {
   return (
@@ -624,7 +715,9 @@ export default function HomeCar() {
       />
       <HomeHeader />
       <HeroSearch />
+      <WhyCarMasr />
       <BrandStrip />
+      <HowItWorks />
       <MoreOnCarMasr />
       <DiscoverCars />
       <SellCta />
