@@ -21,7 +21,7 @@ import { useAuth } from "./contexts/AuthContext";
 import { HOME_VERSION } from "./lib/config";
 import { isNativeApp } from "./services/devicePush";
 
-const Home           = lazy(() => import("./pages/Home"));
+const Home           = lazy(() => import("./pages/HomeCar"));
 const Join           = lazy(() => import("./pages/Join"));
 const PlatformLanding = lazy(() => import("./pages/PlatformLanding"));
 const Vehicles       = lazy(() => import("./pages/Vehicles"));
