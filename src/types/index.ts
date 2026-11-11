@@ -7,7 +7,8 @@ export interface User {
   whatsapp?: string;
   type:
     | "individual"
-    | "company"
+    | "seller"
+    | "driver"
     | "dealer"
     | "workshop"
     | "finance"

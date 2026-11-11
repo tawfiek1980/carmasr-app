@@ -131,19 +131,21 @@ export default function Profile() {
   const fmtNum = (n: number) => Number(n || 0).toLocaleString('ar-EG');
   const maxTrend = Math.max(1, ...(stats?.trend.map(t => t.impressions) || [1]));
 
-  const userTypeLabels: Record<string, string> = {
-    individual: 'سائق',
-    company: 'شركة نقل',
-    dealer: 'معرض سيارات',
-    workshop: 'مركز صيانة',
-    finance: 'شركة تمويل',
-    admin: 'مدير النظام',
+    const userTypeLabels: Record<string, string> = {
+    individual: 'مستخدم',
+    seller: 'بائع',
+    driver: 'سائق',
+    dealer: 'معرض',
+    workshop: 'ورشة',
+    finance: 'تمويل',
+    admin: 'مدير',
   };
 
   const getBadgeColor = (type: string) => {
     switch (type) {
       case 'individual': return 'bg-blue-500';
-      case 'company': return 'bg-purple-500';
+      case 'seller': return 'bg-purple-500';
+      case 'driver': return 'bg-cyan-500';
       case 'dealer': return 'bg-emerald-500';
       case 'workshop': return 'bg-amber-500';
       case 'finance': return 'bg-indigo-500';
@@ -227,7 +229,7 @@ export default function Profile() {
                   <span>{user.governorate}{user.city ? ` - ${user.city}` : ''}</span>
                 </div>
                 
-                {user.type === 'individual' && user.drivingType && (
+                { (user.type === 'individual' || user.type === 'driver') && user.drivingType && (
                   <div className="flex items-center justify-center sm:justify-start gap-2 text-blue-200">
                     <Award className="w-4 h-4" />
                     <span>{user.drivingType} ({user.experienceYears} سنوات خبرة)</span>

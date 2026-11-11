@@ -49,11 +49,12 @@ interface Props {
 }
 
 const accountTypes: { value: User["type"]; label: string }[] = [
-  { value: "individual", label: "سائق" },
-  { value: "dealer", label: "معرض سيارات" },
-  { value: "company", label: "شركة نقل" },
-  { value: "workshop", label: "مركز صيانة" },
-  { value: "finance", label: "شركة تمويل" },
+  { value: "individual", label: "مستخدم" },
+  { value: "seller", label: "بائع" },
+  { value: "driver", label: "سائق" },
+  { value: "dealer", label: "معرض" },
+  { value: "workshop", label: "ورشة" },
+  { value: "finance", label: "تمويل" },
 ];
 
 const governorates = [
@@ -190,7 +191,7 @@ export default function ProfileForm({ saving, setSaving }: Props) {
   const getBusinessNameLabel = () => {
     switch (type) {
       case "dealer": return "اسم المعرض";
-      case "company": return "اسم الشركة";
+      case "seller": return "اسم الشركة";
       case "workshop": return "اسم المركز";
       case "finance": return "اسم شركة التمويل";
       default: return "اسم النشاط";
