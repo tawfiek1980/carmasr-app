@@ -363,14 +363,14 @@ function BrandStrip() {
 function MoreOnCarMasr() {
   const items = [
     {
-      to: '/prices',
+      to: '/prices/new',
       title: 'أسعار السيارات الجديدة',
       desc: 'اكتشف أحدث الأسعار للسيارات الجديدة.',
       icon: Tag,
       bg: 'from-orange/15 to-amber-100 dark:from-orange/20 dark:to-amber-900/20',
     },
     {
-      to: '/listings?condition=used',
+      to: '/prices/used',
       title: 'أسعار السيارات المستعملة',
       desc: 'احصل على أفضل العروض على السيارات المستعملة الموثوقة',
       icon: Car,
@@ -384,7 +384,7 @@ function MoreOnCarMasr() {
       bg: 'from-violet-100 to-fuchsia-100 dark:from-violet-900/30 dark:to-fuchsia-900/20',
     },
     {
-      to: '/maintenance',
+      to: '/my-maintenance',
       title: 'الصيانة الخاصة بي',
       desc: 'إدارة وتتبع صيانة سيارتك',
       icon: Wrench,
@@ -398,14 +398,14 @@ function MoreOnCarMasr() {
       bg: 'from-amber-100 to-yellow-100 dark:from-amber-900/30 dark:to-yellow-900/20',
     },
     {
-      to: '/listings?q=electric',
+      to: '/electric-cars',
       title: 'سيارات كهربائية',
       desc: 'استكشف أفضل السيارات الكهربائية، واعثر على محطات الشحن، واكتشف مقدار ما يمكنك توفيره.',
       icon: Zap,
       bg: 'from-cyan-100 to-sky-100 dark:from-cyan-900/30 dark:to-sky-900/20',
     },
     {
-      to: '/listings?listingType=rent',
+      to: '/rent-cars',
       title: 'سيارات للإيجار',
       desc: 'تصفح سيارات للإيجار، قارن الأسعار، واحجز رحلتك القادمة',
       icon: Calendar,
@@ -626,11 +626,11 @@ function SellCta() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-2.5 shrink-0 w-full md:w-auto">
-          <Link to="/post-listing" className="bg-white text-orange font-extrabold px-6 py-3 rounded-xl hover:bg-orange-50 transition-colors shadow-lg btn-press text-center">
-            أضف إعلانك الآن ←
+          <Link to="/sell-car" className="bg-white text-orange font-extrabold px-6 py-3 rounded-xl hover:bg-orange-50 transition-colors shadow-lg btn-press text-center">
+            بيع عربيتك الآن ←
           </Link>
-          <Link to="/download-app" className="bg-black/20 hover:bg-black/30 border border-white/30 text-white font-bold px-6 py-3 rounded-xl transition-colors btn-press text-center">
-            حمّل التطبيق
+          <Link to="/post-listing" className="bg-black/20 hover:bg-black/30 border border-white/30 text-white font-bold px-6 py-3 rounded-xl transition-colors btn-press text-center">
+            أضف إعلانك
           </Link>
         </div>
       </div>
