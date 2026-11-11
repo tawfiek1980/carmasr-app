@@ -99,7 +99,7 @@ export default function ProductDetail() {
     product.category ? `تصنيف ${product.category}` : '',
     product.exhibitionName ? `من معرض ${cleanText(product.exhibitionName)}` : '',
     product.governorate ? `- ${cleanText(product.governorate)}` : '',
-    'على كار مصر CarMasr سوق النقل الثقيل في مصر.',
+    'على كار مصر CarMasr سوق السيارات الملاكي في مصر.',
   ].filter(Boolean).join(' - ');
   const seoImage = images[0] || undefined;
   const seoJsonLd = {

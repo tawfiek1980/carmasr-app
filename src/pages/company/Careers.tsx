@@ -24,7 +24,7 @@ export default function Careers() {
             </div>
             <h1 className="text-3xl font-bold">انضم لفريقنا</h1>
           </div>
-          <p className="text-gray-300">اعمل في شركة ناشئة تبني مستقبل قطاع النقل في مصر</p>
+          <p className="text-gray-300">اعمل في شركة ناشئة تبني مستقبل قطاع السيارات في مصر</p>
         </div>
       </div>
       <div className="max-w-4xl mx-auto px-4 py-12">

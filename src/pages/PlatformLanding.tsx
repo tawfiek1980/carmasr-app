@@ -20,7 +20,7 @@ const benefits = [
   { icon: Search, title: 'بحث وتصفية متقدم', desc: 'فلتر حسب الفئة والمحافظة والسعر وسنة الصنع' },
   { icon: Heart, title: 'مفضلة وإشعارات', desc: 'احفظ اللي يعجبك واعرف فوراً لما إعلان جديد ينزل' },
   { icon: Shield, title: 'أمان وثقة', desc: 'سياسات واضحة ضد الاحتيال وإرشادات للشراء الآمن' },
-  { icon: MapPin, title: 'مصري 100%', desc: 'مبني لسوق النقل الثقيل في كل محافظات مصر' },
+  { icon: MapPin, title: 'مصري 100%', desc: 'مبني لسوق السيارات الملاكي في كل محافظات مصر' },
 ];
 
 const services = [
@@ -40,7 +40,7 @@ export default function PlatformLanding() {
   return (
     <div className="min-h-screen bg-bg">
       <SeoHead
-        title="كار مصر CarMasr - سوق النقل الثقيل في مصر | سجّل مجاناً"
+        title="كار مصر CarMasr - سوق السيارات الملاكي في مصر | سجّل مجاناً"
         description="كار مصر أكبر سوق إلكتروني للنقل الثقيل في مصر. سيارات، سيارات، قطع غيار، سيارات، وظائف، تمويل وخدمات طوارئ. سجّل مجاناً وابدأ في دقيقة."
       />
 
@@ -114,7 +114,7 @@ export default function PlatformLanding() {
       {/* Services */}
       <section className="max-w-5xl mx-auto px-4 py-10">
         <h2 className="text-xl sm:text-2xl font-extrabold text-navy text-center mb-2">الخدمات المتوفرة على التطبيق</h2>
-        <p className="text-text-light text-sm text-center mb-8">عشر أقسام كاملة تغطي كل احتياجات مجال النقل الثقيل</p>
+        <p className="text-text-light text-sm text-center mb-8">عشر أقسام كاملة تغطي كل احتياجات مجال السيارات الملاكي</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {services.map(s => (
             <Link key={s.name} to={s.path}

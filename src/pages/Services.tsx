@@ -44,7 +44,7 @@ export default function Services() {
     <div className="min-h-screen bg-bg pb-20 sm:pb-8">
       <div className="bg-navy py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">خدمات النقل الثقيل</h1>
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">خدمات السيارات الملاكي</h1>
           <p className="text-gray-300 text-sm sm:text-base">كل ما تحتاجه لسياراتك وسياراتك من خدمات في مكان واحد</p>
         </div>
       </div>
@@ -160,7 +160,7 @@ export default function Services() {
         <div className="mt-8 bg-gradient-to-r from-orange to-orange-dark rounded-2xl p-6 sm:p-8 text-white text-center">
           <Calendar className="w-12 h-12 mx-auto mb-3" />
           <h2 className="text-xl sm:text-2xl font-extrabold mb-2">هل تريد أن تضيف خدمتك إلى كار مصر؟</h2>
-          <p className="text-white/90 text-sm mb-4 max-w-lg mx-auto">انضم إلينا كشريك موثق ووصل عملائك إلى آلاف العملاء في مجال النقل الثقيل</p>
+          <p className="text-white/90 text-sm mb-4 max-w-lg mx-auto">انضم إلينا كشريك موثق ووصل عملائك إلى آلاف العملاء في مجال السيارات الملاكي</p>
           <button
             onClick={() => { setIsPartner(true); setShowService(null); }}
             className="inline-flex items-center gap-1.5 bg-white text-orange px-6 py-2.5 rounded-xl font-bold hover:bg-bg transition-colors cursor-pointer"

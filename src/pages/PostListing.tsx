@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Truck, Package, HardHat, Wrench, CheckCircle, Loader2, ChevronLeft, ChevronDown, Plus, MapPin } from "lucide-react";
+import { Truck, Package, HardHat, Wrench, CheckCircle, Loader2, ChevronLeft, ChevronDown, Plus, MapPin, Car } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import { useNotifications } from "../contexts/NotificationContext";
 import { listingsService } from "../lib/firestoreService";
@@ -15,10 +15,8 @@ import { generateSlug, sanitizeTitle, priceInputError, listingPriceValue, priceT
 import { normalizeArabicText, normalizeGovernorate } from "../lib/listingMeta";
 
 const listingTypes = [
-  { id: "vehicle",     name: "شاحنة أو سيارات", icon: Truck },
-  { id: "load",        name: "حمولة",           icon: Package },
-  { id: "job",         name: "وظيفة",           icon: HardHat },
-  { id: "spare-part",  name: "قطعة غيار",       icon: Wrench },
+  { id: "vehicle",     name: "سيارات",           icon: Car },
+  { id: "spare-part",  name: "قطع غيار",       icon: Wrench },
 ];
 
 function getCitiesOf(govName: string): string[] {
@@ -417,7 +415,7 @@ export default function PostListing() {
               <Field label="عنوان الإعلان *" hint="بدون رقم هاتف وبدون تكرار لكلمة «للبيع»">
                 <input required value={vf.title} maxLength={120}
                   onChange={e => setVf({...vf,title:e.target.value})}
-                  className={inp} placeholder={type === "spare-part" ? "مثال: طقم فرامل مرسيدس أكتروس أصلي" : "مثال: شاحنة فولفو 2020"} />
+                  className={inp} placeholder={type === "spare-part" ? "مثال: قطعة غيار أصلي" : "مثال: تويوتا كامري 2020"} />
               </Field>
 {type === "vehicle" && (
                 <Field label="نوع الهيكل">

@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <SeoHead
-        title="كار مصر CarMasr - أكبر سوق للنقل الثقيل في مصر"
+        title="كار مصر CarMasr - أكبر سوق للسيارات في مصر"
         description="أكبر سوق إلكتروني للنقل الثقيل في مصر. ابحث عن سيارات، سيارات، سيارات، وظائف نقل، تمويل، وخدمات طوارئ في مكان واحد."
         jsonLd={{
           "@context": "https://schema.org",

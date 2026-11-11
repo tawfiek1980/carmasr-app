@@ -655,7 +655,7 @@ function HomeV2Footer() {
               </div>
             </Link>
             <p className="text-text-light text-sm leading-relaxed mb-4 max-w-xs">
-              أكبر سوق إلكتروني متخصص في مركبات النقل الثقيل والسيارات في مصر. نربط البائعين والمشترين وأصحاب الحمولة في بيئة آمنة وموثوقة.
+              أكبر سوق إلكتروني متخصص في مركبات السيارات الملاكي والسيارات في مصر. نربط البائعين والمشترين وأصحاب الحمولة في بيئة آمنة وموثوقة.
             </p>
             <div className="space-y-1.5 text-sm text-text-light">
               <a href="tel:01018870145" className="flex items-center gap-2 hover:text-orange transition-colors">
@@ -703,7 +703,7 @@ function HomeV2Footer() {
           <p className="text-text-light text-xs">© {new Date().getFullYear()} كار مصر CarMasr. جميع الحقوق محفوظة.</p>
           <div className="flex items-center gap-2 text-text-light text-xs">
             <Truck className="w-4 h-4 text-orange" />
-            أكبر سوق للنقل الثقيل في مصر
+            أكبر سوق للسيارات في مصر
           </div>
         </div>
       </div>
@@ -837,7 +837,7 @@ export default function HomeV2() {
       }));
     }
     return [{
-      title: 'أكبر سوق للنقل الثقيل في مصر',
+      title: 'أكبر سوق للسيارات في مصر',
       subtitle: 'سيارات • سيارات • سيارات • وظائف',
       cta: 'تصفح السيارات',
       to: '/vehicles',
@@ -848,7 +848,7 @@ export default function HomeV2() {
   return (
     <div className="min-h-screen bg-bg" dir="rtl">
       <SeoHead
-        title="كار مصر CarMasr - أكبر سوق للنقل الثقيل في مصر"
+        title="كار مصر CarMasr - أكبر سوق للسيارات في مصر"
         description="أكبر سوق إلكتروني للنقل الثقيل في مصر. ابحث عن سيارات، سيارات، سيارات، وظائف نقل، تمويل، وخدمات طوارئ في مكان واحد."
         jsonLd={{
           "@context": "https://schema.org",

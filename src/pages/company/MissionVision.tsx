@@ -24,7 +24,7 @@ export default function MissionVision() {
             <h2 className="text-xl font-bold text-text">رسالتنا</h2>
           </div>
           <p className="text-text-light leading-loose text-sm">
-            تمكين كل فرد ومؤسسة في قطاع النقل الثقيل بمصر من خلال توفير سوق رقمي شفاف وموثوق وسهل الاستخدام، يجعل عمليات البيع والشراء والإيجار والنقل أسرع وأكثر أماناً وأوفر تكلفة للجميع.
+            تمكين كل فرد ومؤسسة في قطاع السيارات الملاكي بمصر من خلال توفير سوق رقمي شفاف وموثوق وسهل الاستخدام، يجعل عمليات البيع والشراء والإيجار والنقل أسرع وأكثر أماناً وأوفر تكلفة للجميع.
           </p>
         </div>
         <div className="bg-surface rounded-2xl border border-border p-8">
@@ -35,14 +35,14 @@ export default function MissionVision() {
             <h2 className="text-xl font-bold text-text">رؤيتنا</h2>
           </div>
           <p className="text-text-light leading-loose text-sm">
-            أن تكون كار مصر بحلول 2030 المنصة الرقمية الرائدة لقطاع النقل الثقيل في منطقة الشرق الأوسط وشمال أفريقيا، مشكّلةً نظاماً بيئياً رقمياً متكاملاً يخدم كل حلقة في سلسلة الإمداد واللوجستيات.
+            أن تكون كار مصر بحلول 2030 المنصة الرقمية الرائدة لقطاع السيارات الملاكي في منطقة الشرق الأوسط وشمال أفريقيا، مشكّلةً نظاماً بيئياً رقمياً متكاملاً يخدم كل حلقة في سلسلة الإمداد واللوجستيات.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="bg-surface rounded-2xl border border-border p-6">
             <Zap className="w-8 h-8 text-orange mb-3" />
             <h3 className="font-bold text-text mb-2">التحول الرقمي</h3>
-            <p className="text-text-light text-sm leading-relaxed">نقود مسيرة التحول الرقمي لقطاع النقل الثقيل في مصر، مُحوِّلين سوقاً تقليدياً إلى منظومة رقمية فاعلة ومتكاملة.</p>
+            <p className="text-text-light text-sm leading-relaxed">نقود مسيرة التحول الرقمي لقطاع السيارات الملاكي في مصر، مُحوِّلين سوقاً تقليدياً إلى منظومة رقمية فاعلة ومتكاملة.</p>
           </div>
           <div className="bg-surface rounded-2xl border border-border p-6">
             <Globe className="w-8 h-8 text-orange mb-3" />

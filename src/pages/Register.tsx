@@ -115,7 +115,7 @@ export default function Register() {
             <img src="/app-icon-128.png" alt="كار مصر" className="h-16 w-16 object-contain" />
           </Link>
           <h1 className="text-2xl font-extrabold text-navy mb-2">إنشاء حساب جديد</h1>
-          <p className="text-text-light text-sm">انضم إلى أكبر سوق للنقل الثقيل في مصر</p>
+          <p className="text-text-light text-sm">انضم إلى أكبر سوق للسيارات في مصر</p>
         </div>
 
         <div className="bg-white rounded-2xl p-6 shadow-sm">

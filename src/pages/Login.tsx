@@ -121,7 +121,7 @@ export default function Login() {
               <img src="/app-icon-128.png" alt="كار مصر" className="h-14 w-14 object-contain" />
             </Link>
             <h1 className="text-xl font-bold text-white">تسجيل الدخول</h1>
-            <p className="text-gray-400 text-xs mt-1">سوق النقل الثقيل الأول في مصر</p>
+            <p className="text-gray-400 text-xs mt-1">سوق السيارات الملاكي الأول في مصر</p>
           </div>
 
           <div className="p-6">

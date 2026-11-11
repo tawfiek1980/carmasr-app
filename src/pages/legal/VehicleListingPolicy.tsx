@@ -2,10 +2,10 @@ import { Truck } from 'lucide-react';
 import PageLayout, { PolicySection } from '../../components/PageLayout';
 export default function VehicleListingPolicy() {
   return (
-    <PageLayout title="سياسة إدراج المركبات" description="إرشادات إدراج مركبات النقل الثقيل والسيارات على منصة كار مصر لضمان تجربة موثوقة للجميع." breadcrumbs={[{ name: 'سياسة الإدراج' }]} icon={<Truck className="w-6 h-6" />} lastUpdated="1 يناير 2025">
+    <PageLayout title="سياسة إدراج المركبات" description="إرشادات إدراج مركبات السيارات الملاكي والسيارات على منصة كار مصر لضمان تجربة موثوقة للجميع." breadcrumbs={[{ name: 'سياسة الإدراج' }]} icon={<Truck className="w-6 h-6" />} lastUpdated="1 يناير 2025">
       <PolicySection title="١. المركبات والسيارات المسموح بإدراجها">
         <p>تقبل المنصة إعلانات الفئات التالية فقط:</p>
-        <p>• سيارات النقل الثقيل (تريلات، سيارات، سيارات بضائع).</p>
+        <p>• سيارات السيارات الملاكي (تريلات، سيارات، سيارات بضائع).</p>
         <p>• سيارات البناء والحفر (حفارات، لودرات، رافعات، دبابات).</p>
         <p>• سيارات المشاريع والزراعة الثقيلة.</p>
         <p>• قطع الغيار الأصلية والمعتمدة لهذه المركبات والسيارات.</p>

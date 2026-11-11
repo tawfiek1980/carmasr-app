@@ -174,7 +174,7 @@ export default function Jobs() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-white">وظائف النقل</h1>
-              <p className="text-gray-400 text-xs sm:text-sm mt-1">فرص عمل في قطاع النقل الثقيل</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">فرص عمل في قطاع السيارات الملاكي</p>
             </div>
             <Link to="/post-listing?type=job"
               className="flex items-center gap-1.5 bg-orange hover:bg-orange-dark text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">

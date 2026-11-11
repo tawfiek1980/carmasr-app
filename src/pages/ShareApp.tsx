@@ -3,7 +3,7 @@ import { Share2, MessageCircle, Facebook, Link2, Check } from 'lucide-react';
 import { getSiteUrl } from '../lib/config';
 
 const APP_URL = 'https://carmasr-app.vercel.app/download';
-const SHARE_TEXT = 'حمّل تطبيق كار مصر CarMasr — أكبر سوق للنقل الثقيل في مصر';
+const SHARE_TEXT = 'حمّل تطبيق كار مصر CarMasr — أكبر سوق للسيارات في مصر';
 
 export default function ShareApp() {
   const [copied, setCopied] = useState(false);

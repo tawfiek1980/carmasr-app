@@ -39,7 +39,7 @@ export default function Partners() {
         <div className="bg-surface rounded-2xl border border-border p-8 text-center">
           <Handshake className="w-12 h-12 text-orange mx-auto mb-4" />
           <h2 className="text-xl font-bold text-text mb-2">هل تريد أن تصبح شريكاً؟</h2>
-          <p className="text-text-light text-sm mb-6">نرحب بالشراكات مع الجهات التي تُضيف قيمة حقيقية لعملائنا في قطاع النقل الثقيل.</p>
+          <p className="text-text-light text-sm mb-6">نرحب بالشراكات مع الجهات التي تُضيف قيمة حقيقية لعملائنا في قطاع السيارات الملاكي.</p>
           <Link to="/contact" className="inline-block bg-orange hover:bg-orange-dark text-white px-8 py-3 rounded-xl font-bold transition-colors">
             تواصل لمناقشة الشراكة
           </Link>

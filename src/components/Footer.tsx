@@ -86,7 +86,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-xs">
-              أكبر سوق إلكتروني متخصص في مركبات النقل الثقيل والسيارات في مصر. نربط البائعين والمشترين وأصحاب الحمولة في بيئة آمنة وموثوقة.
+              أكبر سوق إلكتروني متخصص في مركبات السيارات الملاكي والسيارات في مصر. نربط البائعين والمشترين وأصحاب الحمولة في بيئة آمنة وموثوقة.
             </p>
             {/* Social */}
             <div className="flex items-center gap-2 flex-wrap mb-5">
@@ -194,7 +194,7 @@ export default function Footer() {
           <p className="text-gray-500 text-xs">© 2025 كار مصر CarMasr. جميع الحقوق محفوظة.</p>
           <div className="flex items-center gap-2 text-gray-500 text-xs">
             <Truck className="w-4 h-4 text-orange" />
-            <span>أكبر سوق للنقل الثقيل في مصر</span>
+            <span>أكبر سوق للسيارات في مصر</span>
           </div>
         </div>
       </div>
