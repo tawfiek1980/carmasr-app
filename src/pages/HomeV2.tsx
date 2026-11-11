@@ -648,7 +648,7 @@ function HomeV2Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 pb-8">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-3">
-              <img src="/tareeq-logo.png" alt="كار مصر" className="h-10 w-10 object-contain" />
+              <img src="/app-icon-128.png" alt="كار مصر" className="h-10 w-10 object-contain" />
               <div className="flex flex-col">
                 <span className="text-text font-extrabold text-xl leading-none">كار مصر</span>
                 <span className="text-orange-700 text-[11px] font-bold leading-none">CarMasr</span>

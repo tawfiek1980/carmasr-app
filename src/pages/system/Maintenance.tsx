@@ -3,7 +3,7 @@ export default function Maintenance() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-navy">
       <div className="text-center max-w-md">
-        <img src="/tareeq-logo.png" alt="كار مصر" className="h-16 w-16 mx-auto mb-6 object-contain" />
+        <img src="/app-icon-128.png" alt="كار مصر" className="h-16 w-16 mx-auto mb-6 object-contain" />
         <Wrench className="w-14 h-14 text-orange mx-auto mb-4" />
         <h1 className="text-2xl font-bold text-white mb-3">المنصة قيد الصيانة</h1>
         <p className="text-gray-400 mb-6">نعمل حالياً على تحسين الخدمة لتقديم تجربة أفضل لك. سنعود قريباً!</p>

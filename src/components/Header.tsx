@@ -45,7 +45,7 @@ export default function Header() {
               <BackButton />
             </div>
             <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-            <img src="/tareeq-logo.png" alt="كار مصر" className="h-9 w-9 sm:h-10 sm:w-10 object-contain" />
+            <img src="/app-icon-128.png" alt="كار مصر" className="h-9 w-9 sm:h-10 sm:w-10 object-contain" />
             <div className="flex flex-col">
               <span className="text-white font-bold text-lg sm:text-xl leading-none">كار مصر</span>
               <span className="text-orange text-[10px] sm:text-xs font-semibold leading-none">CarMasr</span>

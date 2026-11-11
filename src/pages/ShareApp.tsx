@@ -50,7 +50,7 @@ export default function ShareApp() {
   return (
     <div className="min-h-screen bg-bg pb-24 sm:pb-8">
       <div className="bg-gradient-to-l from-navy to-navy-light px-4 py-10 text-center">
-        <img src="/tareeq-logo.png" alt="كار مصر CarMasr" className="w-20 h-20 rounded-2xl mx-auto mb-4 object-contain bg-white/10 p-2" />
+        <img src="/app-icon-128.png" alt="كار مصر CarMasr" className="w-20 h-20 rounded-2xl mx-auto mb-4 object-contain bg-white/10 p-2" />
         <h1 className="text-2xl font-extrabold text-white mb-2">شارك تطبيق كار مصر</h1>
         <p className="text-white/80 text-sm max-w-sm mx-auto">
           ابعث التطبيق لأصدقائك وأصحاب السيارات — تحميل مجاني وسريع

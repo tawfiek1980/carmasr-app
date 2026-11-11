@@ -118,7 +118,7 @@ export default function Login() {
 
           <div className="bg-navy p-6 text-center">
             <Link to="/" className="inline-flex items-center gap-3 mb-3">
-              <img src="/tareeq-logo.png" alt="كار مصر" className="h-14 w-14 object-contain" />
+              <img src="/app-icon-128.png" alt="كار مصر" className="h-14 w-14 object-contain" />
             </Link>
             <h1 className="text-xl font-bold text-white">تسجيل الدخول</h1>
             <p className="text-gray-400 text-xs mt-1">سوق النقل الثقيل الأول في مصر</p>

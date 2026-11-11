@@ -79,7 +79,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src="/tareeq-logo.png" alt="كار مصر" className="h-12 w-12 object-contain" />
+              <img src="/app-icon-128.png" alt="كار مصر" className="h-12 w-12 object-contain" />
               <div className="flex flex-col">
                 <span className="text-white font-bold text-2xl leading-none">كار مصر</span>
                 <span className="text-orange text-sm font-semibold leading-none">CarMasr</span>

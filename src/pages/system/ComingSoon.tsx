@@ -6,7 +6,7 @@ export default function ComingSoon() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-navy">
       <div className="text-center max-w-lg">
-        <img src="/tareeq-logo.png" alt="كار مصر" className="h-16 w-16 mx-auto mb-6 object-contain" />
+        <img src="/app-icon-128.png" alt="كار مصر" className="h-16 w-16 mx-auto mb-6 object-contain" />
         <div className="inline-flex items-center gap-2 bg-orange/20 text-orange px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
           <Clock className="w-4 h-4" /> قريباً
         </div>
