@@ -1,10 +1,10 @@
-import { HelpCircle, Search, Truck, CreditCard, Shield, Settings, ChevronLeft, MessageCircle } from 'lucide-react';
+import { HelpCircle, Search, Car, CreditCard, Shield, Settings, ChevronLeft, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { getWhatsAppLink } from '../../lib/utils';
 
 const categories = [
-  { icon: Truck, title: 'الإعلانات والمركبات', desc: 'كيفية نشر وإدارة إعلاناتك', path: '/help/posting-guide' },
+  { icon: Car, title: 'الإعلانات والمركبات', desc: 'كيفية نشر وإدارة إعلاناتك', path: '/help/posting-guide' },
   { icon: CreditCard, title: 'التمويل', desc: 'أسئلة حول خدمات التمويل', path: '/help/financing-guide' },
   { icon: Shield, title: 'الأمان والخصوصية', desc: 'حماية حسابك وبياناتك', path: '/privacy-policy' },
   { icon: Settings, title: 'إعدادات الحساب', desc: 'إدارة حسابك وتفضيلاتك', path: '/settings' },
