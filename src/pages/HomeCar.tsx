@@ -223,25 +223,30 @@ function HeroSearch() {
 }
 
 /* ────────────────────────── Brand strip ────────────────────────── */
-const BRAND_LOGOS: { name: string; domain: string }[] = [
-  { name: 'Toyota', domain: 'toyota.com' },
-  { name: 'Nissan', domain: 'nissan.com' },
-  { name: 'Hyundai', domain: 'hyundai.com' },
-  { name: 'Kia', domain: 'kia.com' },
-  { name: 'Chevrolet', domain: 'chevrolet.com' },
-  { name: 'Ford', domain: 'ford.com' },
-  { name: 'Mitsubishi', domain: 'mitsubishi-motors.com' },
-  { name: 'Mercedes', domain: 'mercedes-benz.com' },
-  { name: 'BMW', domain: 'bmw.com' },
-  { name: 'Volkswagen', domain: 'volkswagen.com' },
-  { name: 'Renault', domain: 'renault.com' },
-  { name: 'Peugeot', domain: 'peugeot.com' },
-  { name: 'Mazda', domain: 'mazda.com' },
-  { name: 'Honda', domain: 'honda.com' },
-  { name: 'MG', domain: 'mgmotor.eu' },
-  { name: 'Jeep', domain: 'jeep.com' },
-  { name: 'Audi', domain: 'audi.com' },
-  { name: 'Chery', domain: 'cheryinternational.com' },
+const BRAND_LOGOS: { name: string; slug: string | null }[] = [
+  { name: 'Toyota', slug: 'toyota' },
+  { name: 'Nissan', slug: 'nissan' },
+  { name: 'Hyundai', slug: 'hyundai' },
+  { name: 'Kia', slug: 'kia' },
+  { name: 'Chevrolet', slug: 'chevrolet' },
+  { name: 'Ford', slug: 'ford' },
+  { name: 'Mitsubishi', slug: 'mitsubishi' },
+  { name: 'Mercedes', slug: null },
+  { name: 'BMW', slug: 'bmw' },
+  { name: 'Volkswagen', slug: 'volkswagen' },
+  { name: 'Renault', slug: 'renault' },
+  { name: 'Peugeot', slug: 'peugeot' },
+  { name: 'Mazda', slug: 'mazda' },
+  { name: 'Honda', slug: 'honda' },
+  { name: 'MG', slug: 'mg' },
+  { name: 'Jeep', slug: 'jeep' },
+  { name: 'Audi', slug: 'audi' },
+  { name: 'Chery', slug: null },
+  { name: 'Skoda', slug: 'skoda' },
+  { name: 'BYD', slug: null },
+  { name: 'Haval', slug: null },
+  { name: 'Geely', slug: null },
+  { name: 'Land Rover', slug: null },
 ];
 
 function BrandStrip() {
@@ -262,25 +267,29 @@ function BrandStrip() {
             className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-surface border border-border hover:border-orange/50 hover:shadow-md transition-all btn-press"
           >
             <div className="w-12 h-12 rounded-xl bg-bg flex items-center justify-center overflow-hidden">
-              <img
-                src={`https://logo.clearbit.com/${b.domain}`}
-                alt={b.name}
-                loading="lazy"
-                className="w-8 h-8 object-contain"
-                onError={(e) => {
-                  const t = e.currentTarget;
-                  t.style.display = 'none';
-                  const parent = t.parentElement;
-                  if (parent) {
-                    const span = document.createElement('span');
-                    span.className = 'text-orange font-extrabold text-sm';
-                    span.textContent = b.name.slice(0, 2).toUpperCase();
-                    parent.appendChild(span);
-                  }
-                }}
-              />
+              {b.slug ? (
+                <img
+                  src={`https://cdn.simpleicons.org/${b.slug}`}
+                  alt={b.name}
+                  loading="lazy"
+                  className="w-8 h-8 object-contain"
+                  onError={(e) => {
+                    const t = e.currentTarget;
+                    t.style.display = 'none';
+                    const parent = t.parentElement;
+                    if (parent && !parent.querySelector('.brand-fallback')) {
+                      const span = document.createElement('span');
+                      span.className = 'brand-fallback text-orange font-extrabold text-xs';
+                      span.textContent = b.name.slice(0, 3);
+                      parent.appendChild(span);
+                    }
+                  }}
+                />
+              ) : (
+                <span className="text-orange font-extrabold text-xs">{b.name.slice(0, 3)}</span>
+              )}
             </div>
-            <span className="text-xs font-semibold text-text group-hover:text-orange transition-colors">{b.name}</span>
+            <span className="text-xs font-semibold text-text group-hover:text-orange transition-colors text-center leading-tight">{b.name}</span>
           </Link>
         ))}
       </div>
