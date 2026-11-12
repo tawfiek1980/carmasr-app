@@ -31,7 +31,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       localStorage.setItem(STORAGE_KEY, theme);
     } catch { /* ignore */ }
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#121212" : "#0F172A");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#121212" : "#0D1B2A");
   }, [theme]);
 
   // تتبّع تفضيل النظام ما دام المستخدم ما اختراش يدويًا

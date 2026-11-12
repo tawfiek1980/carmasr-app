@@ -36,7 +36,7 @@ export default function NewCarPricesPage() {
   return (
     <div className="min-h-screen bg-bg pb-20 sm:pb-8">
       <SeoHead title="أسعار السيارات الجديدة — كار مصر" description="اكتشف أحدث أسعار السيارات الجديدة في مصر بناءً على الإعلانات المتاحة." />
-      <div className="bg-gradient-to-br from-[#0F172A] via-[#172554] to-[#1D4ED8] text-white py-10">
+      <div className="bg-gradient-to-br from-[#0B1E3A] to-[#122B4F] text-white py-10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
           <nav className="flex items-center gap-2 text-sm text-white/70 mb-4">
             <Link to="/" className="hover:text-orange">الرئيسية</Link><ChevronLeft className="w-4 h-4" /><span className="text-white">أسعار السيارات الجديدة</span>

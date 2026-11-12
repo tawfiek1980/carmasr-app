@@ -36,7 +36,7 @@ export default function PricesPage() {
   return (
     <div className="min-h-screen bg-bg pb-20 sm:pb-8">
       <SeoHead title="دليل أسعار السيارات — كار مصر" description="دليل أسعار السيارات في مصر حسب الماركة." />
-      <div className="bg-gradient-to-br from-[#0F172A] via-[#172554] to-[#1D4ED8] text-white py-10">
+      <div className="bg-gradient-to-br from-[#0B1E3A] to-[#122B4F] text-white py-10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
           <h1 className="text-3xl font-extrabold flex items-center gap-3">
             <Tag className="w-8 h-8 text-orange" /> دليل أسعار السيارات

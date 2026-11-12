@@ -28,7 +28,7 @@ export default function ElectricCarsPage() {
   return (
     <div className="min-h-screen bg-bg pb-20 sm:pb-8">
       <SeoHead title="سيارات كهربائية — كار مصر" description="استكشف السيارات الكهربائية المتاحة، واعرف مزاياها وابحث عن الأنسب لك." />
-      <div className="bg-gradient-to-br from-[#0F172A] via-[#155E75] to-[#06B6D4] text-white py-10">
+      <div className="bg-gradient-to-br from-[#062c2a] via-[#0b3b3a] to-[#0f766e] text-white py-10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
           <nav className="flex items-center gap-2 text-sm text-white/70 mb-4">
             <Link to="/" className="hover:text-orange">الرئيسية</Link><ChevronLeft className="w-4 h-4" /><span className="text-white">سيارات كهربائية</span>
